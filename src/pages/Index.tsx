@@ -1,7 +1,8 @@
 import Header from "@/components/portfolio/Header";
 import About from "@/components/portfolio/About";
-import Projects from "@/components/portfolio/Projects";
+import Experience from "@/components/portfolio/Experience";
 import Skills from "@/components/portfolio/Skills";
+import Certificates from "@/components/portfolio/Certificates";
 import Contact from "@/components/portfolio/Contact";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
@@ -11,13 +12,14 @@ const Index = () => {
       <Header />
       <main>
         <About />
-        <Projects />
+        <Experience />
         <Skills />
+        <Certificates />
         <Contact />
       </main>
       <footer className="border-t border-white/10 py-8">
         <div className="mx-auto max-w-5xl px-6 text-center text-sm text-portfolio-muted">
-          © 2024 Jordan Ellis. Built with care.
+          © 2026 Vahid Rahmani. Mit Sorgfalt erstellt.
           <MadeWithDyad />
         </div>
       </footer>

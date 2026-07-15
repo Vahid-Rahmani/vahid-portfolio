@@ -5,21 +5,22 @@ const Contact = () => {
     <section id="contact" className="mx-auto max-w-3xl px-6 py-16">
       <div className="rounded-3xl border border-white/10 bg-portfolio-surface p-8 text-center sm:p-12">
         <h2 className="text-2xl font-bold text-white font-display sm:text-3xl">
-          Let's build something together
+          Lassen Sie uns zusammenarbeiten
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-portfolio-muted">
-          I'm actively looking for junior frontend opportunities. Feel free to
-          reach out — I'd love to chat about how I can help your team.
+          Ich suche aktiv nach einer Einstiegsposition als Junior Cloud Engineer
+          oder IT-Systemadministrator im Raum Hamburg. Melden Sie sich gerne bei
+          mir — ich freue mich auf unser Gespräch.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="mailto:hello@jordanellis.dev"
+            href="mailto:vahidrahmani.info@gmail.com"
             className="inline-flex items-center gap-2 rounded-full bg-portfolio-accent px-6 py-3 text-sm font-semibold text-portfolio-bg transition hover:opacity-90"
           >
-            <Mail size={16} /> Email me
+            <Mail size={16} /> E-Mail
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/vahid-rahmani-699944417"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
@@ -27,7 +28,7 @@ const Contact = () => {
             <Linkedin size={16} /> LinkedIn
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/vahidrahmaniinfo24-alt"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"

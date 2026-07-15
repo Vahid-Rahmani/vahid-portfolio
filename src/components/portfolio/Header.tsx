@@ -1,5 +1,6 @@
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ArrowDown } from "lucide-react";
 import OpenToWorkBadge from "./OpenToWorkBadge";
+import ProfilePhoto from "./ProfilePhoto";
 
 const Header = () => {
   return (
@@ -11,6 +12,10 @@ const Header = () => {
 
       <div className="mx-auto max-w-5xl px-6 pb-16 pt-20 text-center sm:pt-28">
         <div className="animate-fade-in-up">
+          <ProfilePhoto />
+        </div>
+
+        <div className="mt-6 animate-fade-in-up">
           <OpenToWorkBadge />
         </div>
 
@@ -25,8 +30,14 @@ const Header = () => {
           className="mx-auto mt-4 max-w-2xl animate-fade-in-up text-lg text-portfolio-muted sm:text-xl"
           style={{ animationDelay: "0.12s" }}
         >
-          Junior Frontend Developer — crafting clean, accessible, and
-          delightful web experiences.
+          Junior Cloud Engineer & IT-Systemadministrator
+        </p>
+
+        <p
+          className="mt-3 flex animate-fade-in-up items-center justify-center gap-2 text-sm text-portfolio-muted"
+          style={{ animationDelay: "0.15s" }}
+        >
+          <MapPin size={16} className="text-portfolio-accent" /> Hamburg, Deutschland
         </p>
 
         <div
@@ -37,13 +48,13 @@ const Header = () => {
             href="#contact"
             className="rounded-full bg-portfolio-accent px-6 py-3 text-sm font-semibold text-portfolio-bg transition hover:opacity-90"
           >
-            Get in touch
+            Kontakt aufnehmen
           </a>
           <a
-            href="#projects"
+            href="#experience"
             className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
           >
-            View projects <ArrowDown size={16} />
+            Werdegang ansehen <ArrowDown size={16} />
           </a>
         </div>
 
@@ -54,10 +65,10 @@ const Header = () => {
           <a href="https://github.com/vahidrahmaniinfo24-alt" target="_blank" rel="noreferrer" className="transition hover:text-portfolio-accent" aria-label="GitHub">
             <Github size={20} />
           </a>
-          <a href="www.linkedin.com/in/vahid-rahmani-699944417" target="_blank" rel="noreferrer" className="transition hover:text-portfolio-accent" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/vahid-rahmani-699944417" target="_blank" rel="noreferrer" className="transition hover:text-portfolio-accent" aria-label="LinkedIn">
             <Linkedin size={20} />
           </a>
-          <a href="mailto:hello@jordanellis.dev" className="transition hover:text-portfolio-accent" aria-label="Email">
+          <a href="mailto:vahidrahmani.info@gmail.com" className="transition hover:text-portfolio-accent" aria-label="E-Mail">
             <Mail size={20} />
           </a>
         </div>

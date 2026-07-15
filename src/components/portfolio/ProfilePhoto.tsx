@@ -5,7 +5,7 @@ const ProfilePhoto = ({ className, src }: { className?: string; src?: string }) 
     <div className={cn("relative mx-auto h-32 w-32 sm:h-40 sm:w-40", className)}>
       <div className="absolute -inset-1 rounded-full bg-portfolio-accent/20 blur-md"></div>
       <img
-        src={src || "C:\Users\DCI-Student\dyad-apps\dreamy-starfish-snap\img\vr.jpg"}
+        src={src || "file:///C:/Users/DCI-Student/dyad-apps/dreamy-starfish-snap/img/vr.jpg"}
         alt="Vahid Rahmani"
         className="relative h-full w-full rounded-full border-2 border-portfolio-accent/50 object-cover"
       />

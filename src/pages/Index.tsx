@@ -5,7 +5,7 @@ import Experience from "@/components/portfolio/Experience";
 import Skills from "@/components/portfolio/Skills";
 import Certificates from "@/components/portfolio/Certificates";
 import Contact from "@/components/portfolio/Contact";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import FooterCredits from "@/components/FooterCredits";
 
 const Index = () => {
   return (
@@ -21,8 +21,8 @@ const Index = () => {
       </main>
       <footer className="border-t border-white/10 py-8">
         <div className="mx-auto max-w-5xl px-6 text-center text-sm text-portfolio-muted">
-          © 2026 Vahid Rahmani. Mit Sorgfalt erstellt.
-          <MadeWithDyad />
+          © 2026 Vahid Rahmani.
+          <FooterCredits />
         </div>
       </footer>
     </div>

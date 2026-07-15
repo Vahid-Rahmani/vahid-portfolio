@@ -62,6 +62,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        portfolio: {
+          bg: "#0A0F1E",
+          surface: "#131A2E",
+          muted: "#94A3B8",
+          accent: "#FF6B57",
+        },
+      },
+      fontFamily: {
+        sans: ['"Inter"', "system-ui", "sans-serif"],
+        display: ['"Space Grotesk"', "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -85,10 +95,21 @@ export default {
             height: "0",
           },
         },
+        fadeInUp: {
+          from: {
+            opacity: "0",
+            transform: "translateY(16px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fadeInUp 0.6s ease-out both",
       },
     },
   },

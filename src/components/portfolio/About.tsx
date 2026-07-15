@@ -8,12 +8,15 @@ const About = () => {
         <h2 className="text-2xl font-bold text-white font-display">Über mich</h2>
       </div>
       <p className="text-lg leading-relaxed text-portfolio-muted">
-        Zielorientierter und technisch versierter IT-Spezialist mit umfassender
-        Erfahrung in der Hardware-Diagnose, Fehlerbehebung und Netzwerktechnik.
-        Aktuell in der intensiven Weiterbildung zum Cloud Engineer, um moderne
-        IT-Infrastrukturen in der Cloud (Azure) zu orchestrieren, automatisieren
-        (Terraform, Docker) und zu verwalten. Ich suche eine Einstiegsposition
-        als Junior Cloud Engineer oder IT-Systemadministrator im Raum Hamburg.
+        Dank meiner fundierten Erfahrung in der Board-Level-Reparatur, im Mikrolöten
+        und im Lesen von komplexen Schaltplänen (Schematics) besitze ich ein tiefes
+        Verständnis für die physische Schicht (Layer 1) der IT-Infrastruktur. Dies
+        ermöglicht es mir, physische Netzwerkkomponenten, Server-Hardware und
+        IoT-Geräte präzise zu assemblieren, zu verkabeln und auf Hardware-Ebene zu
+        diagnostizieren. Aktuell bilde ich mich zum Cloud Engineer weiter, um diese
+        physische Expertise mit moderner Cloud-Infrastruktur (Azure, Terraform,
+        Docker) zu verbinden. Ich suche eine Einstiegsposition als Junior Cloud
+        Engineer oder IT-Systemadministrator im Raum Hamburg.
       </p>
     </section>
   );

@@ -76,7 +76,7 @@ const projects: Project[] = [
     title: "Cloud-Connected Hardware & IoT Monitor",
     subtitle: "From bench soldering to live cloud telemetry",
     description:
-      "Bridge between my hardware repair/diagnostics background and cloud technology. Connected microcontrollers to cloud IoT Hubs to stream and visualize real-time board temperature and voltage data on a web UI.",
+      "This project leverages my professional background in hardware diagnostics and board-level micro-soldering. I designed the physical circuitry, analyzed the schematics, and physically assembled microcontrollers (ESP32) connected to cloud IoT Hubs to stream and monitor real-time hardware telemetry (temperature, voltage).",
     architecture:
       "ESP32 microcontrollers publish sensor readings over MQTT to a cloud IoT Hub; a stream processor forwards data to a WebSocket-fed web UI showing live temperature & voltage curves.",
     features: [

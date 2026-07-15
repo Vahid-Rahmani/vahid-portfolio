@@ -26,6 +26,7 @@ const phases = [
     status: "completed" as Status,
     icon: Network,
     topics: [
+      "Hardware Assembly & Board-level Diagnostics (Schematics, Micro-soldering, Layer 1 Physical Assembly)",
       "CompTIA A+ (Hardware & OS)",
       "CompTIA Network+",
       "Cisco CCNA (Routing & Switching)",

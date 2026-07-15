@@ -54,7 +54,7 @@ const Header = () => {
           <a href="https://github.com/vahidrahmaniinfo24-alt" target="_blank" rel="noreferrer" className="transition hover:text-portfolio-accent" aria-label="GitHub">
             <Github size={20} />
           </a>
-          <a href="www.linkedin.com/in/vahid-rahmani-699944417" target="_blank" rel="noreferrer" className="transition hover:text-portfolio-accent" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/vahid-rahmani-699944417" target="_blank" rel="noreferrer" className="transition hover:text-portfolio-accent" aria-label="LinkedIn">
             <Linkedin size={20} />
           </a>
           <a href="mailto:hello@jordanellis.dev" className="transition hover:text-portfolio-accent" aria-label="Email">

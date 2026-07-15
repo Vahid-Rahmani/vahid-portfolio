@@ -120,6 +120,8 @@ const projects: Project[] = [
     architecture: "Terraform Configuration → Azure Blob / AWS S3 → CDN → HTTPS Cert.",
     tech: ["Terraform", "Azure Blob / AWS S3", "CloudFront / CDN", "Route 53", "SSL"],
     icon: Globe,
+    githubUrl:
+      "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
     steps: [
       { label: "Step 1: Design global content delivery architecture.", status: "completed" },
       { label: "Step 2: Write Terraform files for AWS S3 bucket / Azure Storage container.", status: "planned" },

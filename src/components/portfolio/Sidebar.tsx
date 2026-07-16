@@ -2,23 +2,26 @@
 
 import React from "react";
 import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+import LanguageToggle from "@/components/LanguageToggle";
 
-const navItems = [
-  { id: "about", label: "Über mich" },
-  { id: "experience", label: "Werdegang" },
-  { id: "roadmap", label: "Roadmap" },
-  { id: "projects", label: "Projekte" },
-  { id: "skills", label: "Fachkenntnisse" },
-  { id: "certificates", label: "Zertifikate" },
-  { id: "contact", label: "Kontakt" },
+const navKeys = [
+  { id: "about", key: "nav.about" },
+  { id: "experience", key: "nav.experience" },
+  { id: "roadmap", key: "nav.roadmap" },
+  { id: "projects", key: "nav.projects" },
+  { id: "skills", key: "nav.skills" },
+  { id: "certificates", key: "nav.certificates" },
+  { id: "contact", key: "nav.contact" },
 ];
 
 const Sidebar = () => {
+  const { t } = useTranslation();
   const [active, setActive] = React.useState<string>("about");
 
   React.useEffect(() => {
-    const sections = navItems
+    const sections = navKeys
       .map((i) => document.getElementById(i.id))
       .filter(Boolean) as HTMLElement[];
     const observer = new IntersectionObserver(
@@ -47,7 +50,7 @@ const Sidebar = () => {
 
         <nav className="mt-10">
           <ul className="space-y-1">
-            {navItems.map((item) => (
+            {navKeys.map((item) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
@@ -66,7 +69,7 @@ const Sidebar = () => {
                         : "bg-zinc-700 group-hover:bg-zinc-500",
                     )}
                   />
-                  {item.label}
+                  {t(item.key)}
                 </a>
               </li>
             ))}
@@ -75,36 +78,18 @@ const Sidebar = () => {
       </div>
 
       <div className="flex items-center gap-4 text-zinc-500">
-        <a
-          href="https://github.com/vahidrahmaniinfo24-alt"
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-teal-400"
-          aria-label="GitHub"
-        >
+        <a href="https://github.com/vahidrahmaniinfo24-alt" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="GitHub">
           <Github size={18} />
         </a>
-        <a
-          href="https://linkedin.com/in/vahid-rahmani-699944417"
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-teal-400"
-          aria-label="LinkedIn"
-        >
+        <a href="https://linkedin.com/in/vahid-rahmani-699944417" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="LinkedIn">
           <Linkedin size={18} />
         </a>
-        <a
-          href="mailto:vahidrahmani.info@gmail.com"
-          className="transition-colors hover:text-teal-400"
-          aria-label="E-Mail"
-        >
+        <a href="mailto:vahidrahmani.info@gmail.com" className="transition-colors hover:text-teal-400" aria-label="E-Mail">
           <Mail size={18} />
         </a>
-        <a
-          href="#contact"
-          className="ml-auto inline-flex items-center gap-1 text-xs text-zinc-500 transition-colors hover:text-teal-400"
-        >
-          Top <ArrowUpRight size={14} />
+        <LanguageToggle />
+        <a href="#contact" className="ml-auto inline-flex items-center gap-1 text-xs text-zinc-500 transition-colors hover:text-teal-400">
+          {t("nav.top")} <ArrowUpRight size={14} />
         </a>
       </div>
     </aside>

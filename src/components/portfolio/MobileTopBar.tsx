@@ -2,24 +2,27 @@
 
 import React from "react";
 import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+import LanguageToggle from "@/components/LanguageToggle";
 
-const navItems = [
-  { id: "about", label: "Über mich" },
-  { id: "experience", label: "Werdegang" },
-  { id: "roadmap", label: "Roadmap" },
-  { id: "projects", label: "Projekte" },
-  { id: "skills", label: "Fachkenntnisse" },
-  { id: "certificates", label: "Zertifikate" },
-  { id: "contact", label: "Kontakt" },
+const navKeys = [
+  { id: "about", key: "nav.about" },
+  { id: "experience", key: "nav.experience" },
+  { id: "roadmap", key: "nav.roadmap" },
+  { id: "projects", key: "nav.projects" },
+  { id: "skills", key: "nav.skills" },
+  { id: "certificates", key: "nav.certificates" },
+  { id: "contact", key: "nav.contact" },
 ];
 
 const MobileTopBar = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState<string>("about");
 
   React.useEffect(() => {
-    const sections = navItems
+    const sections = navKeys
       .map((i) => document.getElementById(i.id))
       .filter(Boolean) as HTMLElement[];
     const observer = new IntersectionObserver(
@@ -40,36 +43,21 @@ const MobileTopBar = () => {
         <a href="#about" className="text-base font-semibold tracking-tight text-[#f4f4f5]">
           Vahid Rahmani
         </a>
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="text-zinc-400 transition hover:text-[#f4f4f5]"
-          aria-label="Menü umschalten"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="flex items-center gap-3">
+          <LanguageToggle />
+          <button onClick={() => setOpen((v) => !v)} className="text-zinc-400 transition hover:text-[#f4f4f5]" aria-label="Menü umschalten">
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
-      <div
-        className={cn(
-          "grid border-t border-white/[0.06] bg-[#09090b] transition-all duration-300 ease-in-out",
-          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
-        )}
-      >
+      <div className={cn("grid border-t border-white/[0.06] bg-[#09090b] transition-all duration-300 ease-in-out", open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
         <div className="overflow-hidden">
           <nav className="px-5 py-4">
             <ul className="space-y-1">
-              {navItems.map((item) => (
+              {navKeys.map((item) => (
                 <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      "block py-2 text-sm transition-colors",
-                      active === item.id
-                        ? "text-[#f4f4f5]"
-                        : "text-zinc-500 hover:text-zinc-300",
-                    )}
-                  >
-                    {item.label}
+                  <a href={`#${item.id}`} onClick={() => setOpen(false)} className={cn("block py-2 text-sm transition-colors", active === item.id ? "text-[#f4f4f5]" : "text-zinc-500 hover:text-zinc-300")}>
+                    {t(item.key)}
                   </a>
                 </li>
               ))}

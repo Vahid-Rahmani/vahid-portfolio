@@ -10,7 +10,7 @@ type StepStatus = "completed" | "in-progress" | "planned";
 type Step = { label: string; status: StepStatus };
 type Project = {
   title: string; subtitle: string; description: string; architecture: string;
-  tech: string[]; icon: string; steps: Step[]; githubUrl?: string;
+  tech: string[]; icon: string; steps: Step[]; githubUrl?: string; demoUrl?: string;
 };
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -25,6 +25,10 @@ const githubUrls: Record<string, string> = {
   "Global High-Availability Web Hosting with IaC": "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
 };
 
+const demoUrls: Record<string, string> = {
+  "Automated Hybrid Network & Monitoring Dashboard": "https://automated-hybrid-network-monitoring-dashboard-9ebg2scanuxqe7fk.streamlit.app/",
+};
+
 const StepIcon = ({ status }: { status: StepStatus }) => {
   if (status === "completed") return <CheckCircle2 size={18} className="shrink-0 text-emerald-300" />;
   if (status === "in-progress") return <span className="relative flex h-4 w-4 shrink-0 items-center justify-center"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-60"></span><span className="relative inline-flex h-3 w-3 rounded-full bg-teal-400"></span></span>;
@@ -33,6 +37,7 @@ const StepIcon = ({ status }: { status: StepStatus }) => {
 
 const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () => void; t: (k: string) => string }) => {
   const Icon = iconMap[project.icon] || FolderGit;
+  const demo = project.demoUrl || demoUrls[project.title];
   return (
     <motion.div className="fixed inset-0 z-[60] flex items-center justify-center p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
@@ -68,7 +73,7 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
         </div>
         <div className="mt-6 flex items-center gap-3" onClick={(e) => e.stopPropagation()}>
           <a href={githubUrls[project.title] || "#"} target={githubUrls[project.title] ? "_blank" : undefined} rel={githubUrls[project.title] ? "noreferrer" : undefined} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400" aria-label="GitHub Repository"><Github size={14} /> {t("projects.github")}</a>
-          <a href="#" onClick={(e) => e.preventDefault()} className="inline-flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-4 py-2 text-xs font-medium text-[#09090b] transition hover:bg-zinc-200" aria-label="Live Demo"><ExternalLink size={14} /> {t("projects.demo")}</a>
+          <a href={demo || "#"} target={demo ? "_blank" : undefined} rel={demo ? "noreferrer" : undefined} onClick={(e) => { if (!demo) e.preventDefault(); }} className="inline-flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-4 py-2 text-xs font-medium text-[#09090b] transition hover:bg-zinc-200" aria-label="Live Demo"><ExternalLink size={14} /> {t("projects.demo")}</a>
         </div>
       </motion.div>
     </motion.div>

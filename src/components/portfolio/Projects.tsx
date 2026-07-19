@@ -24,11 +24,13 @@ const githubUrls: Record<string, string> = {
   "Cloud-Connected Hardware & IoT Monitor": "https://github.com/vahidrahmaniinfo24-alt/Cloud-Connected-Hardware-IoT-Monitor",
   "Global High-Availability Web Hosting with IaC": "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
   "PyFlow — Python Learning Platform": "https://github.com/Vahid-Rahmani/-pyflow-platform/tree/main",
+  "PyMentor — AI Coding Demo": "https://github.com/Vahid-Rahmani/py-mentor",
 };
 
 const demoUrls: Record<string, string> = {
   "Automated Hybrid Network & Monitoring Dashboard": "https://automated-hybrid-network-monitoring-dashboard-9ebg2scanuxqe7fk.streamlit.app/",
   "PyFlow — Python Learning Platform": "https://pyflow-platform.vercel.app/",
+  "PyMentor — AI Coding Demo": "https://vercel.com/vahid-portfolio/py-mentor/7zXBPWqoXmA3ojUoTmnbSXoEGfKx",
 };
 
 const StepIcon = ({ status }: { status: StepStatus }) => {

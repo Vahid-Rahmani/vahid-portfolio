@@ -291,6 +291,22 @@ const resources = {
             { label: "Step 5: Public launch on Vercel with multi-language support.", status: "completed" },
           ],
         },
+        {
+          title: "PyMentor — AI Coding Demo",
+          subtitle: "AI-powered Python mentor & code assistant",
+          description:
+            "PyMentor is an AI-driven coding companion that provides real-time Python mentoring, debugging help, and personalized explanations. Currently ~60% complete, with core AI chat and code analysis already functional.",
+          architecture:
+            "React Frontend → Python FastAPI → OpenAI LLM Agents → Redis Cache.",
+          tech: ["React", "Tailwind CSS", "FastAPI", "Python", "OpenAI API", "Redis"],
+          steps: [
+            { label: "Step 1: Project scaffolding & FastAPI backend setup.", status: "completed" },
+            { label: "Step 2: AI chat integration with LLM agents (functional).", status: "completed" },
+            { label: "Step 3: Real-time code analysis & debugging suggestions.", status: "in-progress" },
+            { label: "Step 4: User history & session persistence (Redis).", status: "in-progress" },
+            { label: "Step 5: Public demo deployment & UI polish.", status: "planned" },
+          ],
+        },
       ],
 
       "skills.title": "Skills",
@@ -609,6 +625,22 @@ const resources = {
             { label: "Step 3: KI-Code-Sandbox-Implementierung (sichere Ausführung).", status: "planned" },
             { label: "Step 4: Gamification (XP, Streaks, Achievements) & PWA Mobile App.", status: "planned" },
             { label: "Step 5: Öffentlicher Launch auf Vercel mit Mehrsprachigkeit.", status: "completed" },
+          ],
+        },
+        {
+          title: "PyMentor — AI Coding Demo",
+          subtitle: "KI-gestützter Python-Mentor & Code-Assistent",
+          description:
+            "PyMentor ist ein KI-gestützter Programmierbegleiter, der Echtzeit-Python-Mentoring, Debugging-Hilfe und personalisierte Erklärungen bietet. Derzeit ~60% fertig, mit funktionalem KI-Chat und Code-Analyse.",
+          architecture:
+            "React Frontend → Python FastAPI → OpenAI LLM Agents → Redis Cache.",
+          tech: ["React", "Tailwind CSS", "FastAPI", "Python", "OpenAI API", "Redis"],
+          steps: [
+            { label: "Step 1: Projekt-Scaffolding & FastAPI-Backend-Setup.", status: "completed" },
+            { label: "Step 2: KI-Chat-Integration mit LLM-Agents (funktional).", status: "completed" },
+            { label: "Step 3: Echtzeit-Code-Analyse & Debugging-Vorschläge.", status: "in-progress" },
+            { label: "Step 4: Benutzerverlauf & Session-Persistenz (Redis).", status: "in-progress" },
+            { label: "Step 5: Öffentliches Demo-Deployment & UI-Politur.", status: "planned" },
           ],
         },
       ],

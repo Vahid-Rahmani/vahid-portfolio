@@ -29,6 +29,7 @@ const githubUrls: Record<string, string> = {
 
 const demoUrls: Record<string, string> = {
   "Automated Hybrid Network & Monitoring Dashboard": "https://automated-hybrid-network-monitoring-dashboard-9ebg2scanuxqe7fk.streamlit.app/",
+  "Global High-Availability Web Hosting with IaC": "https://global-high-availability-web-hosting-with-iacgit-bbegw6s42tjyu.streamlit.app/costs",
   "PyFlow — Python Learning Platform": "https://pyflow-platform.vercel.app/",
   "PyMentor — AI Coding Demo": "https://py-mentor.vercel.app",
 };

@@ -17,7 +17,7 @@ This portfolio website is built using modern web technologies to ensure a fast, 
 * Deployment: Hosted on Vercel for high performance and reliability.
 
 ## 🌐 Connect with Me
-* LinkedIn: [Insert your LinkedIn profile link]
+* LinkedIn: [linkedin.com/in/vahid-rahmani-699944417](https://www.linkedin.com/in/vahid-rahmani-699944417)
 * GitHub: [https://github.com/vahidrahmaniinfo24-alt](https://github.com/vahidrahmaniinfo24-alt)
 * Live Portfolio: [https://vahid-portfolio-three.vercel.app/](https://vahid-portfolio-three.vercel.app/)
 

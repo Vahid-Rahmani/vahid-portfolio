@@ -20,10 +20,10 @@ const Index = () => {
       <main className="lg:pl-[280px]">
         <div className="mx-auto max-w-3xl px-6 pb-20 pt-20 lg:pt-12">
           <Header />
+          <Projects />
           <About />
           <RevealMore />
           <Roadmap />
-          <Projects />
           <Experience />
           <Skills />
           <Certificates />

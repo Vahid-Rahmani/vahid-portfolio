@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import LanguageToggle from "@/components/LanguageToggle";
 
 const navKeys = [
+  { id: "projects", key: "nav.projects" },
   { id: "about", key: "nav.about" },
   { id: "experience", key: "nav.experience" },
   { id: "roadmap", key: "nav.roadmap" },
-  { id: "projects", key: "nav.projects" },
   { id: "skills", key: "nav.skills" },
   { id: "certificates", key: "nav.certificates" },
   { id: "contact", key: "nav.contact" },
@@ -18,7 +18,7 @@ const navKeys = [
 
 const Sidebar = () => {
   const { t } = useTranslation();
-  const [active, setActive] = React.useState<string>("about");
+  const [active, setActive] = React.useState<string>("projects");
 
   React.useEffect(() => {
     const sections = navKeys
@@ -39,7 +39,7 @@ const Sidebar = () => {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-[280px] flex-col justify-between border-r border-white/[0.06] bg-[#09090b] px-8 py-12 lg:flex">
       <div>
-        <a href="#about" className="block">
+        <a href="#projects" className="block">
           <h1 className="text-2xl font-semibold tracking-tight text-[#f4f4f5]">
             Vahid Rahmani
           </h1>
@@ -73,6 +73,15 @@ const Sidebar = () => {
                 </a>
               </li>
             ))}
+            <li className="pt-2">
+              <a
+                href="/costs"
+                className="group inline-flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
+              >
+                <span className="h-px w-4 bg-zinc-700 transition-all duration-300 group-hover:w-6 group-hover:bg-zinc-500" />
+                Costs <ExternalLink size={12} className="opacity-50" />
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

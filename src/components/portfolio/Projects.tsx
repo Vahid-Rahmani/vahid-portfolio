@@ -35,6 +35,11 @@ const demoUrls: Record<string, string> = {
   "PyMentor — AI Coding Demo": "https://py-mentor.vercel.app",
 };
 
+const featuredProjects = [
+  "Global High-Availability Web Hosting with IaC",
+  "Automated Hybrid Network & Monitoring Dashboard",
+];
+
 const stepWeight: Record<StepStatus, number> = {
   completed: 1,
   "in-progress": 0.5,
@@ -53,6 +58,19 @@ const getStatusLabel = (progress: number): string => {
   if (progress >= 40) return "projects.activeDevelopment";
   if (progress > 0) return "projects.inDevelopment";
   return "projects.concept";
+};
+
+const statusColor = (progress: number): string => {
+  if (progress >= 100) return "bg-emerald-400/10 text-emerald-300";
+  if (progress >= 40) return "bg-teal-400/10 text-teal-400";
+  if (progress > 0) return "bg-teal-400/10 text-teal-400";
+  return "bg-white/[0.06] text-zinc-500";
+};
+
+const progressBarColor = (progress: number): string => {
+  if (progress >= 100) return "bg-emerald-400";
+  if (progress > 0) return "bg-teal-400";
+  return "bg-zinc-600";
 };
 
 const StepIcon = ({ status }: { status: StepStatus }) => {
@@ -85,7 +103,7 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
     <motion.div className="fixed inset-0 z-[60] flex items-center justify-center p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
       <motion.div role="dialog" aria-modal="true" className="relative z-10 max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-[#09090b] p-6 shadow-2xl sm:p-8" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.2, ease: "easeOut" }}>
-        <button onClick={onClose} className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400" aria-label="Schließen"><X size={18} /></button>
+        <button onClick={onClose} className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400" aria-label="Close"><X size={18} /></button>
         <div className="flex items-start gap-4 pr-10">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-400/10 text-teal-400"><Icon size={24} /></div>
           <div className="min-w-0 flex-1">
@@ -95,7 +113,7 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
           <ProgressRing value={progress} />
         </div>
         <div className="mt-5">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-400">
+          <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium", statusColor(progress))}>
             <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-60"></span><span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400"></span></span>
             {t(getStatusLabel(progress))}
           </span>
@@ -124,10 +142,97 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
   );
 };
 
+const FeaturedCard = ({ project, onClick, t }: { project: Project; onClick: () => void; t: (k: string) => string }) => {
+  const Icon = iconMap[project.icon] || FolderGit;
+  const progress = getProgress(project.steps);
+  const github = githubUrls[project.title];
+  const demo = project.demoUrl || demoUrls[project.title];
+  return (
+    <button onClick={onClick} className="group w-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:shadow-lg hover:shadow-teal-400/5">
+      <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex items-start gap-4 min-w-0 flex-1">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-400/10 text-teal-400"><Icon size={24} /></div>
+          <div className="min-w-0 flex-1">
+            <h3 className="text-base font-semibold leading-snug text-[#f4f4f5]">{project.title}</h3>
+            <p className="mt-1 text-sm text-teal-400">{project.subtitle}</p>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-400 line-clamp-2">{project.description}</p>
+          </div>
+        </div>
+        <div className="flex flex-col items-start gap-3 lg:items-end lg:min-w-[180px]">
+          <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium", statusColor(progress))}>
+            <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-60"></span><span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400"></span></span>
+            {t(getStatusLabel(progress))}
+          </span>
+          <div className="w-full lg:w-44">
+            <div className="mb-1 flex items-center justify-between">
+              <span className="text-[11px] text-zinc-500">Progress</span>
+              <span className="text-[11px] font-semibold text-zinc-300">{progress}%</span>
+            </div>
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
+              <div className={cn("h-full rounded-full transition-all duration-700 ease-out", progressBarColor(progress))} style={{ width: `${progress}%` }}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap gap-1.5">
+          {project.tech.map((tech) => (<span key={tech} className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-400 ring-1 ring-white/[0.06]">{tech}</span>))}
+        </div>
+        <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+          {github && <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-[11px] font-medium text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={12} /> GitHub</a>}
+          {demo && <a href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-3 py-1.5 text-[11px] font-medium text-[#09090b] transition hover:bg-zinc-200"><ExternalLink size={12} /> Demo</a>}
+        </div>
+      </div>
+    </button>
+  );
+};
+
+const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () => void; t: (k: string) => string }) => {
+  const Icon = iconMap[project.icon] || FolderGit;
+  const progress = getProgress(project.steps);
+  const github = githubUrls[project.title];
+  const demo = project.demoUrl || demoUrls[project.title];
+  return (
+    <button onClick={onClick} className="group flex flex-col rounded-xl border border-white/[0.08] bg-white/[0.02] p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:shadow-lg hover:shadow-teal-400/5">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-start gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400"><Icon size={20} /></div>
+          <div className="min-w-0">
+            <h3 className="text-sm font-medium leading-snug text-[#f4f4f5]">{project.title}</h3>
+            <p className="mt-1 text-xs text-teal-400/80">{project.subtitle}</p>
+          </div>
+        </div>
+        <ProgressRing value={progress} />
+      </div>
+      <div className="mt-3">
+        <div className="mb-1 flex items-center justify-between">
+          <span className={cn("inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium", statusColor(progress))}>
+            {t(getStatusLabel(progress))}
+          </span>
+          <span className="text-[10px] font-semibold text-zinc-400">{progress}%</span>
+        </div>
+        <div className="h-1 w-full overflow-hidden rounded-full bg-white/[0.06]">
+          <div className={cn("h-full rounded-full transition-all duration-700 ease-out", progressBarColor(progress))} style={{ width: `${progress}%` }}></div>
+        </div>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {project.tech.map((tech) => (<span key={tech} className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-400 ring-1 ring-white/[0.06]">{tech}</span>))}
+      </div>
+      <div className="mt-3 flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+        {github && <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-white/10 px-2.5 py-1 text-[10px] font-medium text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={11} /> GitHub</a>}
+        {demo && <a href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[#f4f4f5] px-2.5 py-1 text-[10px] font-medium text-[#09090b] transition hover:bg-zinc-200"><ExternalLink size={11} /> Demo</a>}
+      </div>
+    </button>
+  );
+};
+
 const Projects = () => {
   const { t } = useTranslation();
   const [active, setActive] = React.useState<Project | null>(null);
   const items = t("projects.items", { returnObjects: true }) as Project[];
+
+  const featured = items.filter((p) => featuredProjects.includes(p.title));
+  const rest = items.filter((p) => !featuredProjects.includes(p.title));
 
   return (
     <section id="projects" className="scroll-mt-24 border-b border-white/[0.06] px-0 py-16">
@@ -135,30 +240,25 @@ const Projects = () => {
         <FolderGit className="text-teal-400" size={20} />
         <h2 className="text-xl font-semibold tracking-tight text-[#f4f4f5]">{t("projects.title")}</h2>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((project, i) => {
-          const Icon = iconMap[project.icon] || FolderGit;
-          const progress = getProgress(project.steps);
-          return (
-            <button key={project.title} onClick={() => setActive(project)} className="group animate-fade-in-up cursor-pointer rounded-xl border border-white/[0.08] bg-white/[0.02] p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30" style={{ animationDelay: `${i * 0.06}s` }}>
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400"><Icon size={20} /></div>
-                  <div className="min-w-0">
-                    <h3 className="text-sm font-medium leading-snug text-[#f4f4f5]">{project.title}</h3>
-                    <p className="mt-1 text-xs text-teal-400/80">{project.subtitle}</p>
-                  </div>
-                </div>
-                <ProgressRing value={progress} />
-              </div>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {project.tech.map((tech) => (<span key={tech} className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-400 ring-1 ring-white/[0.06]">{tech}</span>))}
-              </div>
-              <p className="mt-4 text-xs font-medium text-teal-400 opacity-0 transition-opacity group-hover:opacity-100">{t("projects.clickHint")}</p>
-            </button>
-          );
-        })}
+
+      {featured.length > 0 && (
+        <div className="mb-6 space-y-4">
+          {featured.map((project, i) => (
+            <div key={project.title} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.08}s` }}>
+              <FeaturedCard project={project} onClick={() => setActive(project)} t={t} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        {rest.map((project, i) => (
+          <div key={project.title} className="animate-fade-in-up" style={{ animationDelay: `${(i + featured.length) * 0.06}s` }}>
+            <CompactCard project={project} onClick={() => setActive(project)} t={t} />
+          </div>
+        ))}
       </div>
+
       <AnimatePresence>{active && <ProjectModal project={active} onClose={() => setActive(null)} t={t} />}</AnimatePresence>
     </section>
   );

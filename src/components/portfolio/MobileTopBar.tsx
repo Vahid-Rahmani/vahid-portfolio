@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import LanguageToggle from "@/components/LanguageToggle";
 
 const navKeys = [
+  { id: "projects", key: "nav.projects" },
   { id: "about", key: "nav.about" },
   { id: "experience", key: "nav.experience" },
   { id: "roadmap", key: "nav.roadmap" },
-  { id: "projects", key: "nav.projects" },
   { id: "skills", key: "nav.skills" },
   { id: "certificates", key: "nav.certificates" },
   { id: "contact", key: "nav.contact" },
@@ -19,7 +19,7 @@ const navKeys = [
 const MobileTopBar = () => {
   const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
-  const [active, setActive] = React.useState<string>("about");
+  const [active, setActive] = React.useState<string>("projects");
 
   React.useEffect(() => {
     const sections = navKeys
@@ -40,7 +40,7 @@ const MobileTopBar = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#09090b]/90 backdrop-blur-md lg:hidden">
       <div className="flex items-center justify-between px-5 py-4">
-        <a href="#about" className="text-base font-semibold tracking-tight text-[#f4f4f5]">
+        <a href="#projects" className="text-base font-semibold tracking-tight text-[#f4f4f5]">
           Vahid Rahmani
         </a>
         <div className="flex items-center gap-3">
@@ -61,6 +61,11 @@ const MobileTopBar = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/costs" onClick={() => setOpen(false)} className="block py-2 text-sm text-zinc-500 transition-colors hover:text-zinc-300">
+                  Costs
+                </a>
+              </li>
             </ul>
           </nav>
         </div>

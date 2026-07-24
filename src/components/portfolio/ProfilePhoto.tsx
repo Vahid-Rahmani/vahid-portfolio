@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import profileImage from "../../../img/vr.jpg";
 
-const ProfilePhoto = ({ className, src }: { className?: string; src?: string }) => {
+const ProfilePhoto = ({ className, src, size = "lg" }: { className?: string; src?: string; size?: "sm" | "lg" }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
@@ -78,7 +78,7 @@ const ProfilePhoto = ({ className, src }: { className?: string; src?: string }) 
         style={{ "--glow-x": "0px", "--glow-y": "0px" } as React.CSSProperties}
         aria-hidden="true"
       />
-      <div className="relative h-28 w-28 sm:h-32 sm:w-32">
+      <div className={cn("relative", size === "sm" ? "h-14 w-14" : "h-28 w-28 sm:h-32 sm:w-32")}>
         <img
           src={src || profileImage}
           alt="Vahid Rahmani"

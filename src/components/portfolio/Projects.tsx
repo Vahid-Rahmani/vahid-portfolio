@@ -21,7 +21,7 @@ const githubUrls: Record<string, string> = {
   "Automated Hybrid Network & Monitoring Dashboard": "https://github.com/vahidrahmaniinfo24-alt/Automated-Hybrid-Network-Monitoring-Dashboard",
   "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/vahidrahmaniinfo24-alt/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
   "Serverless Network Sentinel Bot": "https://github.com/vahidrahmaniinfo24-alt/Serverless-Network-Sentinel-Bot",
-  "Cloud-Connected Hardware & IoT Monitor": "https://github.com/vahidrahmaniinfo24-alt/Cloud-Connected-Hardware-IoT-Monitor",
+  "Cloud-Connected Hardware & IoT Monitor": "https://github.com/Vahid-Rahmani/Cloud-Connected-Hardware-IoT-Monitor",
   "Global High-Availability Web Hosting with IaC": "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
   "PyFlow — Python Learning Platform": "https://github.com/Vahid-Rahmani/-pyflow-platform/tree/main",
   "PyMentor — AI Coding Demo": "https://github.com/Vahid-Rahmani/py-mentor",
@@ -29,6 +29,7 @@ const githubUrls: Record<string, string> = {
 
 const demoUrls: Record<string, string> = {
   "Automated Hybrid Network & Monitoring Dashboard": "https://automated-hybrid-network-monitoring-dashboard-9ebg2scanuxqe7fk.streamlit.app/",
+  "Cloud-Connected Hardware & IoT Monitor": "https://cloud-connected-hardware-iot-monitor-ajf9nifbw9ks9mi2clskdr.streamlit.app/",
   "Global High-Availability Web Hosting with IaC": "https://global-high-availability-web-hosting-with-iacgit-bbegw6s42tjyu.streamlit.app/costs",
   "PyFlow — Python Learning Platform": "https://pyflow-platform.vercel.app/",
   "PyMentor — AI Coding Demo": "https://py-mentor.vercel.app",
@@ -44,6 +45,14 @@ const getProgress = (steps: Step[]): number => {
   if (steps.length === 0) return 0;
   const total = steps.reduce((sum, s) => sum + stepWeight[s.status], 0);
   return Math.round((total / steps.length) * 100);
+};
+
+const getStatusLabel = (progress: number): string => {
+  if (progress >= 100) return "projects.completed";
+  if (progress >= 80) return "projects.almostDone";
+  if (progress >= 40) return "projects.activeDevelopment";
+  if (progress > 0) return "projects.inDevelopment";
+  return "projects.concept";
 };
 
 const StepIcon = ({ status }: { status: StepStatus }) => {
@@ -88,7 +97,7 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
         <div className="mt-5">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-400">
             <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-60"></span><span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400"></span></span>
-            {t("projects.concept")}
+            {t(getStatusLabel(progress))}
           </span>
         </div>
         <div className="mt-5 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">

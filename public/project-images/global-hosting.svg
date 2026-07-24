@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#09090b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#2dd4bf"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="315" r="350" fill="#22c55e" opacity="0.02"/>
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <g transform="translate(540,180)">
+    <circle cx="-80" cy="0" r="25" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="1"/>
+    <text x="-80" y="4" text-anchor="middle" fill="#22c55e" font-family="system-ui" font-size="10">US</text>
+    <circle cx="0" cy="0" r="25" fill="#2dd4bf" opacity="0.1" stroke="#2dd4bf" stroke-width="1"/>
+    <text x="0" y="4" text-anchor="middle" fill="#2dd4bf" font-family="system-ui" font-size="10">EU</text>
+    <circle cx="80" cy="0" r="25" fill="#818cf8" opacity="0.1" stroke="#818cf8" stroke-width="1"/>
+    <text x="80" y="4" text-anchor="middle" fill="#818cf8" font-family="system-ui" font-size="10">AP</text>
+    <line x1="-55" y1="0" x2="-25" y2="0" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <line x1="25" y1="0" x2="55" y2="0" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <rect x="-100" y="40" width="200" height="40" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="0" y="55" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="9">CDN Edge Cache</text>
+    <text x="0" y="70" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="8">Terraform → S3/Blob → CloudFront</text>
+  </g>
+  <text x="600" y="320" text-anchor="middle" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="32" font-weight="600">Global High-Availability</text>
+  <text x="600" y="360" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="18">Web Hosting with IaC</text>
+  <text x="600" y="420" text-anchor="middle" fill="#71717a" font-family="system-ui, sans-serif" font-size="14">Terraform · Azure Blob / AWS S3 · CloudFront · Route 53 · SSL</text>
+  <rect x="460" y="450" width="280" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+  <rect x="460" y="450" width="140" height="3" rx="1.5" fill="url(#accent)"/>
+</svg>

@@ -3,77 +3,17 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, Network, Shield, Bot, Cpu, Globe, FolderGit, X, CheckCircle2, CircleDot } from "lucide-react";
+import { Github, ExternalLink, Network, Shield, Bot, Cpu, Globe, FolderGit, X, CheckCircle2, CircleDot, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-type StepStatus = "completed" | "in-progress" | "planned";
-type Step = { label: string; status: StepStatus };
-type Project = {
-  title: string; subtitle: string; description: string; architecture: string;
-  tech: string[]; icon: string; steps: Step[]; githubUrl?: string; demoUrl?: string;
-};
+import {
+  githubUrls, demoUrls, featuredProjects, getProgress, getStatusLabel, statusColor, progressBarColor, slugify, type Step, type Project,
+} from "@/data/projects";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   Network, Shield, Bot, Cpu, Globe,
 };
 
-const githubUrls: Record<string, string> = {
-  "Automated Hybrid Network & Monitoring Dashboard": "https://github.com/vahidrahmaniinfo24-alt/Automated-Hybrid-Network-Monitoring-Dashboard",
-  "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/vahidrahmaniinfo24-alt/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
-  "Serverless Network Sentinel Bot": "https://github.com/vahidrahmaniinfo24-alt/Serverless-Network-Sentinel-Bot",
-  "Cloud-Connected Hardware & IoT Monitor": "https://github.com/Vahid-Rahmani/Cloud-Connected-Hardware-IoT-Monitor",
-  "Global High-Availability Web Hosting with IaC": "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
-  "PyFlow — Python Learning Platform": "https://github.com/Vahid-Rahmani/-pyflow-platform/tree/main",
-  "PyMentor — AI Coding Demo": "https://github.com/Vahid-Rahmani/py-mentor",
-};
-
-const demoUrls: Record<string, string> = {
-  "Automated Hybrid Network & Monitoring Dashboard": "https://automated-hybrid-network-monitoring-dashboard-9ebg2scanuxqe7fk.streamlit.app/",
-  "Cloud-Connected Hardware & IoT Monitor": "https://cloud-connected-hardware-iot-monitor-ajf9nifbw9ks9mi2clskdr.streamlit.app/",
-  "Global High-Availability Web Hosting with IaC": "https://global-high-availability-web-hosting-with-iacgit-bbegw6s42tjyu.streamlit.app/costs",
-  "PyFlow — Python Learning Platform": "https://pyflow-platform.vercel.app/",
-  "PyMentor — AI Coding Demo": "https://py-mentor.vercel.app",
-};
-
-const featuredProjects = [
-  "Global High-Availability Web Hosting with IaC",
-  "Automated Hybrid Network & Monitoring Dashboard",
-];
-
-const stepWeight: Record<StepStatus, number> = {
-  completed: 1,
-  "in-progress": 0.5,
-  planned: 0,
-};
-
-const getProgress = (steps: Step[]): number => {
-  if (steps.length === 0) return 0;
-  const total = steps.reduce((sum, s) => sum + stepWeight[s.status], 0);
-  return Math.round((total / steps.length) * 100);
-};
-
-const getStatusLabel = (progress: number): string => {
-  if (progress >= 100) return "projects.completed";
-  if (progress >= 80) return "projects.almostDone";
-  if (progress >= 40) return "projects.activeDevelopment";
-  if (progress > 0) return "projects.inDevelopment";
-  return "projects.concept";
-};
-
-const statusColor = (progress: number): string => {
-  if (progress >= 100) return "bg-emerald-400/10 text-emerald-300";
-  if (progress >= 40) return "bg-teal-400/10 text-teal-400";
-  if (progress > 0) return "bg-teal-400/10 text-teal-400";
-  return "bg-white/[0.06] text-zinc-500";
-};
-
-const progressBarColor = (progress: number): string => {
-  if (progress >= 100) return "bg-emerald-400";
-  if (progress > 0) return "bg-teal-400";
-  return "bg-zinc-600";
-};
-
-const StepIcon = ({ status }: { status: StepStatus }) => {
+const StepIcon = ({ status }: { status: Step["status"] }) => {
   if (status === "completed") return <CheckCircle2 size={18} className="shrink-0 text-emerald-300" />;
   if (status === "in-progress") return <span className="relative flex h-4 w-4 shrink-0 items-center justify-center"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-60"></span><span className="relative inline-flex h-3 w-3 rounded-full bg-teal-400"></span></span>;
   return <CircleDot size={18} className="shrink-0 text-zinc-600" />;
@@ -99,6 +39,7 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
   const Icon = iconMap[project.icon] || FolderGit;
   const demo = project.demoUrl || demoUrls[project.title];
   const progress = getProgress(project.steps);
+  const projectSlug = slugify(project.title);
   return (
     <motion.div className="fixed inset-0 z-[60] flex items-center justify-center p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
@@ -133,9 +74,12 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
             ))}
           </ul>
         </div>
-        <div className="mt-6 flex items-center gap-3" onClick={(e) => e.stopPropagation()}>
-          <a href={githubUrls[project.title] || "#"} target={githubUrls[project.title] ? "_blank" : undefined} rel={githubUrls[project.title] ? "noreferrer" : undefined} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400" aria-label="GitHub Repository"><Github size={14} /> {t("projects.github")}</a>
-          <a href={demo || "#"} target={demo ? "_blank" : undefined} rel={demo ? "noreferrer" : undefined} onClick={(e) => { if (!demo) e.preventDefault(); }} className="inline-flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-4 py-2 text-xs font-medium text-[#09090b] transition hover:bg-zinc-200" aria-label="Live Demo"><ExternalLink size={14} /> {t("projects.demo")}</a>
+        <div className="mt-6 flex flex-wrap items-center gap-3" onClick={(e) => e.stopPropagation()}>
+          <a href={`/project/${projectSlug}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-teal-500 px-4 py-2 text-xs font-medium text-[#09090b] transition hover:bg-teal-400">
+            <ArrowUpRight size={14} /> {t("projects.viewPage")}
+          </a>
+          <a href={githubUrls[project.title] || "#"} target={githubUrls[project.title] ? "_blank" : undefined} rel={githubUrls[project.title] ? "noreferrer" : undefined} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={14} /> {t("projects.github")}</a>
+          <a href={demo || "#"} target={demo ? "_blank" : undefined} rel={demo ? "noreferrer" : undefined} onClick={(e) => { if (!demo) e.preventDefault(); }} className="inline-flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-4 py-2 text-xs font-medium text-[#09090b] transition hover:bg-zinc-200"><ExternalLink size={14} /> {t("projects.demo")}</a>
         </div>
       </motion.div>
     </motion.div>
@@ -147,6 +91,7 @@ const FeaturedCard = ({ project, onClick, t }: { project: Project; onClick: () =
   const progress = getProgress(project.steps);
   const github = githubUrls[project.title];
   const demo = project.demoUrl || demoUrls[project.title];
+  const projectSlug = slugify(project.title);
   return (
     <button onClick={onClick} className="group w-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:shadow-lg hover:shadow-teal-400/5">
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
@@ -179,6 +124,7 @@ const FeaturedCard = ({ project, onClick, t }: { project: Project; onClick: () =
           {project.tech.map((tech) => (<span key={tech} className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-400 ring-1 ring-white/[0.06]">{tech}</span>))}
         </div>
         <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+          <a href={`/project/${projectSlug}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-teal-500 px-3 py-1.5 text-[11px] font-medium text-[#09090b] transition hover:bg-teal-400"><ArrowUpRight size={12} /> View</a>
           {github && <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-[11px] font-medium text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={12} /> GitHub</a>}
           {demo && <a href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-3 py-1.5 text-[11px] font-medium text-[#09090b] transition hover:bg-zinc-200"><ExternalLink size={12} /> Demo</a>}
         </div>
@@ -192,6 +138,7 @@ const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () =>
   const progress = getProgress(project.steps);
   const github = githubUrls[project.title];
   const demo = project.demoUrl || demoUrls[project.title];
+  const projectSlug = slugify(project.title);
   return (
     <button onClick={onClick} className="group flex flex-col rounded-xl border border-white/[0.08] bg-white/[0.02] p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:shadow-lg hover:shadow-teal-400/5">
       <div className="flex items-start justify-between gap-3">
@@ -219,6 +166,7 @@ const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () =>
         {project.tech.map((tech) => (<span key={tech} className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-400 ring-1 ring-white/[0.06]">{tech}</span>))}
       </div>
       <div className="mt-3 flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+        <a href={`/project/${projectSlug}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-teal-500 px-2.5 py-1 text-[10px] font-medium text-[#09090b] transition hover:bg-teal-400"><ArrowUpRight size={11} /> View</a>
         {github && <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-white/10 px-2.5 py-1 text-[10px] font-medium text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={11} /> GitHub</a>}
         {demo && <a href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[#f4f4f5] px-2.5 py-1 text-[10px] font-medium text-[#09090b] transition hover:bg-zinc-200"><ExternalLink size={11} /> Demo</a>}
       </div>

@@ -199,6 +199,7 @@ const resources = {
       "projects.roadmapLabel": "Implementation Roadmap",
       "projects.github": "GitHub",
       "projects.demo": "Live Demo",
+      "projects.viewPage": "View Project",
       "projects.items": [
         {
           title: "Automated Hybrid Network & Monitoring Dashboard",
@@ -547,6 +548,7 @@ const resources = {
       "projects.roadmapLabel": "Implementation Roadmap",
       "projects.github": "GitHub",
       "projects.demo": "Live Demo",
+      "projects.viewPage": "Projekt ansehen",
       "projects.items": [
         {
           title: "Automated Hybrid Network & Monitoring Dashboard",

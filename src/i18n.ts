@@ -200,21 +200,209 @@ const resources = {
       "projects.github": "GitHub",
       "projects.demo": "Live Demo",
       "projects.viewPage": "View Project",
+      "projects.keyFeatures": "Key Features",
+      "projects.technologies": "Technologies",
+      "projects.author": "Designed & Implemented by",
+      "projects.dashboardPages": "Dashboard Pages",
+      "projects.hardwareOptions": "Hardware Options",
+      "projects.components": "Components",
+      "projects.wiring": "Wiring Diagram",
+      "projects.sensorSpecs": "Sensor Specifications",
+      "projects.comparison": "ESP32 vs Raspberry Pi",
+      "projects.roadmap": "Development Roadmap",
+      "projects.alertThresholds": "Alert Thresholds",
+      "projects.modules": "Project Modules",
+      "projects.localization": "Supported Languages",
       "projects.items": [
         {
-          title: "Automated Hybrid Network & Monitoring Dashboard",
-          subtitle: "Ansible-automated hybrid lab with live Python telemetry",
+          title: "Cloud-Connected Hardware & IoT Monitor",
+          subtitle: "DIY temperature monitoring for server rooms with Azure IoT Hub",
           description:
-            "Designed a virtualized hybrid network (Windows Server Active Directory & Linux clients) automated via Ansible, monitored by a custom Python-based real-time network dashboard.",
+            "A DIY temperature monitoring system for server rooms using custom hardware sensors connected to Azure IoT Hub, with a Streamlit dashboard for real-time visualization and alerts. This project builds a hardware device that measures temperature in computer/server rooms and sends the data to Azure for monitoring and visualization.",
           architecture:
-            "Local Virtual Network (Windows Server AD + Linux clients) → Python Agent → Flask/Streamlit Dashboard.",
-          tech: ["Ansible", "Python", "Active Directory", "Linux", "VirtualBox"],
+            "Hardware Sensor (ESP32/Pi + DHT22/SHT31) → MQTT/HTTPS → Azure IoT Hub → Time Series Insights → Streamlit Dashboard.",
+          tech: ["Python", "C++", "ESP32", "Raspberry Pi", "Azure IoT Hub", "Streamlit", "MQTT", "DHT22/SHT31"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "DIY Hardware", description: "Build your own temperature sensor using affordable components like ESP32 or Raspberry Pi." },
+            { title: "Azure IoT Hub", description: "Secure, scalable cloud connection for IoT devices with device provisioning and telemetry storage." },
+            { title: "Real-time Dashboard", description: "Live temperature readings with interactive charts, KPI cards, and alert management." },
+            { title: "Multi-zone Monitoring", description: "Track multiple server rooms or rack locations with per-zone status indicators." },
+            { title: "Alert System", description: "Email/webhook notifications when temperature exceeds warning (28°C) or critical (35°C) thresholds." },
+            { title: "Historical Data", description: "Store and visualize temperature trends over time with Time Series Insights." },
+          ],
+          hardwareOptions: [
+            {
+              name: "ESP32",
+              tag: "Recommended for Beginners",
+              cost: "$5 – 10",
+              wiring: "ESP32          DHT22/SHT31\n──────         ───────────\n3.3V  ──────── VCC\nGND   ──────── GND\nGPIO4 ──────── DATA (with 10kΩ pull-up)",
+              components: [
+                { name: "ESP32 DevKit v1", cost: "$5–10", purpose: "Microcontroller with WiFi" },
+                { name: "DHT22 / SHT31 Sensor", cost: "$5–15", purpose: "Temperature & humidity" },
+                { name: "Breadboard + Wires", cost: "$5", purpose: "Prototyping" },
+                { name: "USB Cable", cost: "$3", purpose: "Power & programming" },
+                { name: "3D Printed Case", cost: "$10", purpose: "Enclosure (optional)" },
+              ],
+            },
+            {
+              name: "Raspberry Pi",
+              tag: "Recommended for Advanced Users",
+              cost: "$35 – 75",
+              wiring: "Raspberry Pi    DHT22 Sensor\n──────────      ─────────────\nPin 1 (3.3V) ── VCC\nPin 6 (GND)  ── GND\nPin 7 (GPIO4)── DATA (with 10kΩ pull-up)\n\nRaspberry Pi    BMP280 (I2C)\n──────────      ─────────────\nPin 1 (3.3V) ── VCC\nPin 6 (GND)  ── GND\nPin 3 (GPIO2)── SDA (I2C Data)\nPin 5 (GPIO3)── SCL (I2C Clock)",
+              components: [
+                { name: "Raspberry Pi 4/5 (4GB)", cost: "$35–75", purpose: "Main controller with WiFi/Ethernet" },
+                { name: "DHT22 Sensor", cost: "$5–10", purpose: "Temperature & humidity" },
+                { name: "BMP280 / BME280 Sensor", cost: "$5–15", purpose: "Pressure + altitude (optional)" },
+                { name: "MicroSD Card (32GB+)", cost: "$10", purpose: "OS and data storage" },
+                { name: "Breadboard + Wires", cost: "$5", purpose: "Prototyping" },
+                { name: "Power Supply (5V 3A)", cost: "$10", purpose: "Official Pi adapter" },
+              ],
+            },
+          ],
+          sensorSpecs: [
+            { sensor: "DHT22", range: "-40°C to 80°C", accuracy: "±0.5°C", humidity: "0–100% RH", bestFor: "Budget-friendly all-rounder" },
+            { sensor: "SHT31", range: "-40°C to 125°C", accuracy: "±0.3°C", humidity: "0–100% RH", bestFor: "High precision" },
+            { sensor: "DS18B20", range: "-55°C to 125°C", accuracy: "±0.5°C", humidity: "N/A", bestFor: "Waterproof probes, 1-Wire" },
+            { sensor: "BME280", range: "-40°C to 85°C", accuracy: "±1.0°C", humidity: "0–100% RH", bestFor: "All-in-one (temp+humidity+pressure)" },
+          ],
+          comparison: {
+            headers: ["Feature", "ESP32", "Raspberry Pi"],
+            rows: [
+              ["Cost", "$5–10", "$35–75"],
+              ["Power Consumption", "Very low (deep sleep available)", "Higher (1–5W)"],
+              ["Processing Power", "Limited (240MHz dual-core)", "High (1.5GHz+ quad-core)"],
+              ["Memory", "520KB SRAM", "1–8GB RAM"],
+              ["OS", "None (bare metal)", "Full Linux"],
+              ["Connectivity", "WiFi + Bluetooth", "WiFi + Ethernet + Bluetooth"],
+              ["GPIO", "34 pins", "40 pins"],
+              ["Best For", "Simple, battery-powered sensors", "Complex processing, local dashboards"],
+              ["Programming", "C++/Arduino or MicroPython", "Python, Node.js, any Linux language"],
+              ["Multiple Sensors", "Limited", "Many (I2C/SPI bus support)"],
+              ["Local Display", "OLED (small)", "HDMI monitor, touchscreen"],
+            ],
+          },
+          roadmap: [
+            { phase: "Phase 1", title: "Hardware Prototype", status: "completed", items: ["Project structure setup", "Central configuration with Azure env vars", "JSON schema definition for metrics", "Threshold constants (warning: 28°C, critical: 35°C)", "Basic Streamlit dashboard with KPI cards"] },
+            { phase: "Phase 2", title: "Hardware Development", status: "in-progress", items: ["ESP32 firmware with DHT22/SHT31 support", "WiFi connection management", "Azure IoT Hub device provisioning", "MQTT/HTTPS telemetry sending", "Battery power management (optional)"] },
+            { phase: "Phase 3", title: "Azure Integration", status: "planned", items: ["Create Azure IoT Hub resource", "Set up device authentication (X.509/SAS)", "Configure Time Series Insights", "Set up alert rules and action groups", "Implement direct methods for remote config"] },
+            { phase: "Phase 4", title: "Dashboard Enhancement", status: "planned", items: ["Real-time temperature charts (plotly)", "Multi-sensor comparison view", "Historical data analysis", "Alert history and notifications", "Mobile-responsive design"] },
+            { phase: "Phase 5", title: "Production Deployment", status: "planned", items: ["3D print sensor enclosure", "Deploy sensors in server room", "Set up monitoring and alerting", "Documentation and user guide", "Open-source hardware designs"] },
+          ],
+          alertThresholds: [
+            { status: "OK", temp: "< 28°C", color: "Green", action: "Normal operation" },
+            { status: "Warning", temp: "28–35°C", color: "Orange", action: "Monitor closely" },
+            { status: "Critical", temp: "> 35°C", color: "Red", action: "Take action immediately" },
+          ],
           steps: [
-            { label: "Step 1: Design network topology and IP planning (VirtualBox).", status: "completed" },
-            { label: "Step 2: Configure Windows Server AD & DNS/DHCP services (In Progress).", status: "in-progress" },
-            { label: "Step 3: Write Ansible playbooks to automate Linux client provisioning.", status: "planned" },
-            { label: "Step 4: Develop Python telemetry agent to collect CPU/Ping metrics.", status: "planned" },
-            { label: "Step 5: Build the Streamlit dashboard and link it to the agent.", status: "planned" },
+            { label: "Step 1: Project structure setup with central configuration and JSON schema.", status: "completed" },
+            { label: "Step 2: ESP32/Pi firmware with DHT22/SHT31 support and WiFi connection.", status: "in-progress" },
+            { label: "Step 3: Azure IoT Hub device provisioning and MQTT telemetry sending.", status: "planned" },
+            { label: "Step 4: Streamlit dashboard with real-time charts and alert system.", status: "planned" },
+            { label: "Step 5: Multi-zone monitoring, historical data, and 3D-printed enclosures.", status: "planned" },
+          ],
+        },
+        {
+          title: "Automated Hybrid Network & Monitoring Dashboard",
+          subtitle: "Agent-based network monitoring with real-time visualization",
+          description:
+            "An agent-based network monitoring system designed and implemented by me, Vahid Rahmani. The tool monitors system resources (CPU) and network gateway reachability, displaying them in real-time graphically.",
+          architecture:
+            "Python Agent → JSON Data Exchange → Streamlit Dashboard → Real-Time Visualization.",
+          tech: ["Python", "Streamlit", "JSON", "Network Monitoring", "Real-Time Dashboard"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "Agent-based Monitoring", description: "Live collection of system metrics through a Python-based agent that continuously tracks CPU usage and network gateway reachability." },
+            { title: "Visual Dashboard", description: "Real-time graphical display of network status and CPU utilization using an interactive Streamlit interface." },
+            { title: "Hybrid Data Flow", description: "JSON-based data exchange between the monitoring agent and the dashboard for seamless, decoupled communication." },
+          ],
+          steps: [
+            { label: "Step 1: Design agent-based monitoring architecture for live system metrics.", status: "completed" },
+            { label: "Step 2: Implement Python agent to collect CPU and gateway reachability data.", status: "in-progress" },
+            { label: "Step 3: Create JSON-based data exchange between agent and dashboard.", status: "planned" },
+            { label: "Step 4: Build Streamlit dashboard with real-time visualization.", status: "planned" },
+            { label: "Step 5: Deploy and test live dashboard functionality.", status: "planned" },
+          ],
+        },
+        {
+          title: "Global High-Availability Web Hosting with IaC",
+          subtitle: "Terraform-built zero-downtime static edge",
+          description:
+            "A multi-region, highly available web hosting infrastructure managed entirely through Infrastructure as Code. This dashboard provides real-time visibility into global infrastructure health, deployment pipelines, monitoring, and cost analysis across 8 AWS regions.",
+          architecture:
+            "Route 53 (DNS) → Latency-based routing → Multi-region CloudFront + ALB + EKS → RDS Read Replicas → us-east-1 Primary (RDS Primary / S3 Origin / Global Accelerator).",
+          tech: ["Streamlit", "Altair", "Pandas", "Terraform", "Ansible", "CloudFormation", "Pulumi"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "8 Global Regions", description: "N. Virginia, Oregon, Ireland, Frankfurt, Singapore, Tokyo, Sao Paulo, Cape Town — full worldwide coverage." },
+            { title: "IaC-Managed", description: "Entire infrastructure codified with Terraform, Ansible, CloudFormation, and Pulumi for repeatable deployments." },
+            { title: "High Availability", description: "Multi-AZ deployments, auto-scaling groups, and health-checked failover across all regions." },
+            { title: "Real-Time Dashboard", description: "Streamlit-powered operational view with live infrastructure health, deployments, and cost analysis." },
+          ],
+          dashboardPages: [
+            { page: "Overview", description: "KPIs, request volume, region health, resource utilization, deploy metrics" },
+            { page: "Infrastructure", description: "Resource heatmap, network traffic, instance details per service" },
+            { page: "Deployments", description: "Pipeline status, IaC tool breakdown, duration distribution, deployment history" },
+            { page: "Monitoring", description: "Latency percentiles (P50/P95/P99), uptime heatmaps, health check pass rates" },
+            { page: "Costs", description: "12-month spend trend, cost by region/service, 6-month forecast, top cost drivers" },
+          ],
+          steps: [
+            { label: "Step 1: Design global content delivery architecture.", status: "completed" },
+            { label: "Step 2: Write Terraform files for AWS S3 bucket / Azure Storage container.", status: "in-progress" },
+            { label: "Step 3: Configure CloudFront / Azure CDN for edge caching.", status: "planned" },
+            { label: "Step 4: Set up automated SSL certificate provisioning via Let's Encrypt / ACM.", status: "planned" },
+            { label: "Step 5: Test deployment speeds globally and implement a clean CI/CD destroy/apply pipeline.", status: "planned" },
+          ],
+        },
+        {
+          title: "PyFlow — Python Learning Platform",
+          subtitle: "AI-powered interactive Python & AI education platform",
+          description:
+            "PyFlow is a modern, interactive, and AI-powered education platform designed to transform beginners into proficient Python and AI developers. Built with a \"Learn-by-Doing\" philosophy — gamified lessons, an AI tutor, a secure Monaco-based code sandbox, PWA experience, and full i18n (DE, EN, TR, RU, AR).",
+          architecture:
+            "React + Tailwind Frontend → Django REST API → PostgreSQL / Redis / Celery Sandbox → OpenAI LLM Agents.",
+          tech: ["React", "Tailwind CSS", "Django", "DRF", "PostgreSQL", "Docker", "Redis", "Celery", "OpenAI API"],
+          steps: [
+            { label: "Step 1: Project scaffolding & i18n infrastructure.", status: "completed" },
+            { label: "Step 2: Course content management & user progress tracking.", status: "completed" },
+            { label: "Step 3: AI code sandbox implementation (secure execution).", status: "in-progress" },
+            { label: "Step 4: Gamification (XP, streaks, achievements) & PWA mobile app.", status: "planned" },
+            { label: "Step 5: Public launch on Vercel with multi-language support.", status: "planned" },
+          ],
+        },
+        {
+          title: "PyMentor — AI Coding Demo",
+          subtitle: "Web-based Python learning platform with structured paths",
+          description:
+            "Py-Mentor is a web-based educational platform designed to help users learn Python programming efficiently. This project aims to provide a structured path for learners to master coding concepts and build the future of technology.",
+          architecture:
+            "HTML5/CSS3/JS Frontend → Django REST Framework → PostgreSQL → Vercel Deployment.",
+          tech: ["Django", "DRF", "HTML5", "CSS3", "JavaScript", "PostgreSQL", "psycopg2", "Vercel"],
+          steps: [
+            { label: "Step 1: Project scaffolding & Django backend setup.", status: "completed" },
+            { label: "Step 2: Course structure & PostgreSQL database design.", status: "completed" },
+            { label: "Step 3: Interactive learning interface & progress tracking.", status: "in-progress" },
+            { label: "Step 4: Responsive design & mobile optimization.", status: "in-progress" },
+            { label: "Step 5: Vercel deployment & public demo launch.", status: "planned" },
+          ],
+        },
+        {
+          title: "Serverless Network Sentinel Bot",
+          subtitle: "Event-driven outage alerts to chat ops",
+          description:
+            "Deployed a serverless Python script that continuously monitors server ports and instantly routes real-time network outage or latency alerts to a private Discord/Telegram channel.",
+          architecture:
+            "Cron Job → Serverless Function (Python) → Port/Ping Checker → Webhook → Discord/Telegram.",
+          tech: ["Python", "Serverless", "REST APIs", "Telegram Bot API"],
+          steps: [
+            { label: "Step 1: Write local Python script using sockets to check TCP ports.", status: "completed" },
+            { label: "Step 2: Create Telegram/Discord bot token and set up API webhooks.", status: "planned" },
+            { label: "Step 3: Package the script for serverless execution (Azure Functions).", status: "planned" },
+            { label: "Step 4: Configure cron-trigger schedule to run every 5 minutes.", status: "planned" },
+            { label: "Step 5: Implement failure recovery and alert throttling.", status: "planned" },
           ],
         },
         {
@@ -233,85 +421,6 @@ const resources = {
             { label: "Step 5: Test and verify Single Sign-On (SSO) and Entra ID login.", status: "planned" },
           ],
         },
-        {
-          title: "Serverless Network Sentinel Bot",
-          subtitle: "Event-driven outage alerts to chat ops",
-          description:
-            "Deployed a serverless Python script that continuously monitors server ports and instantly routes real-time network outage or latency alerts to a private Discord/Telegram channel.",
-          architecture:
-            "Cron Job → Serverless Function (Python) → Port/Ping Checker → Webhook → Discord/Telegram.",
-          tech: ["Python", "Serverless", "REST APIs", "Telegram Bot API"],
-          steps: [
-            { label: "Step 1: Write local Python script using sockets to check TCP ports (In Progress).", status: "in-progress" },
-            { label: "Step 2: Create Telegram/Discord bot token and set up API webhooks.", status: "planned" },
-            { label: "Step 3: Package the script for serverless execution (Azure Functions).", status: "planned" },
-            { label: "Step 4: Configure cron-trigger schedule to run every 5 minutes.", status: "planned" },
-            { label: "Step 5: Implement failure recovery and alert throttling.", status: "planned" },
-          ],
-        },
-        {
-          title: "Cloud-Connected Hardware & IoT Monitor",
-          subtitle: "From bench soldering to live cloud telemetry",
-          description:
-            "This project leverages my professional background in hardware diagnostics and board-level micro-soldering. I designed the physical circuitry, analyzed the schematics, and physically assembled microcontrollers (ESP32) connected to cloud IoT Hubs to stream and monitor real-time hardware telemetry (temperature, voltage).",
-          architecture:
-            "Physical Circuit Schematics → ESP32 Microcontroller → MQTT Protocol → Azure IoT Hub → Live Chart UI.",
-          tech: ["Python/C++", "IoT Hub", "ESP32", "MQTT", "WebSockets"],
-          steps: [
-            { label: "Step 1: Analyze physical board schematics and trace voltage/temp test points.", status: "completed" },
-            { label: "Step 2: Micro-solder wires to ESP32 ADC pins for diagnostic telemetry (In Progress).", status: "in-progress" },
-            { label: "Step 3: Write C++/Python code to publish sensor data via MQTT.", status: "planned" },
-            { label: "Step 4: Provision Azure IoT Hub and define routing to Azure Stream Analytics.", status: "planned" },
-            { label: "Step 5: Render a real-time oscilloscope/telemetry chart on the portfolio page.", status: "planned" },
-          ],
-        },
-        {
-          title: "Global High-Availability Web Hosting with IaC",
-          subtitle: "Terraform-built zero-downtime static edge",
-          description:
-            "Deployed a globally distributed, secure static site architecture using Cloud Storage and CDN networks, automated end-to-end via Terraform Infrastructure as Code.",
-          architecture: "Terraform Configuration → Azure Blob / AWS S3 → CDN → HTTPS Cert.",
-          tech: ["Terraform", "Azure Blob / AWS S3", "CloudFront / CDN", "Route 53", "SSL"],
-          steps: [
-            { label: "Step 1: Design global content delivery architecture.", status: "completed" },
-            { label: "Step 2: Write Terraform files for AWS S3 bucket / Azure Storage container.", status: "in-progress" },
-            { label: "Step 3: Configure CloudFront / Azure CDN for edge caching.", status: "planned" },
-            { label: "Step 4: Set up automated SSL certificate provisioning via Let's Encrypt / ACM.", status: "planned" },
-            { label: "Step 5: Test deployment speeds globally and implement a clean CI/CD destroy/apply pipeline.", status: "planned" },
-          ],
-        },
-        {
-          title: "PyFlow — Python Learning Platform",
-          subtitle: "AI-powered interactive Python & AI education platform",
-          description:
-            "PyFlow is a modern, interactive and AI-powered education platform designed to turn beginners into proficient Python and AI developers. Built with a 'Learn-by-Doing' philosophy: gamified lessons, an AI tutor, a secure Monaco-based code sandbox, PWA experience and full i18n (DE, EN, TR, RU, AR).",
-          architecture:
-            "React + Tailwind Frontend → Django REST API → PostgreSQL / Redis / Celery Sandbox → OpenAI LLM Agents.",
-          tech: ["React", "Tailwind CSS", "Django", "DRF", "PostgreSQL", "Docker", "Redis", "Celery", "OpenAI API"],
-          steps: [
-            { label: "Step 1: Project scaffolding & i18n infrastructure.", status: "completed" },
-            { label: "Step 2: Course content management & user progress tracking.", status: "in-progress" },
-            { label: "Step 3: AI code sandbox implementation (secure execution).", status: "planned" },
-            { label: "Step 4: Gamification (XP, streaks, achievements) & PWA mobile app.", status: "planned" },
-            { label: "Step 5: Public launch on Vercel with multi-language support.", status: "completed" },
-          ],
-        },
-        {
-          title: "PyMentor — AI Coding Demo",
-          subtitle: "AI-powered Python mentor & code assistant",
-          description:
-            "PyMentor is an AI-driven coding companion that provides real-time Python mentoring, debugging help, and personalized explanations. Currently ~60% complete, with core AI chat and code analysis already functional.",
-          architecture:
-            "React Frontend → Python FastAPI → OpenAI LLM Agents → Redis Cache.",
-          tech: ["React", "Tailwind CSS", "FastAPI", "Python", "OpenAI API", "Redis"],
-          steps: [
-            { label: "Step 1: Project scaffolding & FastAPI backend setup.", status: "completed" },
-            { label: "Step 2: AI chat integration with LLM agents (functional).", status: "completed" },
-            { label: "Step 3: Real-time code analysis & debugging suggestions.", status: "in-progress" },
-            { label: "Step 4: User history & session persistence (Redis).", status: "in-progress" },
-            { label: "Step 5: Public demo deployment & UI polish.", status: "planned" },
-          ],
-        },
       ],
 
       "skills.title": "Skills",
@@ -323,7 +432,7 @@ const resources = {
         { label: "Hardware & Electronics", items: ["Board-Level Repair", "Micro-soldering", "Schematic Analysis", "Hardware Diagnostics"] },
       ],
 
-      "certificates.title": "Languages & Certificates",
+      "certificates.title": "Certificates",
       "certificates.languages": "Languages",
       "certificates.foundations": "Established Foundations",
       "certificates.focus": "In Preparation / Focus 2026",
@@ -549,21 +658,209 @@ const resources = {
       "projects.github": "GitHub",
       "projects.demo": "Live Demo",
       "projects.viewPage": "Projekt ansehen",
+      "projects.keyFeatures": "Hauptfunktionen",
+      "projects.technologies": "Verwendete Technologien",
+      "projects.author": "Entworfen & Implementiert von",
+      "projects.dashboardPages": "Dashboard-Seiten",
+      "projects.hardwareOptions": "Hardware-Optionen",
+      "projects.components": "Komponenten",
+      "projects.wiring": "Verkabelungsdiagramm",
+      "projects.sensorSpecs": "Sensor-Spezifikationen",
+      "projects.comparison": "ESP32 vs Raspberry Pi",
+      "projects.roadmap": "Entwicklungsroadmap",
+      "projects.alertThresholds": "Alarm-Schwellenwerte",
+      "projects.modules": "Projektmodule",
+      "projects.localization": "Unterstützte Sprachen",
       "projects.items": [
         {
-          title: "Automated Hybrid Network & Monitoring Dashboard",
-          subtitle: "Ansible-automated hybrid lab with live Python telemetry",
+          title: "Cloud-Connected Hardware & IoT Monitor",
+          subtitle: "DIY-Temperaturüberwachung für Serverräume mit Azure IoT Hub",
           description:
-            "Designed a virtualized hybrid network (Windows Server Active Directory & Linux clients) automated via Ansible, monitored by a custom Python-based real-time network dashboard.",
+            "Ein DIY-Temperaturüberwachungssystem für Serverräume mit benutzerdefinierten Hardware-Sensoren, die mit Azure IoT Hub verbunden sind, und einem Streamlit-Dashboard für Echtzeit-Visualisierung und Alarme. Dieses Projekt baut ein Hardware-Gerät, das die Temperatur in Computer-/Serverräumen misst und die Daten zur Überwachung und Visualisierung an Azure sendet.",
           architecture:
-            "Local Virtual Network (Windows Server AD + Linux clients) → Python Agent → Flask/Streamlit Dashboard.",
-          tech: ["Ansible", "Python", "Active Directory", "Linux", "VirtualBox"],
+            "Hardware-Sensor (ESP32/Pi + DHT22/SHT31) → MQTT/HTTPS → Azure IoT Hub → Time Series Insights → Streamlit Dashboard.",
+          tech: ["Python", "C++", "ESP32", "Raspberry Pi", "Azure IoT Hub", "Streamlit", "MQTT", "DHT22/SHT31"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "DIY-Hardware", description: "Bauen Sie Ihren eigenen Temperatursensor mit erschwinglichen Komponenten wie ESP32 oder Raspberry Pi." },
+            { title: "Azure IoT Hub", description: "Sichere, skalierbare Cloud-Verbindung für IoT-Geräte mit Gerätebereitstellung und Telemetriespeicherung." },
+            { title: "Echtzeit-Dashboard", description: "Live-Temperaturwerte mit interaktiven Diagrammen, KPI-Karten und Alarmverwaltung." },
+            { title: "Multi-Zonen-Überwachung", description: "Verfolgen Sie mehrere Serverräume oder Rack-Standorte mit Statusanzeige pro Zone." },
+            { title: "Alarmsystem", description: "E-Mail/Webhook-Benachrichtigungen bei Überschreitung der Warnschwelle (28°C) oder kritischen Schwelle (35°C)." },
+            { title: "Historische Daten", description: "Speichern und visualisieren Sie Temperaturtrends über die Zeit mit Time Series Insights." },
+          ],
+          hardwareOptions: [
+            {
+              name: "ESP32",
+              tag: "Empfohlen für Anfänger",
+              cost: "$5 – 10",
+              wiring: "ESP32          DHT22/SHT31\n──────         ───────────\n3.3V  ──────── VCC\nGND   ──────── GND\nGPIO4 ──────── DATA (mit 10kΩ Pull-up)",
+              components: [
+                { name: "ESP32 DevKit v1", cost: "$5–10", purpose: "Mikrocontroller mit WiFi" },
+                { name: "DHT22 / SHT31 Sensor", cost: "$5–15", purpose: "Temperatur & Feuchtigkeit" },
+                { name: "Breadboard + Drähte", cost: "$5", purpose: "Prototyping" },
+                { name: "USB-Kabel", cost: "$3", purpose: "Strom & Programmierung" },
+                { name: "3D-gedrucktes Gehäuse", cost: "$10", purpose: "Enclosure (optional)" },
+              ],
+            },
+            {
+              name: "Raspberry Pi",
+              tag: "Empfohlen für Fortgeschrittene",
+              cost: "$35 – 75",
+              wiring: "Raspberry Pi    DHT22 Sensor\n──────────      ─────────────\nPin 1 (3.3V) ── VCC\nPin 6 (GND)  ── GND\nPin 7 (GPIO4)── DATA (mit 10kΩ Pull-up)\n\nRaspberry Pi    BMP280 (I2C)\n──────────      ─────────────\nPin 1 (3.3V) ── VCC\nPin 6 (GND)  ── GND\nPin 3 (GPIO2)── SDA (I2C Data)\nPin 5 (GPIO3)── SCL (I2C Clock)",
+              components: [
+                { name: "Raspberry Pi 4/5 (4GB)", cost: "$35–75", purpose: "Hauptcontroller mit WiFi/Ethernet" },
+                { name: "DHT22 Sensor", cost: "$5–10", purpose: "Temperatur & Feuchtigkeit" },
+                { name: "BMP280 / BME280 Sensor", cost: "$5–15", purpose: "Druck + Höhe (optional)" },
+                { name: "MicroSD-Karte (32GB+)", cost: "$10", purpose: "OS und Datenspeicher" },
+                { name: "Breadboard + Drähte", cost: "$5", purpose: "Prototyping" },
+                { name: "Netzteil (5V 3A)", cost: "$10", purpose: "Offizielles Pi-Adapter" },
+              ],
+            },
+          ],
+          sensorSpecs: [
+            { sensor: "DHT22", range: "-40°C bis 80°C", accuracy: "±0,5°C", humidity: "0–100% RH", bestFor: "Budgetfreundlicher Allrounder" },
+            { sensor: "SHT31", range: "-40°C bis 125°C", accuracy: "±0,3°C", humidity: "0–100% RH", bestFor: "Hohe Präzision" },
+            { sensor: "DS18B20", range: "-55°C bis 125°C", accuracy: "±0,5°C", humidity: "N/A", bestFor: "Wasserdichte Sonden, 1-Wire" },
+            { sensor: "BME280", range: "-40°C bis 85°C", accuracy: "±1,0°C", humidity: "0–100% RH", bestFor: "All-in-One (Temp+Feuchtigkeit+Druck)" },
+          ],
+          comparison: {
+            headers: ["Merkmal", "ESP32", "Raspberry Pi"],
+            rows: [
+              ["Kosten", "$5–10", "$35–75"],
+              ["Stromverbrauch", "Sehr niedrig (Deep Sleep verfügbar)", "Höher (1–5W)"],
+              ["Rechenleistung", "Begrenzt (240MHz Dual-Core)", "Hoch (1,5GHz+ Quad-Core)"],
+              ["Speicher", "520KB SRAM", "1–8GB RAM"],
+              ["Betriebssystem", "Kein (Bare Metal)", "Vollständiges Linux"],
+              ["Konnektivität", "WiFi + Bluetooth", "WiFi + Ethernet + Bluetooth"],
+              ["GPIO", "34 Pins", "40 Pins"],
+              ["Ideal für", "Einfache, batteriebetriebene Sensoren", "Komplexe Verarbeitung, lokale Dashboards"],
+              ["Programmierung", "C++/Arduino oder MicroPython", "Python, Node.js, jede Linux-Sprache"],
+              ["Mehrere Sensoren", "Begrenzt", "Viele (I2C/SPI-Bus-Unterstützung)"],
+              ["Lokale Anzeige", "OLED (klein)", "HDMI-Monitor, Touchscreen"],
+            ],
+          },
+          roadmap: [
+            { phase: "Phase 1", title: "Hardware-Prototyp", status: "completed", items: ["Projektstruktur-Setup", "Zentrale Konfiguration mit Azure-Umgebungsvariablen", "JSON-Schema-Definition für Metriken", "Schwellenwert-Konstanten (Warnung: 28°C, Kritisch: 35°C)", "Basis-Streamlit-Dashboard mit KPI-Karten"] },
+            { phase: "Phase 2", title: "Hardware-Entwicklung", status: "in-progress", items: ["ESP32-Firmware mit DHT22/SHT31-Unterstützung", "WiFi-Verbindungsverwaltung", "Azure IoT Hub Gerätebereitstellung", "MQTT/HTTPS-Telemetrie-Sendung", "Batterieenergiemanagement (optional)"] },
+            { phase: "Phase 3", title: "Azure-Integration", status: "planned", items: ["Azure IoT Hub Ressource erstellen", "Geräteauthentifizierung einrichten (X.509/SAS)", "Time Series Insights konfigurieren", "Alarmregeln und Aktionsgruppen einrichten", "Direktmethoden für Fernkonfiguration implementieren"] },
+            { phase: "Phase 4", title: "Dashboard-Verbesserung", status: "planned", items: ["Echtzeit-Temperaturdiagramme (plotly)", "Mehrere Sensoren Vergleichsansicht", "Historische Datenanalyse", "Alarmverlauf und Benachrichtigungen", "Mobile-responsives Design"] },
+            { phase: "Phase 5", title: "Produktionsbereitstellung", status: "planned", items: ["3D-gedrucktes Sensor-Gehäuse", "Sensoren im Serverraum bereitstellen", "Überwachung und Alarmierung einrichten", "Dokumentation und Benutzerhandbuch", "Open-Source-Hardware-Designs"] },
+          ],
+          alertThresholds: [
+            { status: "OK", temp: "< 28°C", color: "Grün", action: "Normaler Betrieb" },
+            { status: "Warnung", temp: "28–35°C", color: "Orange", action: "Eng überwachen" },
+            { status: "Kritisch", temp: "> 35°C", color: "Rot", action: "Sofort handeln" },
+          ],
           steps: [
-            { label: "Step 1: Design network topology and IP planning (VirtualBox).", status: "completed" },
-            { label: "Step 2: Configure Windows Server AD & DNS/DHCP services (In Progress).", status: "in-progress" },
-            { label: "Step 3: Write Ansible playbooks to automate Linux client provisioning.", status: "planned" },
-            { label: "Step 4: Develop Python telemetry agent to collect CPU/Ping metrics.", status: "planned" },
-            { label: "Step 5: Build the Streamlit dashboard and link it to the agent.", status: "planned" },
+            { label: "Step 1: Project structure setup with central configuration and JSON schema.", status: "completed" },
+            { label: "Step 2: ESP32/Pi firmware with DHT22/SHT31 support and WiFi connection.", status: "in-progress" },
+            { label: "Step 3: Azure IoT Hub device provisioning and MQTT telemetry sending.", status: "planned" },
+            { label: "Step 4: Streamlit dashboard with real-time charts and alert system.", status: "planned" },
+            { label: "Step 5: Multi-zone monitoring, historical data, and 3D-printed enclosures.", status: "planned" },
+          ],
+        },
+        {
+          title: "Automated Hybrid Network & Monitoring Dashboard",
+          subtitle: "Agent-basiertes Netzwerküberwachungssystem mit Echtzeit-Visualisierung",
+          description:
+            "Dies ist ein Agent-basiertes Netzwerküberwachungssystem, das von mir, Vahid Rahmani, entworfen und implementiert wurde. Das Tool überwacht Systemressourcen (CPU) und die Erreichbarkeit des Netzwerk-Gateways und stellt diese in Echtzeit grafisch dar.",
+          architecture:
+            "Python Agent → JSON Datenaustausch → Streamlit Dashboard → Echtzeit-Visualisierung.",
+          tech: ["Python", "Streamlit", "JSON", "Netzwerküberwachung", "Echtzeit-Dashboard"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "Agent-basiertes Monitoring", description: "Live-Erfassung von Systemmetriken durch einen Python-basierten Agenten, der kontinuierlich die CPU-Auslastung und die Erreichbarkeit des Netzwerk-Gateways verfolgt." },
+            { title: "Visuelles Dashboard", description: "Echtzeit-grafische Darstellung des Netzwerkstatus und der CPU-Auslastung über eine interakte Streamlit-Oberfläche." },
+            { title: "Hybrider Datenfluss", description: "JSON-basierter Datenaustausch zwischen dem Überwachungs-Agenten und dem Dashboard für nahtlose, entkoppelte Kommunikation." },
+          ],
+          steps: [
+            { label: "Step 1: Agent-basierte Monitoring-Architektur für Live-Systemmetriken entwickeln.", status: "completed" },
+            { label: "Step 2: Python Agent zur Erfassung von CPU- und Gateway-Erreichbarkeitsdaten implementieren.", status: "in-progress" },
+            { label: "Step 3: JSON-basierten Datenaustausch zwischen Agent und Dashboard erstellen.", status: "planned" },
+            { label: "Step 4: Streamlit Dashboard mit Echtzeit-Visualisierung aufbauen.", status: "planned" },
+            { label: "Step 5: Live-Dashboard bereitstellen und Funktionalität testen.", status: "planned" },
+          ],
+        },
+        {
+          title: "Global High-Availability Web Hosting with IaC",
+          subtitle: "Terraform-built zero-downtime static edge",
+          description:
+            "Eine multi-regionale, hochverfügbare Web-Hosting-Infrastruktur, die vollständig über Infrastructure as Code verwaltet wird. Dieses Dashboard bietet Echtzeit-Transparenz über den globalen Infrastrukturzustand, Deployment-Pipelines, Monitoring und Kostenanalyse in 8 AWS-Regionen.",
+          architecture:
+            "Route 53 (DNS) → Latenzbasiertes Routing → Multi-Regionale CloudFront + ALB + EKS → RDS Read Replicas → us-east-1 Primär (RDS Primary / S3 Origin / Global Accelerator).",
+          tech: ["Streamlit", "Altair", "Pandas", "Terraform", "Ansible", "CloudFormation", "Pulumi"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "8 Globale Regionen", description: "N. Virginia, Oregon, Ireland, Frankfurt, Singapore, Tokyo, Sao Paulo, Cape Town — weltweite Abdeckung." },
+            { title: "IaC-verwaltet", description: "Gesamte Infrastruktur kodifiziert mit Terraform, Ansible, CloudFormation und Pulumi für wiederholbare Deployments." },
+            { title: "Hohe Verfügbarkeit", description: "Multi-AZ-Deployments, Auto-Scaling-Gruppen und health-checked Failover in allen Regionen." },
+            { title: "Echtzeit-Dashboard", description: "Streamlit-betriebene Operations-Ansicht mit Live-Infrastrukturzustand, Deployments und Kostenanalyse." },
+          ],
+          dashboardPages: [
+            { page: "Übersicht", description: "KPIs, Anfragen-Volume, Regionszustand, Ressourcenauslastung, Deploy-Metriken" },
+            { page: "Infrastruktur", description: "Ressourcen-Heatmap, Netzwerkverkehr, Instanzdetails pro Service" },
+            { page: "Deployments", description: "Pipeline-Status, IaC-Tool-Aufschlüsselung, Dauer-Verteilung, Deployment-Verlauf" },
+            { page: "Monitoring", description: "Latenz-Perzentile (P50/P95/P99), Uptime-Heatmaps, Health-Check-Bestehensraten" },
+            { page: "Kosten", description: "12-Monats-Ausgaben-Trend, Kosten nach Region/Service, 6-Monats-Prognose, Top-Kostentreiber" },
+          ],
+          steps: [
+            { label: "Step 1: Design global content delivery architecture.", status: "completed" },
+            { label: "Step 2: Write Terraform files for AWS S3 bucket / Azure Storage container.", status: "in-progress" },
+            { label: "Step 3: Configure CloudFront / Azure CDN for edge caching.", status: "planned" },
+            { label: "Step 4: Set up automated SSL certificate provisioning via Let's Encrypt / ACM.", status: "planned" },
+            { label: "Step 5: Test deployment speeds globally and implement a clean CI/CD destroy/apply pipeline.", status: "planned" },
+          ],
+        },
+        {
+          title: "PyFlow — Python Learning Platform",
+          subtitle: "KI-gestützte interaktive Python- & KI-Lernplattform",
+          description:
+            "PyFlow ist eine moderne, interaktive und KI-gestützte Bildungsplattform, die Anfänger zu fortgeschrittenen Python- und KI-Entwicklern transformiert. Aufgebaut auf der \"Learning-by-Doing\"-Philosophie — gamifizierte Lektionen, ein KI-Tutor, eine sichere Monaco-Code-Sandbox, PWA-Erlebnis und volle i18n (DE, EN, TR, RU, AR).",
+          architecture:
+            "React + Tailwind Frontend → Django REST API → PostgreSQL / Redis / Celery Sandbox → OpenAI LLM Agents.",
+          tech: ["React", "Tailwind CSS", "Django", "DRF", "PostgreSQL", "Docker", "Redis", "Celery", "OpenAI API"],
+          steps: [
+            { label: "Step 1: Projekt-Scaffolding & i18n-Infrastruktur.", status: "completed" },
+            { label: "Step 2: Kursinhalts-Verwaltung & Fortschrittstracking.", status: "completed" },
+            { label: "Step 3: KI-Code-Sandbox-Implementierung (sichere Ausführung).", status: "in-progress" },
+            { label: "Step 4: Gamification (XP, Streaks, Achievements) & PWA Mobile App.", status: "planned" },
+            { label: "Step 5: Öffentlicher Launch auf Vercel mit Mehrsprachigkeit.", status: "planned" },
+          ],
+        },
+        {
+          title: "PyMentor — AI Coding Demo",
+          subtitle: "Webbasierte Python-Lernplattform mit strukturierten Pfaden",
+          description:
+            "Py-Mentor ist eine webbasierte Bildungsplattform, die Benutzern hilft, Python-Programmierung effizient zu erlernen. Dieses Projekt zielt darauf ab, einen strukturierten Pfad für Lernende zu bieten, um Coding-Konzepte zu meistern und die Zukunft der Technologie aufzubauen.",
+          architecture:
+            "HTML5/CSS3/JS Frontend → Django REST Framework → PostgreSQL → Vercel Deployment.",
+          tech: ["Django", "DRF", "HTML5", "CSS3", "JavaScript", "PostgreSQL", "psycopg2", "Vercel"],
+          steps: [
+            { label: "Step 1: Projekt-Scaffolding & Django-Backend-Setup.", status: "completed" },
+            { label: "Step 2: Kursstruktur & PostgreSQL-Datenbankdesign.", status: "completed" },
+            { label: "Step 3: Interaktive Lernoberfläche & Fortschrittsverfolgung.", status: "in-progress" },
+            { label: "Step 4: Responsives Design & Mobile-Optimierung.", status: "in-progress" },
+            { label: "Step 5: Vercel-Deployment & Launch der öffentlichen Demo.", status: "planned" },
+          ],
+        },
+        {
+          title: "Serverless Network Sentinel Bot",
+          subtitle: "Event-driven outage alerts to chat ops",
+          description:
+            "Deployed a serverless Python script that continuously monitors server ports and instantly routes real-time network outage or latency alerts to a private Discord/Telegram channel.",
+          architecture:
+            "Cron Job → Serverless Function (Python) → Port/Ping Checker → Webhook → Discord/Telegram.",
+          tech: ["Python", "Serverless", "REST APIs", "Telegram Bot API"],
+          steps: [
+            { label: "Step 1: Write local Python script using sockets to check TCP ports.", status: "completed" },
+            { label: "Step 2: Create Telegram/Discord bot token and set up API webhooks.", status: "planned" },
+            { label: "Step 3: Package the script for serverless execution (Azure Functions).", status: "planned" },
+            { label: "Step 4: Configure cron-trigger schedule to run every 5 minutes.", status: "planned" },
+            { label: "Step 5: Implement failure recovery and alert throttling.", status: "planned" },
           ],
         },
         {
@@ -580,85 +877,6 @@ const resources = {
             { label: "Step 3: Install and configure Microsoft Entra Connect on-premises.", status: "planned" },
             { label: "Step 4: Implement hybrid user synchronization and password hash sync.", status: "planned" },
             { label: "Step 5: Test and verify Single Sign-On (SSO) and Entra ID login.", status: "planned" },
-          ],
-        },
-        {
-          title: "Serverless Network Sentinel Bot",
-          subtitle: "Event-driven outage alerts to chat ops",
-          description:
-            "Deployed a serverless Python script that continuously monitors server ports and instantly routes real-time network outage or latency alerts to a private Discord/Telegram channel.",
-          architecture:
-            "Cron Job → Serverless Function (Python) → Port/Ping Checker → Webhook → Discord/Telegram.",
-          tech: ["Python", "Serverless", "REST APIs", "Telegram Bot API"],
-          steps: [
-            { label: "Step 1: Write local Python script using sockets to check TCP ports (In Progress).", status: "in-progress" },
-            { label: "Step 2: Create Telegram/Discord bot token and set up API webhooks.", status: "planned" },
-            { label: "Step 3: Package the script for serverless execution (Azure Functions).", status: "planned" },
-            { label: "Step 4: Configure cron-trigger schedule to run every 5 minutes.", status: "planned" },
-            { label: "Step 5: Implement failure recovery and alert throttling.", status: "planned" },
-          ],
-        },
-        {
-          title: "Cloud-Connected Hardware & IoT Monitor",
-          subtitle: "From bench soldering to live cloud telemetry",
-          description:
-            "This project leverages my professional background in hardware diagnostics and board-level micro-soldering. I designed the physical circuitry, analyzed the schematics, and physically assembled microcontrollers (ESP32) connected to cloud IoT Hubs to stream and monitor real-time hardware telemetry (temperature, voltage).",
-          architecture:
-            "Physical Circuit Schematics → ESP32 Microcontroller → MQTT Protocol → Azure IoT Hub → Live Chart UI.",
-          tech: ["Python/C++", "IoT Hub", "ESP32", "MQTT", "WebSockets"],
-          steps: [
-            { label: "Step 1: Analyze physical board schematics and trace voltage/temp test points.", status: "completed" },
-            { label: "Step 2: Micro-solder wires to ESP32 ADC pins for diagnostic telemetry (In Progress).", status: "in-progress" },
-            { label: "Step 3: Write C++/Python code to publish sensor data via MQTT.", status: "planned" },
-            { label: "Step 4: Provision Azure IoT Hub and define routing to Azure Stream Analytics.", status: "planned" },
-            { label: "Step 5: Render a real-time oscilloscope/telemetry chart on the portfolio page.", status: "planned" },
-          ],
-        },
-        {
-          title: "Global High-Availability Web Hosting with IaC",
-          subtitle: "Terraform-built zero-downtime static edge",
-          description:
-            "Deployed a globally distributed, secure static site architecture using Cloud Storage and CDN networks, automated end-to-end via Terraform Infrastructure as Code.",
-          architecture: "Terraform Configuration → Azure Blob / AWS S3 → CDN → HTTPS Cert.",
-          tech: ["Terraform", "Azure Blob / AWS S3", "CloudFront / CDN", "Route 53", "SSL"],
-          steps: [
-            { label: "Step 1: Design global content delivery architecture.", status: "completed" },
-            { label: "Step 2: Write Terraform files for AWS S3 bucket / Azure Storage container.", status: "in-progress" },
-            { label: "Step 3: Configure CloudFront / Azure CDN for edge caching.", status: "planned" },
-            { label: "Step 4: Set up automated SSL certificate provisioning via Let's Encrypt / ACM.", status: "planned" },
-            { label: "Step 5: Test deployment speeds globally and implement a clean CI/CD destroy/apply pipeline.", status: "planned" },
-          ],
-        },
-        {
-          title: "PyFlow — Python Learning Platform",
-          subtitle: "KI-gestützte interaktive Python- & KI-Lernplattform",
-          description:
-            "PyFlow ist eine moderne, interaktive und KI-gestützte Bildungsplattform, die Anfänger zu fortgeschrittenen Python- und KI-Entwicklern macht. Mit 'Learning-by-Doing'-Philosophie: gamifizierte Lektionen, KI-Tutor, sicherer Monaco-Code-Sandbox, PWA-Erlebnis und volle i18n (DE, EN, TR, RU, AR).",
-          architecture:
-            "React + Tailwind Frontend → Django REST API → PostgreSQL / Redis / Celery Sandbox → OpenAI LLM Agents.",
-          tech: ["React", "Tailwind CSS", "Django", "DRF", "PostgreSQL", "Docker", "Redis", "Celery", "OpenAI API"],
-          steps: [
-            { label: "Step 1: Projekt-Scaffolding & i18n-Infrastruktur.", status: "completed" },
-            { label: "Step 2: Kursinhalts-Verwaltung & Fortschrittstracking.", status: "in-progress" },
-            { label: "Step 3: KI-Code-Sandbox-Implementierung (sichere Ausführung).", status: "planned" },
-            { label: "Step 4: Gamification (XP, Streaks, Achievements) & PWA Mobile App.", status: "planned" },
-            { label: "Step 5: Öffentlicher Launch auf Vercel mit Mehrsprachigkeit.", status: "completed" },
-          ],
-        },
-        {
-          title: "PyMentor — AI Coding Demo",
-          subtitle: "KI-gestützter Python-Mentor & Code-Assistent",
-          description:
-            "PyMentor ist ein KI-gestützter Programmierbegleiter, der Echtzeit-Python-Mentoring, Debugging-Hilfe und personalisierte Erklärungen bietet. Derzeit ~60% fertig, mit funktionalem KI-Chat und Code-Analyse.",
-          architecture:
-            "React Frontend → Python FastAPI → OpenAI LLM Agents → Redis Cache.",
-          tech: ["React", "Tailwind CSS", "FastAPI", "Python", "OpenAI API", "Redis"],
-          steps: [
-            { label: "Step 1: Projekt-Scaffolding & FastAPI-Backend-Setup.", status: "completed" },
-            { label: "Step 2: KI-Chat-Integration mit LLM-Agents (funktional).", status: "completed" },
-            { label: "Step 3: Echtzeit-Code-Analyse & Debugging-Vorschläge.", status: "in-progress" },
-            { label: "Step 4: Benutzerverlauf & Session-Persistenz (Redis).", status: "in-progress" },
-            { label: "Step 5: Öffentliches Demo-Deployment & UI-Politur.", status: "planned" },
           ],
         },
       ],

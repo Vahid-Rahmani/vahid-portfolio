@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import {
   githubUrls, demoUrls, featuredProjects, getProgress, getStatusLabel, statusColor, progressBarColor, slugify, type Step, type Project,
 } from "@/data/projects";
+import cloudImg from "../../../img/cloud.jpg";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   Network, Shield, Bot, Cpu, Globe,
@@ -93,13 +94,16 @@ const FeaturedCard = ({ project, onClick, t }: { project: Project; onClick: () =
   const demo = project.demoUrl || demoUrls[project.title];
   const projectSlug = slugify(project.title);
   return (
-    <button onClick={onClick} className="group w-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:shadow-lg hover:shadow-teal-400/5">
+    <button onClick={onClick} className="project-card group w-full rounded-xl p-5 text-left transition-all duration-300 hover:-translate-y-1 sm:p-6">
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex items-start gap-4 min-w-0 flex-1">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-400/10 text-teal-400"><Icon size={24} /></div>
+          <div className="project-icon-glow flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-400/10 text-teal-400"><Icon size={24} /></div>
+          {project.title === "Cloud-Connected Hardware & IoT Monitor" && (
+            <img src={cloudImg} alt="Cloud-Connected Hardware preview" className="hidden h-32 w-32 shrink-0 rounded-lg object-cover ring-1 ring-white/10 sm:block" />
+          )}
           <div className="min-w-0 flex-1">
-            <h3 className="text-base font-semibold leading-snug text-[#f4f4f5]">{project.title}</h3>
-            <p className="mt-1 text-sm text-teal-400">{project.subtitle}</p>
+            <h3 className="text-base font-bold leading-snug text-[#f4f4f5] sm:font-semibold">{project.title}</h3>
+            <p className="mt-1 text-sm font-medium text-teal-400">{project.subtitle}</p>
             <p className="mt-2 text-sm leading-relaxed text-zinc-400 line-clamp-2">{project.description}</p>
           </div>
         </div>
@@ -140,13 +144,13 @@ const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () =>
   const demo = project.demoUrl || demoUrls[project.title];
   const projectSlug = slugify(project.title);
   return (
-    <button onClick={onClick} className="group flex flex-col rounded-xl border border-white/[0.08] bg-white/[0.02] p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:shadow-lg hover:shadow-teal-400/5">
+    <button onClick={onClick} className="project-card group flex flex-col rounded-xl p-5 text-left transition-all duration-300 hover:-translate-y-1">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400"><Icon size={20} /></div>
+          <div className="project-icon-glow flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400"><Icon size={20} /></div>
           <div className="min-w-0">
-            <h3 className="text-sm font-medium leading-snug text-[#f4f4f5]">{project.title}</h3>
-            <p className="mt-1 text-xs text-teal-400/80">{project.subtitle}</p>
+            <h3 className="text-sm font-bold leading-snug text-[#f4f4f5] sm:font-medium">{project.title}</h3>
+            <p className="mt-1 text-xs font-medium text-teal-400/80">{project.subtitle}</p>
           </div>
         </div>
         <ProgressRing value={progress} />

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Languages, Award, CheckCircle2 } from "lucide-react";
+import { Languages, Award, CheckCircle2, Clock } from "lucide-react";
 
 const Certificates = () => {
   const { t } = useTranslation();
@@ -10,8 +10,8 @@ const Certificates = () => {
   React.useEffect(() => { const tm = setTimeout(() => setMounted(true), 150); return () => clearTimeout(tm); }, []);
 
   const langs = t("certificates.langs", { returnObjects: true }) as Array<{ name: string; level: string; value: number }>;
-  const foundational = t("certificates.foundational", { returnObjects: true }) as string[];
-  const focus = t("certificates.focusCerts", { returnObjects: true }) as string[];
+  const earned = t("certificates.earnedCerts", { returnObjects: true }) as Array<{ name: string; detail: string; date: string }>;
+  const planned = t("certificates.plannedCerts", { returnObjects: true }) as Array<{ name: string; detail: string; date: string }>;
 
   return (
     <section id="certificates" className="scroll-mt-24 border-b border-white/[0.06] px-0 py-16">
@@ -40,32 +40,38 @@ const Certificates = () => {
           </div>
         </div>
         <div className="flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 transition-colors hover:border-teal-400/20 sm:p-8">
-          <div className="mb-6 flex items-center gap-2">
-            <Award className="text-teal-400" size={18} />
-            <h3 className="text-base font-semibold text-[#f4f4f5]">{t("certificates.title")}</h3>
-          </div>
           <div className="flex flex-1 flex-col gap-6">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("certificates.foundations")}</p>
-              <div className="flex flex-wrap gap-2">
-                {foundational.map((cert) => (
-                  <span key={cert} className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5 text-sm text-emerald-300">
-                    <CheckCircle2 size={14} className="shrink-0" /> {cert}
-                  </span>
+              <div className="mb-3 flex items-center gap-2">
+                <CheckCircle2 size={14} className="text-emerald-400" />
+                <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("certificates.earned")}</p>
+              </div>
+              <div className="flex flex-col gap-3">
+                {earned.map((cert) => (
+                  <div key={cert.name} className="rounded-lg border border-emerald-400/10 bg-emerald-400/[0.03] px-3 py-2.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-sm font-medium text-emerald-300">{cert.name}</span>
+                      {cert.date && <span className="shrink-0 text-xs text-zinc-500">{cert.date}</span>}
+                    </div>
+                    {cert.detail && <p className="mt-1 text-xs leading-relaxed text-zinc-400">{cert.detail}</p>}
+                  </div>
                 ))}
               </div>
             </div>
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("certificates.focus")}</p>
-              <div className="flex flex-wrap gap-2">
-                {focus.map((cert) => (
-                  <span key={cert} className="inline-flex items-center gap-1.5 rounded-full border border-teal-400/20 bg-teal-400/5 px-3 py-1.5 text-sm text-teal-400">
-                    <span className="relative flex h-2 w-2 shrink-0">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-60"></span>
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400"></span>
-                    </span>
-                    {cert}
-                  </span>
+              <div className="mb-3 flex items-center gap-2">
+                <Clock size={14} className="text-teal-400" />
+                <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("certificates.planned")}</p>
+              </div>
+              <div className="flex flex-col gap-3">
+                {planned.map((cert) => (
+                  <div key={cert.name} className="rounded-lg border border-teal-400/10 bg-teal-400/[0.03] px-3 py-2.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-sm font-medium text-teal-400">{cert.name}</span>
+                      {cert.date && <span className="shrink-0 text-xs text-zinc-500">{cert.date}</span>}
+                    </div>
+                    {cert.detail && <p className="mt-1 text-xs leading-relaxed text-zinc-400">{cert.detail}</p>}
+                  </div>
                 ))}
               </div>
             </div>

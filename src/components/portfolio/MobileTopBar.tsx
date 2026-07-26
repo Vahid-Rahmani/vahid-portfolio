@@ -39,12 +39,16 @@ const MobileTopBar = () => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#09090b]/90 backdrop-blur-md lg:hidden">
-      <div className="flex items-center justify-between px-5 py-4">
-        <a href="#projects" className="text-base font-semibold tracking-tight text-[#f4f4f5]">
-          Vahid Rahmani
-        </a>
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between px-5 py-3">
+        <div className="flex flex-1 items-center">
+          <a href="#projects" className="text-base font-semibold tracking-tight text-[#f4f4f5]">
+            Vahid Rahmani
+          </a>
+        </div>
+        <div className="flex flex-1 items-center justify-center">
           <LanguageToggle />
+        </div>
+        <div className="flex flex-1 items-center justify-end">
           <button onClick={() => setOpen((v) => !v)} className="text-zinc-400 transition hover:text-[#f4f4f5]" aria-label="Menü umschalten">
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>

@@ -82,7 +82,7 @@ const ProfilePhoto = ({ className, src, size = "lg" }: { className?: string; src
         <img
           src={src || profileImage}
           alt="Vahid Rahmani"
-          className="h-full w-full rounded-full border border-white/10 object-cover"
+          className="h-full w-full rounded-full object-cover"
         />
       </div>
     </div>

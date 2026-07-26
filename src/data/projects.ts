@@ -5,6 +5,8 @@ export type Project = {
   tech: string[]; icon: string; steps: Step[]; githubUrl?: string; demoUrl?: string;
 };
 
+import cloudImg from "../../img/cloud.jpg";
+
 export const githubUrls: Record<string, string> = {
   "Automated Hybrid Network & Monitoring Dashboard": "https://github.com/vahidrahmaniinfo24-alt/Automated-Hybrid-Network-Monitoring-Dashboard",
   "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/vahidrahmaniinfo24-alt/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
@@ -73,7 +75,7 @@ export const projectImages: Record<string, string> = {
   "automated-hybrid-network-monitoring-dashboard": "/project-images/network-dashboard.svg",
   "hybrid-identity-sync-local-ad-to-azure-entra-id": "/project-images/hybrid-identity.svg",
   "serverless-network-sentinel-bot": "/project-images/sentinel-bot.svg",
-  "cloud-connected-hardware-iot-monitor": "/project-images/iot-monitor.svg",
+  "cloud-connected-hardware-iot-monitor": cloudImg,
   "global-high-availability-web-hosting-with-iac": "/project-images/global-hosting.svg",
   "pyflow-python-learning-platform": "/project-images/pyflow.svg",
   "pymentor-ai-coding-demo": "/project-images/pymentor.svg",

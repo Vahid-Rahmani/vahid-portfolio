@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1626"/>
+      <stop offset="100%" style="stop-color:#09090b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0A66C2"/>
+      <stop offset="100%" style="stop-color:#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="300" cy="500" r="250" fill="#0A66C2" opacity="0.05"/>
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <g transform="translate(540,185)">
+    <rect x="-34" y="-40" width="68" height="56" rx="14" fill="#0A66C2" opacity="0.12" stroke="#3B82F6" stroke-width="1.5"/>
+    <circle cx="0" cy="-14" r="9" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M-24,10 Q0,-6 24,10" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="3" fill="#3B82F6" opacity="0.7"/>
+  </g>
+  <text x="600" y="320" text-anchor="middle" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="32" font-weight="600">LinkedIn AI Agent</text>
+  <text x="600" y="360" text-anchor="middle" fill="#3B82F6" font-family="system-ui, sans-serif" font-size="18">AI-powered LinkedIn automation with content generation</text>
+  <text x="600" y="420" text-anchor="middle" fill="#71717a" font-family="system-ui, sans-serif" font-size="14">Python · Playwright · OpenCode Zen AI · SQLite</text>
+  <rect x="460" y="450" width="280" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+  <rect x="460" y="450" width="84" height="3" rx="1.5" fill="url(#accent)"/>
+</svg>

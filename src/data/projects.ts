@@ -15,6 +15,7 @@ export const githubUrls: Record<string, string> = {
   "Global High-Availability Web Hosting with IaC": "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
   "PyFlow — Python Learning Platform": "https://github.com/Vahid-Rahmani/-pyflow-platform/tree/main",
   "PyMentor — AI Coding Demo": "https://github.com/Vahid-Rahmani/py-mentor",
+  "LinkedIn AI Agent": "https://github.com/Vahid-Rahmani/agent-for-linkdin",
 };
 
 export const demoUrls: Record<string, string> = {
@@ -79,4 +80,5 @@ export const projectImages: Record<string, string> = {
   "global-high-availability-web-hosting-with-iac": "/project-images/global-hosting.svg",
   "pyflow-python-learning-platform": "/project-images/pyflow.svg",
   "pymentor-ai-coding-demo": "/project-images/pymentor.svg",
+  "linkedin-ai-agent": "/project-images/linkedin-agent.svg",
 };

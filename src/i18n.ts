@@ -421,6 +421,32 @@ const resources = {
             { label: "Step 5: Test and verify Single Sign-On (SSO) and Entra ID login.", status: "planned" },
           ],
         },
+        {
+          title: "LinkedIn AI Agent",
+          subtitle: "AI-powered LinkedIn automation with content generation",
+          description:
+            "An AI-powered automation toolkit that manages your LinkedIn presence end-to-end: it monitors profile views, posts, comments and messages, auto-generates engaging posts from your live GitHub activity using the OpenCode Zen API, drafts context-aware images, replies to comments and messages, and produces detailed activity reports — all without manual input.",
+          architecture:
+            "Python CLI (Click + Rich) → Playwright (LinkedIn Browser) → Monitor Modules → AI Engine (OpenCode Zen) → Image Generation (Hugging Face/Pollinations) → Publisher → SQLite → Reports.",
+          tech: ["Python", "Playwright", "OpenCode Zen AI", "Hugging Face", "SQLite", "Click", "Rich"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "Full LinkedIn Monitoring", description: "Tracks profile views, search appearances, connections, post metrics, new comments and inbox messages in real time." },
+            { title: "AI Post Generation", description: "Auto-generates professional LinkedIn posts from your live GitHub commits and issues via the OpenCode Zen API." },
+            { title: "Context-Aware Images", description: "Generates a matching serious or funny image for every post using Hugging Face, with Pollinations fallback." },
+            { title: "Smart Auto Replies", description: "AI-drafted replies to comments and messages, respecting rate limits and human-like behavior patterns." },
+            { title: "Zero-Input Automation", description: "Fully autonomous 'post' and 'run' commands — no prompts required, safe to run unattended." },
+            { title: "Activity Reports", description: "Detailed reports on your LinkedIn activity, generated on demand or as part of the full automation cycle." },
+          ],
+          steps: [
+            { label: "Step 1: LinkedIn authentication with secure Playwright session persistence.", status: "completed" },
+            { label: "Step 2: Monitoring modules for profile, posts, comments and messages with SQLite storage.", status: "completed" },
+            { label: "Step 3: AI engine with post generation, context-aware images and reply drafting.", status: "completed" },
+            { label: "Step 4: Publishing and interaction automation with anti-detection and rate limiting.", status: "completed" },
+            { label: "Step 5: CLI orchestration with login, monitor, post, reply, report and full run commands.", status: "completed" },
+          ],
+        },
       ],
 
       "skills.title": "Skills",
@@ -889,6 +915,32 @@ const resources = {
             { label: "Step 3: Install and configure Microsoft Entra Connect on-premises.", status: "planned" },
             { label: "Step 4: Implement hybrid user synchronization and password hash sync.", status: "planned" },
             { label: "Step 5: Test and verify Single Sign-On (SSO) and Entra ID login.", status: "planned" },
+          ],
+        },
+        {
+          title: "LinkedIn AI Agent",
+          subtitle: "KI-gestützte LinkedIn-Automatisierung mit Inhaltserstellung",
+          description:
+            "Ein KI-gestütztes Automatisierungstoolkit, das Ihre LinkedIn-Präsenz komplett verwaltet: Profilansichten, Beiträge, Kommentare und Nachrichten werden überwacht, ansprechende Posts aus Ihrer Live-GitHub-Aktivität per OpenCode-Zen-API generiert, passende Bilder erstellt, Kommentare und Nachrichten automatisch beantwortet und detaillierte Aktivitätsberichte erzeugt — ganz ohne manuelle Eingaben.",
+          architecture:
+            "Python-CLI (Click + Rich) → Playwright (LinkedIn-Browser) → Monitoring-Module → KI-Engine (OpenCode Zen) → Bildgenerierung (Hugging Face/Pollinations) → Publisher → SQLite → Berichte.",
+          tech: ["Python", "Playwright", "OpenCode Zen AI", "Hugging Face", "SQLite", "Click", "Rich"],
+          author: "Vahid Rahmani",
+          showSteps: false,
+          features: [
+            { title: "Vollständiges LinkedIn-Monitoring", description: "Verfolgt Profilansichten, Suchergebnisse, Verbindungen, Beitrags-Metriken, neue Kommentare und Inbox-Nachrichten in Echtzeit." },
+            { title: "KI-Beitragsgenerierung", description: "Erstellt automatisch professionelle LinkedIn-Posts aus Ihren Live-GitHub-Commits und Issues über die OpenCode-Zen-API." },
+            { title: "Kontextbezogene Bilder", description: "Erzeugt ein passendes Bild im ernsten oder humorvollen Stil für jeden Beitrag — per Hugging Face, mit Pollinations-Fallback." },
+            { title: "Smarte Auto-Antworten", description: "KI-entworfene Antworten auf Kommentare und Nachrichten, mit Raten-Limits und menschlichem Verhalten." },
+            { title: "Automatisierung ohne Eingaben", description: "Vollautonome 'post'- und 'run'-Befehle — keine Bestätigungen nötig, sicher für unbeaufsichtigte Ausführung." },
+            { title: "Aktivitätsberichte", description: "Detaillierte Berichte über Ihre LinkedIn-Aktivität, auf Abruf oder als Teil des vollständigen Automatisierungszyklus." },
+          ],
+          steps: [
+            { label: "Step 1: LinkedIn-Authentifizierung mit sicherer Playwright-Sitzungspersistenz.", status: "completed" },
+            { label: "Step 2: Monitoring-Module für Profil, Beiträge, Kommentare und Nachrichten mit SQLite-Speicher.", status: "completed" },
+            { label: "Step 3: KI-Engine mit Beitragsgenerierung, kontextbezogenen Bildern und Antwortentwürfen.", status: "completed" },
+            { label: "Step 4: Veröffentlichungs- und Interaktionsautomatisierung mit Anti-Erkennung und Raten-Limits.", status: "completed" },
+            { label: "Step 5: CLI-Orchestrierung mit login, monitor, post, reply, report und full run Befehlen.", status: "completed" },
           ],
         },
       ],

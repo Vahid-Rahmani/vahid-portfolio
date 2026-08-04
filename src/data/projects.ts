@@ -27,6 +27,7 @@ export const demoUrls: Record<string, string> = {
 };
 
 export const featuredProjects = [
+  "LinkedIn AI Agent",
   "Cloud-Connected Hardware & IoT Monitor",
   "Global High-Availability Web Hosting with IaC",
   "Automated Hybrid Network & Monitoring Dashboard",

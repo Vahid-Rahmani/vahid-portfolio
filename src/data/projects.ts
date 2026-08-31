@@ -81,7 +81,7 @@ export const slugify = (title: string): string =>
     .replace(/(^-|-$)/g, "");
 
 export const projectImages: Record<string, string> = {
-  "automated-hybrid-network-monitoring-dashboard": "/project-images/network-dashboard.svg",
+  "automated-hybrid-network-monitoring-dashboard": "/project-images/monitoring.png",
   "hybrid-identity-sync-local-ad-to-azure-entra-id": "/project-images/hybrid-identity.svg",
   "serverless-network-sentinel-bot": "/project-images/sentinel-bot.svg",
   "cloud-connected-hardware-iot-monitor": cloudImg,

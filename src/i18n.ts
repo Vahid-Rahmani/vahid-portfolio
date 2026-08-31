@@ -225,7 +225,7 @@ const resources = {
             { label: "Step 2: Add live transcription, translation, and language detection.", status: "completed" },
             { label: "Step 3: Add Smart Notes, Clean Study File, and saved classes.", status: "completed" },
             { label: "Step 4: Publish the extension and user guide.", status: "completed" },
-            { label: "Step 5: Continue improving classroom integrations and study workflows.", status: "in-progress" },
+            { label: "Step 5: Continue improving classroom integrations and study workflows.", status: "completed" },
           ],
         },
         {
@@ -762,7 +762,7 @@ const resources = {
           description: "Eine Chrome-Erweiterung für Online-Unterricht mit Live-Transkription, Übersetzung in 78 Sprachen, Smart Class, gespeicherten Notizen und optionaler Audioübersetzung.",
           architecture: "Chrome-Erweiterung → Lokaler Speicher → Gemini API → Smart-Class-Overlay → Gespeicherte Lektionen.",
           tech: ["JavaScript", "Chrome Extensions", "Gemini API", "Live-Übersetzung", "Lokaler Speicher"],
-          steps: [{ label: "Zova-Erweiterung, Lernfunktionen und Installationsanleitung veröffentlicht.", status: "completed" }, { label: "Weitere Unterrichtsintegrationen und Lernabläufe verbessern.", status: "in-progress" }],
+          steps: [{ label: "Zova-Erweiterung, Lernfunktionen und Installationsanleitung veröffentlicht.", status: "completed" }, { label: "Weitere Unterrichtsintegrationen und Lernabläufe verbessern.", status: "completed" }],
         },
         {
           title: "AI Drop Agent",

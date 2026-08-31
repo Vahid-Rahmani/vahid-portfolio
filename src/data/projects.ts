@@ -8,14 +8,19 @@ export type Project = {
 import cloudImg from "../../img/cloud.jpg";
 
 export const githubUrls: Record<string, string> = {
-  "Automated Hybrid Network & Monitoring Dashboard": "https://github.com/vahidrahmaniinfo24-alt/Automated-Hybrid-Network-Monitoring-Dashboard",
-  "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/vahidrahmaniinfo24-alt/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
-  "Serverless Network Sentinel Bot": "https://github.com/vahidrahmaniinfo24-alt/Serverless-Network-Sentinel-Bot",
+  "Automated Hybrid Network & Monitoring Dashboard": "https://github.com/Vahid-Rahmani/Automated-Hybrid-Network-Monitoring-Dashboard",
+  "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/Vahid-Rahmani/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
+  "Serverless Network Sentinel Bot": "https://github.com/Vahid-Rahmani/Serverless-Network-Sentinel-Bot",
   "Cloud-Connected Hardware & IoT Monitor": "https://github.com/Vahid-Rahmani/Cloud-Connected-Hardware-IoT-Monitor",
   "Global High-Availability Web Hosting with IaC": "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
   "PyFlow — Python Learning Platform": "https://github.com/Vahid-Rahmani/-pyflow-platform/tree/main",
   "PyMentor — AI Coding Demo": "https://github.com/Vahid-Rahmani/py-mentor",
   "LinkedIn AI Agent": "https://github.com/Vahid-Rahmani/agent-for-linkdin",
+  "Zova — AI Learning Assistant": "https://github.com/Vahid-Rahmani/zofa",
+  "AI Drop Agent": "https://github.com/Vahid-Rahmani/AI-Drop-Agent",
+  "Zova Product Website": "https://github.com/Vahid-Rahmani/zovasite",
+  "Cloud DevOps Hub": "https://github.com/Vahid-Rahmani/cloud-devops-hub",
+  "Network to Cloud Sheets": "https://github.com/Vahid-Rahmani/network-to-cloud-sheets",
 };
 
 export const demoUrls: Record<string, string> = {
@@ -24,6 +29,7 @@ export const demoUrls: Record<string, string> = {
   "Global High-Availability Web Hosting with IaC": "https://global-high-availability-web-hosting-with-iacgit-bbegw6s42tjyu.streamlit.app/costs",
   "PyFlow — Python Learning Platform": "https://pyflow-platform.vercel.app/",
   "PyMentor — AI Coding Demo": "https://py-mentor.vercel.app",
+  "Zova — AI Learning Assistant": "https://zovasite.vercel.app/guide#install",
 };
 
 export const featuredProjects = [
@@ -31,6 +37,7 @@ export const featuredProjects = [
   "Cloud-Connected Hardware & IoT Monitor",
   "Global High-Availability Web Hosting with IaC",
   "Automated Hybrid Network & Monitoring Dashboard",
+  "Zova — AI Learning Assistant",
 ];
 
 export const stepWeight: Record<StepStatus, number> = {
@@ -82,4 +89,9 @@ export const projectImages: Record<string, string> = {
   "pyflow-python-learning-platform": "/project-images/pyflow.svg",
   "pymentor-ai-coding-demo": "/project-images/pymentor.svg",
   "linkedin-ai-agent": "/project-images/linkedin-agent.svg",
+  "zova-ai-learning-assistant": "/placeholder.svg",
+  "ai-drop-agent": "/placeholder.svg",
+  "zova-product-website": "/placeholder.svg",
+  "cloud-devops-hub": "/placeholder.svg",
+  "network-to-cloud-sheets": "/placeholder.svg",
 };

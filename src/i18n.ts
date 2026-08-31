@@ -366,10 +366,10 @@ const resources = {
           ],
           steps: [
             { label: "Step 1: Design agent-based monitoring architecture for live system metrics.", status: "completed" },
-            { label: "Step 2: Implement Python agent to collect CPU and gateway reachability data.", status: "in-progress" },
-            { label: "Step 3: Create JSON-based data exchange between agent and dashboard.", status: "planned" },
-            { label: "Step 4: Build Streamlit dashboard with real-time visualization.", status: "planned" },
-            { label: "Step 5: Deploy and test live dashboard functionality.", status: "planned" },
+            { label: "Step 2: Implement Python agent to collect CPU and gateway reachability data.", status: "completed" },
+            { label: "Step 3: Create JSON-based data exchange between agent and dashboard.", status: "completed" },
+            { label: "Step 4: Build Streamlit dashboard with real-time visualization.", status: "completed" },
+            { label: "Step 5: Deploy and test live dashboard functionality.", status: "in-progress" },
           ],
         },
         {
@@ -902,10 +902,10 @@ const resources = {
           ],
           steps: [
             { label: "Step 1: Agent-basierte Monitoring-Architektur für Live-Systemmetriken entwickeln.", status: "completed" },
-            { label: "Step 2: Python Agent zur Erfassung von CPU- und Gateway-Erreichbarkeitsdaten implementieren.", status: "in-progress" },
-            { label: "Step 3: JSON-basierten Datenaustausch zwischen Agent und Dashboard erstellen.", status: "planned" },
-            { label: "Step 4: Streamlit Dashboard mit Echtzeit-Visualisierung aufbauen.", status: "planned" },
-            { label: "Step 5: Live-Dashboard bereitstellen und Funktionalität testen.", status: "planned" },
+            { label: "Step 2: Python Agent zur Erfassung von CPU- und Gateway-Erreichbarkeitsdaten implementieren.", status: "completed" },
+            { label: "Step 3: JSON-basierten Datenaustausch zwischen Agent und Dashboard erstellen.", status: "completed" },
+            { label: "Step 4: Streamlit Dashboard mit Echtzeit-Visualisierung aufbauen.", status: "completed" },
+            { label: "Step 5: Live-Dashboard bereitstellen und Funktionalität testen.", status: "in-progress" },
           ],
         },
         {

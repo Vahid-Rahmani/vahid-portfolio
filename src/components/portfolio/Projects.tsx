@@ -185,6 +185,7 @@ const Projects = () => {
 
   const featured = items.filter((p) => featuredProjects.includes(p.title));
   const rest = items.filter((p) => !featuredProjects.includes(p.title));
+  const orderedProjects = [...featured, ...rest];
 
   return (
     <section id="projects" className="scroll-mt-24 border-b border-white/[0.06] px-0 py-16">
@@ -193,18 +194,8 @@ const Projects = () => {
         <h2 className="text-xl font-semibold tracking-tight text-[#f4f4f5]">{t("projects.title")}</h2>
       </div>
 
-      {featured.length > 0 && (
-        <div className="mb-6 space-y-4">
-          {featured.map((project, i) => (
-            <div key={project.title} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.08}s` }}>
-              <FeaturedCard project={project} onClick={() => setActive(project)} t={t} />
-            </div>
-          ))}
-        </div>
-      )}
-
       <div className="grid gap-4 sm:grid-cols-2">
-        {rest.map((project, i) => (
+        {orderedProjects.map((project, i) => (
           <div key={project.title} className="animate-fade-in-up" style={{ animationDelay: `${(i + featured.length) * 0.06}s` }}>
             <CompactCard project={project} onClick={() => setActive(project)} t={t} />
           </div>

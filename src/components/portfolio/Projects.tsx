@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Network, Shield, Bot, Cpu, Globe, FolderGit, X, CheckCircle2, CircleDot, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
-  githubUrls, demoUrls, featuredProjects, getProgress, getStatusLabel, statusColor, progressBarColor, slugify, projectImages, type Step, type Project,
+  githubUrls, demoUrls, featuredProjects, getProgress, getStatusLabel, statusColor, progressBarColor, slugify, type Step, type Project,
 } from "@/data/projects";
 import cloudImg from "../../../img/cloud.jpg";
 
@@ -148,9 +148,6 @@ const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () =>
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
           <div className="project-icon-glow flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400"><Icon size={20} /></div>
-          {project.title === "Automated Hybrid Network & Monitoring Dashboard" && (
-            <img src={projectImages[projectSlug]} alt="Monitoring dashboard preview" className="hidden h-16 w-24 shrink-0 rounded-lg object-cover ring-1 ring-white/10 sm:block" />
-          )}
           <div className="min-w-0">
             <h3 className="text-sm font-bold leading-snug text-[#f4f4f5] sm:font-medium">{project.title}</h3>
             <p className="mt-1 text-xs font-medium text-teal-400/80">{project.subtitle}</p>

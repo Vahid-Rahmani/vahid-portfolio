@@ -217,7 +217,7 @@ const resources = {
         {
           title: "Zova — AI Learning Assistant",
           subtitle: "Live translation and smart study tools for Chrome",
-          description: "A Chrome extension that helps learners understand online classes with live transcription, translation in 78 languages, Smart Class assistance, saved notes, study files, and optional translated audio.",
+          description: "Zova is an AI-powered classroom assistant for Chrome designed to help learners follow online classes, understand lesson content, and organize their study materials. It provides live classroom transcription, real-time translation, optional translated audio/dubbing, Smart Class explanations, AI-assisted questions and answers, lesson summaries, Smart Notes, vocabulary, chapter organization, saved class history, Study Maps, and detailed Study Guide views. Zova supports multilingual learning while keeping the classroom experience simple and focused, with class history and generated study materials stored locally in the browser where applicable. The app and all of its own features are completely free to use, and the extension works fully with a free Gemini API key. Zova is a learning assistant and does not replace teachers, educational institutions, or professional advice.",
           architecture: "Chrome Extension → Local Storage → Gemini API → Smart Class Overlay → Saved Lessons.",
           tech: ["JavaScript", "Chrome Extensions", "Gemini API", "Live Translation", "Local Storage"],
           steps: [
@@ -759,7 +759,7 @@ const resources = {
         {
           title: "Zova — AI Learning Assistant",
           subtitle: "Live-Übersetzung und intelligente Lernwerkzeuge für Chrome",
-          description: "Eine Chrome-Erweiterung für Online-Unterricht mit Live-Transkription, Übersetzung in 78 Sprachen, Smart Class, gespeicherten Notizen und optionaler Audioübersetzung.",
+          description: "Zova ist ein KI-gestützter Klassenassistent für Chrome, der Lernenden hilft, Online-Unterricht zu verfolgen, Inhalte zu verstehen und Lernmaterialien zu organisieren. Die Erweiterung bietet Live-Transkription, Echtzeitübersetzung, optionale Audioübersetzung, Smart-Class-Erklärungen, KI-gestützte Fragen und Antworten, Zusammenfassungen, Smart Notes, Vokabeln, Kapitelorganisation, gespeicherte Klassen, Study Maps und detaillierte Lernansichten. Zova unterstützt mehrsprachiges Lernen mit einer einfachen, fokussierten Unterrichtserfahrung; Verlauf und generierte Lernmaterialien werden, soweit anwendbar, lokal im Browser gespeichert. Die App und alle eigenen Funktionen sind vollständig kostenlos nutzbar und funktionieren vollständig mit einem kostenlosen Gemini-API-Schlüssel. Zova ist ein Lernassistent und ersetzt keine Lehrkräfte, Bildungseinrichtungen oder professionelle Beratung.",
           architecture: "Chrome-Erweiterung → Lokaler Speicher → Gemini API → Smart-Class-Overlay → Gespeicherte Lektionen.",
           tech: ["JavaScript", "Chrome Extensions", "Gemini API", "Live-Übersetzung", "Lokaler Speicher"],
           steps: [{ label: "Zova-Erweiterung, Lernfunktionen und Installationsanleitung veröffentlicht.", status: "completed" }, { label: "Weitere Unterrichtsintegrationen und Lernabläufe verbessern.", status: "completed" }],

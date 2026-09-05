@@ -16,14 +16,14 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud Engineer Trainee | Microsoft Azure & Windows Server | Infrastructure & Network Administration | Python",
+      "header.role": "Cloud Engineer Trainee | Azure & Windows Server | Infrastructure, Network & AI Automation | Python",
       "header.location": "Hamburg, Germany",
       "header.contactBtn": "Get in touch",
       "header.experienceBtn": "Experience",
       "header.cvBtn": "Resume",
 
       "about.title": "About Me",
-      "about.text": "Thanks to my solid experience in board-level repair, micro-soldering, and reading complex schematics, I have a deep understanding of the physical layer (Layer 1) of IT infrastructure. This enables me to precisely assemble, cable, and diagnose physical network components, server hardware, and IoT devices at the hardware level. I am currently training to become a Cloud Engineer to combine this physical expertise with modern cloud infrastructure (Azure, Terraform, Docker). I am looking for an entry-level position as a Junior Cloud Engineer or IT System Administrator in the Hamburg area.",
+      "about.text": "Thanks to my solid experience in board-level repair, micro-soldering, and reading complex schematics, I have a deep understanding of the physical layer (Layer 1) of IT infrastructure. This enables me to precisely assemble, cable, and diagnose physical network components, server hardware, and IoT devices at the hardware level. I am currently training to become a Cloud Engineer and extending that foundation through Azure, Terraform, Docker, Python automation and applied AI workflows, including prompt engineering, LangChain/LangGraph, RAG, MCP and multi-agent systems. I am looking for an entry-level position as a Junior Cloud Engineer or IT System Administrator in the Hamburg area.",
 
       "reveal.title": "Click here for more about me",
       "reveal.less": "Show less",
@@ -34,7 +34,7 @@ const resources = {
       "reveal.funTitle": "Fun Fact",
       "reveal.funText": "I repaired demanding mainboards at component level for over 2 years before turning to the cloud.",
       "reveal.learningTitle": "Currently learning",
-      "reveal.learningText": "Deepening Azure DevOps, Kubernetes basics and automated cloud deployments with Terraform.",
+      "reveal.learningText": "Deepening Azure DevOps, Kubernetes basics, Terraform deployments and production-oriented AI automation with LangChain, LangGraph, RAG and observability.",
 
       "experience.title": "Professional Experience",
       "experience.items": [
@@ -350,6 +350,23 @@ const resources = {
           ],
         },
         {
+          title: "Raspberry Pi AI Monitoring System",
+          subtitle: "Privacy-aware edge monitoring with anomaly detection",
+          description:
+            "An independent Raspberry Pi project focused on device health, performance telemetry and actionable incident analysis. It is separate from the environmental IoT monitor and is currently in the planning and foundation phase.",
+          architecture:
+            "Raspberry Pi Collector → SQLite History → Baseline/Anomaly Detector → Optional AI Explainer → FastAPI Dashboard → Alerts.",
+          tech: ["Python", "Raspberry Pi", "FastAPI", "SQLite", "Anomaly Detection", "Observability"],
+          icon: "Cpu",
+          steps: [
+            { label: "Step 1: Define the metric schema and monitoring configuration.", status: "in-progress" },
+            { label: "Step 2: Build the lightweight Raspberry Pi collector.", status: "planned" },
+            { label: "Step 3: Add local history, baseline learning and anomaly detection.", status: "planned" },
+            { label: "Step 4: Add the FastAPI dashboard and severity-based alerts.", status: "planned" },
+            { label: "Step 5: Add optional AI incident explanations and service deployment.", status: "planned" },
+          ],
+        },
+        {
           title: "Automated Hybrid Network & Monitoring Dashboard",
           subtitle: "Agent-based network monitoring with real-time visualization",
           description:
@@ -499,6 +516,7 @@ const resources = {
       "skills.groups": [
         { label: "Cloud Platforms", items: ["Microsoft Azure", "Azure Active Directory", "Azure VMs", "Virtual Networks (VNet)", "Identity & Access (IAM)"] },
         { label: "DevOps & Automation", items: ["Terraform (IaC)", "Docker", "Python (Basics)", "Bash & PowerShell", "Git / GitHub"] },
+        { label: "Applied AI & Automation", items: ["Prompt Engineering", "LLM & SLM Workflows", "LangChain", "LangGraph", "RAG", "MCP", "Tool Calling", "Multi-Agent Systems", "Evaluation & Observability"] },
         { label: "System Administration", items: ["Windows Server 2025", "Active Directory (AD DS)", "Linux (Ubuntu/Debian)"] },
         { label: "Network & Security", items: ["TCP/IP", "DNS", "DHCP", "Firewalls", "Routing & Switching"] },
         { label: "Hardware & Electronics", items: ["Board-Level Repair", "Micro-soldering", "Schematic Analysis", "Hardware Diagnostics"] },
@@ -516,9 +534,11 @@ const resources = {
       ],
       "certificates.earnedCerts": [
         { name: "B.Sc. Computer Science", detail: "Bachelor of Science — completed 2014", date: "" },
-        { name: "AI & Automation Certificate", detail: "AI & Automation Club — Project Builder (DCI). Advanced AI Career Assistant Framework & Parameterized Prompt Library using Gemini.", date: "Jul 6 – Jul 10, 2026" },
-        { name: "Phase 1 — Web & Programming Fundamentals", detail: "Python basics, file handling, REST APIs, HTML/CSS, Git/GitHub.", date: "Jun 2026" },
-        { name: "Phase 2 — Enterprise Linux, Docker, K8s, CCNA", detail: "Enterprise Linux administration, Docker containers, Kubernetes, CCNA networking.", date: "Jul 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "Advanced AI Career Assistant Framework & Parameterized Prompt Library using Gemini. DCI Digital Career Institute.", date: "Jul 6 – Jul 10, 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "Azure Infrastructure Automation (Cloud Operations) and Py-Mentor automated educational platform. Python, Git, OpenRouter API and Vercel. DCI Digital Career Institute.", date: "Jul 13 – Jul 17, 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "ZovaGraph AI. Python, LLM APIs, agent architecture, LangGraph, RAG, MCP and multi-agent workflows. DCI Digital Career Institute.", date: "Jul 20 – Jul 24, 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "Zova: AI-powered real-time classroom assistant for multilingual learning. LLM APIs, tool calling, LangGraph, RAG, MCP, multi-agent systems, evaluation, observability, Docker, CI/CD and Azure. DCI Digital Career Institute.", date: "Aug 10 – Aug 14, 2026" },
+        { name: "AI & Automation Lab — Advanced Participation Certificate", detail: "Completed all four weeks of the AI & Automation Lab with a focus on workflow design, automation logic and applied AI in professional contexts. 40 teaching units. DCI Digital Career Institute.", date: "Jul 6 – Aug 14, 2026" },
       ],
       "certificates.plannedCerts": [
         { name: "AZ-900 — Azure Fundamentals", detail: "Microsoft Azure cloud fundamentals certification.", date: "Upcoming" },
@@ -558,14 +578,14 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud Engineer Trainee | Microsoft Azure & Windows Server | Infrastructure & Network Administration | Python",
+      "header.role": "Cloud Engineer Trainee | Azure & Windows Server | Infrastructure, Netzwerk & KI-Automatisierung | Python",
       "header.location": "Hamburg, Deutschland",
       "header.contactBtn": "Kontakt aufnehmen",
       "header.experienceBtn": "Werdegang",
       "header.cvBtn": "Lebenslauf",
 
       "about.title": "Über mich",
-      "about.text": "Dank meiner fundierten Erfahrung in der Board-Level-Reparatur, im Mikrolöten und im Lesen von komplexen Schaltplänen (Schematics) besitze ich ein tiefes Verständnis für die physische Schicht (Layer 1) der IT-Infrastruktur. Dies ermöglicht es mir, physische Netzwerkkomponenten, Server-Hardware und IoT-Geräte präzise zu assemblieren, zu verkabeln und auf Hardware-Ebene zu diagnostizieren. Aktuell bilde ich mich zum Cloud Engineer weiter, um diese physische Expertise mit moderner Cloud-Infrastruktur (Azure, Terraform, Docker) zu verbinden. Ich suche eine Einstiegsposition als Junior Cloud Engineer oder IT-Systemadministrator im Raum Hamburg.",
+      "about.text": "Dank meiner fundierten Erfahrung in der Board-Level-Reparatur, im Mikrolöten und im Lesen komplexer Schaltpläne besitze ich ein tiefes Verständnis für die physische Schicht (Layer 1) der IT-Infrastruktur. Dies ermöglicht es mir, physische Netzwerkkomponenten, Server-Hardware und IoT-Geräte präzise zu assemblieren, zu verkabeln und auf Hardware-Ebene zu diagnostizieren. Aktuell bilde ich mich zum Cloud Engineer weiter und erweitere diese Grundlage durch Azure, Terraform, Docker, Python-Automatisierung und angewandte KI-Workflows wie Prompt Engineering, LangChain/LangGraph, RAG, MCP und Multi-Agent-Systeme. Ich suche eine Einstiegsposition als Junior Cloud Engineer oder IT-Systemadministrator im Raum Hamburg.",
 
       "reveal.title": "Klicke hier für mehr über mich",
       "reveal.less": "Weniger anzeigen",
@@ -576,7 +596,7 @@ const resources = {
       "reveal.funTitle": "Fun Fact",
       "reveal.funText": "Ich habe über 2 Jahre lang anspruchsvolle Mainboards auf Komponentenebene repariert, bevor ich mich der Cloud zuwandte.",
       "reveal.learningTitle": "Aktuell am Lernen",
-      "reveal.learningText": "Vertiefung in Azure DevOps, Kubernetes-Grundlagen und automatisierte Cloud-Deployments mit Terraform.",
+      "reveal.learningText": "Vertiefung in Azure DevOps, Kubernetes-Grundlagen, Terraform-Deployments und produktionsnaher KI-Automatisierung mit LangChain, LangGraph, RAG und Observability.",
 
       "experience.title": "Beruflicher Werdegang",
       "experience.items": [
@@ -886,6 +906,23 @@ const resources = {
           ],
         },
         {
+          title: "Raspberry Pi AI Monitoring System",
+          subtitle: "Datenschutzorientiertes Edge-Monitoring mit Anomalieerkennung",
+          description:
+            "Ein eigenständiges Raspberry-Pi-Projekt für Gerätezustand, Leistungsmetriken und nachvollziehbare Störungsanalyse. Es bleibt getrennt vom bestehenden Umwelt-IoT-Monitor und befindet sich aktuell in der Planungs- und Grundlagenphase.",
+          architecture:
+            "Raspberry-Pi-Collector → SQLite-Verlauf → Baseline/Anomalieerkennung → Optionaler KI-Erklärer → FastAPI-Dashboard → Alarme.",
+          tech: ["Python", "Raspberry Pi", "FastAPI", "SQLite", "Anomalieerkennung", "Observability"],
+          icon: "Cpu",
+          steps: [
+            { label: "Step 1: Metrikschema und Monitoring-Konfiguration definieren.", status: "in-progress" },
+            { label: "Step 2: Leichtgewichtigen Raspberry-Pi-Collector entwickeln.", status: "planned" },
+            { label: "Step 3: Lokale Historie, Baseline-Lernen und Anomalieerkennung ergänzen.", status: "planned" },
+            { label: "Step 4: FastAPI-Dashboard und Alarme nach Schweregrad ergänzen.", status: "planned" },
+            { label: "Step 5: Optionale KI-Erklärungen und Service-Deployment ergänzen.", status: "planned" },
+          ],
+        },
+        {
           title: "Automated Hybrid Network & Monitoring Dashboard",
           subtitle: "Agent-basiertes Netzwerküberwachungssystem mit Echtzeit-Visualisierung",
           description:
@@ -1035,6 +1072,7 @@ const resources = {
       "skills.groups": [
         { label: "Cloud-Plattformen", items: ["Microsoft Azure", "Azure Active Directory", "Azure VMs", "Virtual Networks (VNet)", "Identity & Access (IAM)"] },
         { label: "DevOps & Automatisierung", items: ["Terraform (IaC)", "Docker", "Python (Grundlagen)", "Bash & PowerShell", "Git / GitHub"] },
+        { label: "Angewandte KI & Automatisierung", items: ["Prompt Engineering", "LLM- & SLM-Workflows", "LangChain", "LangGraph", "RAG", "MCP", "Tool Calling", "Multi-Agent-Systeme", "Evaluation & Observability"] },
         { label: "Systemadministration", items: ["Windows Server 2025", "Active Directory (AD DS)", "Linux (Ubuntu/Debian)"] },
         { label: "Netzwerk & Sicherheit", items: ["TCP/IP", "DNS", "DHCP", "Firewalls", "Routing & Switching"] },
         { label: "Hardware & Elektronik", items: ["Board-Level-Reparatur", "Mikrolöten", "Schaltplan-Analyse", "Hardware-Diagnose"] },
@@ -1052,9 +1090,11 @@ const resources = {
       ],
       "certificates.earnedCerts": [
         { name: "B.Sc. Informatik", detail: "Bachelor of Science — abgeschlossen 2014", date: "" },
-        { name: "AI & Automation Zertifikat", detail: "AI & Automation Club — Project Builder (DCI). Advanced AI Career Assistant Framework & parametrisierte Prompt-Bibliothek mit Gemini.", date: "6. Jul – 10. Jul 2026" },
-        { name: "Phase 1 — Web- & Programmiergrundlagen", detail: "Python-Grundlagen, Dateiverarbeitung, REST-APIs, HTML/CSS, Git/GitHub.", date: "Jun 2026" },
-        { name: "Phase 2 — Enterprise Linux, Docker, K8s, CCNA", detail: "Enterprise Linux-Administration, Docker-Container, Kubernetes, CCNA-Netzwerk.", date: "Jul 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "Advanced AI Career Assistant Framework & parametrisierte Prompt-Bibliothek mit Gemini. DCI Digital Career Institute.", date: "6. Jul – 10. Jul 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "Azure Infrastructure Automation (Cloud Operations) und Py-Mentor als automatisierte Bildungsplattform. Python, Git, OpenRouter API und Vercel. DCI Digital Career Institute.", date: "13. Jul – 17. Jul 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "ZovaGraph AI. Python, LLM APIs, Agent Architecture, LangGraph, RAG, MCP und Multi-Agent-Workflows. DCI Digital Career Institute.", date: "20. Jul – 24. Jul 2026" },
+        { name: "AI & Automation Club — Project Builder", detail: "Zova: KI-gestützter Echtzeit-Klassenassistent für mehrsprachiges Lernen. LLM APIs, Tool Calling, LangGraph, RAG, MCP, Multi-Agent-Systeme, Evaluation, Observability, Docker, CI/CD und Azure. DCI Digital Career Institute.", date: "10. Aug – 14. Aug 2026" },
+        { name: "AI & Automation Lab — Advanced Participation Certificate", detail: "Alle vier Wochen des AI & Automation Lab abgeschlossen, mit Fokus auf Workflow-Design, Automatisierungslogik und angewandte KI im beruflichen Kontext. 40 Unterrichtseinheiten. DCI Digital Career Institute.", date: "6. Jul – 14. Aug 2026" },
       ],
       "certificates.plannedCerts": [
         { name: "AZ-900 — Azure Grundlagen", detail: "Microsoft Azure Cloud-Grundlagen-Zertifizierung.", date: "Bevorstehend" },

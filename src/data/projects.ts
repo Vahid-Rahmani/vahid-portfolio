@@ -18,6 +18,7 @@ export const githubUrls: Record<string, string> = {
   "LinkedIn AI Agent": "https://github.com/Vahid-Rahmani/agent-for-linkdin",
   "Zova — AI Learning Assistant": "https://github.com/Vahid-Rahmani/zofa",
   "AI Drop Agent": "https://github.com/Vahid-Rahmani/AI-Drop-Agent",
+  "Raspberry Pi AI Monitoring System": "https://github.com/Vahid-Rahmani/Raspberry-Pi-AI-Monitoring-System",
   "Zova Product Website": "https://github.com/Vahid-Rahmani/zovasite",
   "Cloud DevOps Hub": "https://github.com/Vahid-Rahmani/cloud-devops-hub",
   "Network to Cloud Sheets": "https://github.com/Vahid-Rahmani/network-to-cloud-sheets",
@@ -37,6 +38,7 @@ export const featuredProjects = [
   "Cloud-Connected Hardware & IoT Monitor",
   "Global High-Availability Web Hosting with IaC",
   "Automated Hybrid Network & Monitoring Dashboard",
+  "Raspberry Pi AI Monitoring System",
   "Zova — AI Learning Assistant",
 ];
 

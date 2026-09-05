@@ -37,9 +37,10 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-40 hidden w-[280px] flex-col justify-between border-r border-white/[0.06] bg-[#09090b] px-8 py-12 lg:flex">
+    <aside className="command-sidebar fixed inset-y-0 left-0 z-40 hidden w-[300px] flex-col justify-between px-9 py-12 lg:flex">
       <div>
         <a href="#projects" className="block">
+          <div className="mb-5 flex items-center gap-3"><span className="brand-mark">VR</span><span className="h-px flex-1 bg-gradient-to-r from-cyan-300/40 to-transparent" /></div>
           <h1 className="text-2xl font-semibold tracking-tight text-[#f4f4f5]">
             Vahid Rahmani
           </h1>

@@ -144,7 +144,7 @@ const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () =>
   const demo = project.demoUrl || demoUrls[project.title];
   const projectSlug = slugify(project.title);
   return (
-    <button onClick={onClick} className="project-card group flex flex-col rounded-xl p-5 text-left transition-all duration-300 hover:-translate-y-1">
+    <button onClick={onClick} className="project-card group flex flex-col rounded-2xl p-5 text-left transition-all duration-500 hover:-translate-y-2">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
           <div className="project-icon-glow flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400"><Icon size={20} /></div>
@@ -188,13 +188,13 @@ const Projects = () => {
   const orderedProjects = [...featured, ...rest];
 
   return (
-    <section id="projects" className="scroll-mt-24 border-b border-white/[0.06] px-0 py-16">
+    <section id="projects" className="scroll-mt-24 border-b border-cyan-300/10 px-0 py-16">
       <div className="mb-8 flex items-center gap-2">
         <FolderGit className="text-teal-400" size={20} />
         <h2 className="text-xl font-semibold tracking-tight text-[#f4f4f5]">{t("projects.title")}</h2>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="project-grid grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {orderedProjects.map((project, i) => (
           <div key={project.title} className="animate-fade-in-up" style={{ animationDelay: `${(i + featured.length) * 0.06}s` }}>
             <CompactCard project={project} onClick={() => setActive(project)} t={t} />

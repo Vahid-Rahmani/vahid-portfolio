@@ -96,7 +96,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: #050811;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -104,6 +105,66 @@
     background-color: #ff6b57;
     color: #0a0f1e;
   }
+}
+
+/* ── Signature Signal Grid theme ── */
+.portfolio-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(circle at 55% -10%, #102841 0, #07101d 34%, #050811 68%);
+}
+
+.signal-backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.signal-grid { position: absolute; inset: 0; opacity: .24; background-image: linear-gradient(rgba(73,220,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(73,220,255,.1) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to bottom, black, transparent 85%); animation: grid-drift 18s linear infinite; }
+.signal-orb { position: absolute; width: 38rem; height: 38rem; border-radius: 50%; filter: blur(110px); opacity: .16; animation: orb-float 12s ease-in-out infinite alternate; }
+.signal-orb-a { top: -18rem; right: -8rem; background: #00e7ff; }
+.signal-orb-b { left: 20%; top: 38%; background: #6d5cff; animation-delay: -5s; }
+.signal-scan { position: absolute; inset: -20% 0 auto; height: 18rem; background: linear-gradient(180deg, transparent, rgba(77,224,255,.055), transparent); animation: scanline 11s linear infinite; }
+.signal-noise { position: absolute; inset: 0; opacity: .032; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); }
+
+.command-sidebar { background: linear-gradient(180deg, rgba(7,13,24,.94), rgba(5,8,17,.88)); border-right: 1px solid rgba(91,221,255,.11); backdrop-filter: blur(22px); box-shadow: 24px 0 80px rgba(0,0,0,.18); }
+.brand-mark { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 1px solid rgba(83,226,255,.35); border-radius: .85rem; font-family: "Space Grotesk", sans-serif; font-weight: 700; color: #7de8ff; background: linear-gradient(135deg, rgba(49,214,255,.14), rgba(111,92,255,.09)); box-shadow: inset 0 0 18px rgba(76,218,255,.08), 0 0 24px rgba(76,218,255,.08); }
+.command-hero { position: relative; }
+.hero-identity, .ops-panel { border: 1px solid rgba(105,223,255,.12); background: linear-gradient(145deg, rgba(14,25,42,.78), rgba(7,12,23,.62)); backdrop-filter: blur(20px); box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 24px 80px rgba(0,0,0,.23); }
+.ops-panel { position: relative; overflow: hidden; }
+.ops-panel::before { content: ""; position: absolute; inset: 0 0 auto; height: 2px; background: linear-gradient(90deg, transparent, #51e3ff, transparent); animation: data-sweep 3.4s ease-in-out infinite; }
+.ops-row { display: grid; grid-template-columns: 1.4rem 1fr auto; align-items: center; gap: .6rem; color: #8eeaff; font-size: .82rem; }
+.ops-row span { color: #aab7c8; }
+.ops-row b { color: #79f2bd; font: 600 .64rem/1 "Space Grotesk", sans-serif; letter-spacing: .12em; }
+.signal-dot { width: .48rem; height: .48rem; border-radius: 50%; background: #55f1c1; box-shadow: 0 0 0 4px rgba(85,241,193,.08), 0 0 18px #55f1c1; animation: signal-pulse 1.8s ease-in-out infinite; }
+.telemetry-bars { display: flex; height: 100%; align-items: end; gap: 4px; }
+.telemetry-bars i { flex: 1; min-height: 16%; border-radius: 2px 2px 0 0; background: linear-gradient(to top, #5b5cff, #43def5); animation: telemetry 1.5s ease-in-out infinite alternate; }
+.glass-button { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); transition: .25s ease; }
+.glass-button:hover { border-color: rgba(94,229,255,.32); color: white; transform: translateY(-2px); }
+
+.project-card { position: relative; overflow: hidden; background: linear-gradient(155deg, rgba(14,25,41,.82), rgba(7,12,23,.73)); border-color: rgba(105,223,255,.11); box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 14px 50px rgba(0,0,0,.18); }
+.project-card::before { content: ""; position: absolute; width: 11rem; height: 11rem; right: -5rem; top: -6rem; border-radius: 50%; background: rgba(74,224,255,.08); filter: blur(35px); transition: .5s ease; }
+.project-card::after { content: ""; position: absolute; inset: auto 12% 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(83,226,255,.7), transparent); transform: scaleX(0); transition: transform .5s ease; }
+.project-card:hover { border-color: rgba(85,229,255,.34); box-shadow: 0 28px 70px rgba(0,0,0,.35), 0 0 35px rgba(62,210,255,.07); }
+.project-card:hover::before { transform: scale(1.45); background: rgba(111,92,255,.12); }
+.project-card:hover::after { transform: scaleX(1); }
+.project-card > * { position: relative; z-index: 1; }
+.glitch-title { position: relative; text-shadow: 0 0 38px rgba(82,225,255,.11); }
+.glitch-title::after { content: attr(data-text); position: absolute; inset: 0; color: #61dff8; opacity: 0; transform: translateX(2px); clip-path: inset(40% 0 42%); }
+.glitch-title:hover::after { opacity: .45; animation: glitch .45s steps(2,end) 2; }
+
+@keyframes grid-drift { to { background-position: 56px 56px; } }
+@keyframes orb-float { to { transform: translate3d(5rem, 3rem, 0) scale(1.12); } }
+@keyframes scanline { from { transform: translateY(-30vh); } to { transform: translateY(140vh); } }
+@keyframes data-sweep { 0%,100% { transform: translateX(-100%); opacity: 0; } 40%,60% { opacity: 1; } 70% { transform: translateX(100%); } }
+@keyframes signal-pulse { 50% { opacity: .52; transform: scale(.82); } }
+@keyframes telemetry { from { height: 18%; } to { height: 92%; } }
+@keyframes glitch { 0% { transform: translateX(-2px); } 50% { transform: translateX(3px); } 100% { transform: translateX(0); } }
+
+@media (max-width: 639px) {
+  .portfolio-shell { background: radial-gradient(circle at 70% 0, #10283e, #050811 52%); }
+  .profile-card { background: linear-gradient(145deg, rgba(14,25,42,.88), rgba(7,12,23,.72)); border-color: rgba(105,223,255,.14); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-grid, .signal-orb, .signal-scan, .ops-panel::before, .signal-dot, .telemetry-bars i { animation: none !important; }
+  .project-card { transition-duration: .01ms !important; }
 }
 
 @keyframes fadeInUp {

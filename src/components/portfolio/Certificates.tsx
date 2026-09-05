@@ -47,8 +47,8 @@ const Certificates = () => {
                 <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("certificates.earned")}</p>
               </div>
               <div className="flex flex-col gap-3">
-                {earned.map((cert) => (
-                  <div key={cert.name} className="rounded-lg border border-emerald-400/10 bg-emerald-400/[0.03] px-3 py-2.5">
+                {earned.map((cert, index) => (
+                  <div key={`${cert.name}-${cert.date}-${index}`} className="rounded-lg border border-emerald-400/10 bg-emerald-400/[0.03] px-3 py-2.5">
                     <div className="flex items-center justify-between gap-2">
                       <span className="text-sm font-medium text-emerald-300">{cert.name}</span>
                       {cert.date && <span className="shrink-0 text-xs text-zinc-500">{cert.date}</span>}
@@ -64,8 +64,8 @@ const Certificates = () => {
                 <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("certificates.planned")}</p>
               </div>
               <div className="flex flex-col gap-3">
-                {planned.map((cert) => (
-                  <div key={cert.name} className="rounded-lg border border-teal-400/10 bg-teal-400/[0.03] px-3 py-2.5">
+                {planned.map((cert, index) => (
+                  <div key={`${cert.name}-${cert.date}-${index}`} className="rounded-lg border border-teal-400/10 bg-teal-400/[0.03] px-3 py-2.5">
                     <div className="flex items-center justify-between gap-2">
                       <span className="text-sm font-medium text-teal-400">{cert.name}</span>
                       {cert.date && <span className="shrink-0 text-xs text-zinc-500">{cert.date}</span>}

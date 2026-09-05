@@ -17,7 +17,7 @@ const Contact = () => {
           <a href="https://www.linkedin.com/in/vahid-rahmani-699944417/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400">
             <Linkedin size={16} /> {t("contact.linkedin")}
           </a>
-          <a href="https://github.com/vahidrahmaniinfo24-alt" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400">
+          <a href="https://github.com/Vahid-Rahmani" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400">
             <Github size={16} /> {t("contact.github")}
           </a>
         </div>

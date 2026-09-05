@@ -87,7 +87,7 @@ const Sidebar = () => {
       </div>
 
       <div className="flex items-center gap-4 text-zinc-500">
-        <a href="https://github.com/vahidrahmaniinfo24-alt" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="GitHub">
+        <a href="https://github.com/Vahid-Rahmani" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="GitHub">
           <Github size={18} />
         </a>
         <a href="https://www.linkedin.com/in/vahid-rahmani-699944417/" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="LinkedIn">

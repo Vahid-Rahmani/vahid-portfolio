@@ -16,7 +16,7 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud Engineer & IT System Administrator",
+      "header.role": "Cloud Engineer Trainee | Microsoft Azure & Windows Server | Infrastructure & Network Administration | Python",
       "header.location": "Hamburg, Germany",
       "header.contactBtn": "Get in touch",
       "header.experienceBtn": "Experience",
@@ -558,7 +558,7 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud Engineer & IT System Administrator",
+      "header.role": "Cloud Engineer Trainee | Microsoft Azure & Windows Server | Infrastructure & Network Administration | Python",
       "header.location": "Hamburg, Deutschland",
       "header.contactBtn": "Kontakt aufnehmen",
       "header.experienceBtn": "Werdegang",

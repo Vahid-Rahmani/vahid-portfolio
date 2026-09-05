@@ -44,7 +44,7 @@ const Sidebar = () => {
             Vahid Rahmani
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-            Cloud Engineer & IT System Administrator
+            Cloud Engineer Trainee · Azure · Windows Server · Networks · Python
           </p>
         </a>
 
@@ -90,7 +90,7 @@ const Sidebar = () => {
         <a href="https://github.com/vahidrahmaniinfo24-alt" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="GitHub">
           <Github size={18} />
         </a>
-        <a href="https://linkedin.com/in/vahid-rahmani-699944417" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/vahid-rahmani-699944417/" target="_blank" rel="noreferrer" className="transition-colors hover:text-teal-400" aria-label="LinkedIn">
           <Linkedin size={18} />
         </a>
         <a href="mailto:vahidrahmani.info@gmail.com" className="transition-colors hover:text-teal-400" aria-label="E-Mail">

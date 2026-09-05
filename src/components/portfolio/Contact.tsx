@@ -14,7 +14,7 @@ const Contact = () => {
           <a href="mailto:vahidrahmani.info@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-[#f4f4f5] px-5 py-2.5 text-sm font-medium text-[#09090b] transition hover:bg-zinc-200">
             <Mail size={16} /> {t("contact.email")}
           </a>
-          <a href="https://linkedin.com/in/vahid-rahmani-699944417" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400">
+          <a href="https://www.linkedin.com/in/vahid-rahmani-699944417/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400">
             <Linkedin size={16} /> {t("contact.linkedin")}
           </a>
           <a href="https://github.com/vahidrahmaniinfo24-alt" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400">

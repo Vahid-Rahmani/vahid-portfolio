@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import {
   Sparkles, Cloud, KeyRound, Server, Network, Users, Boxes, Container,
-  Code, Terminal, GitBranch, Globe, Shield, Route, CircuitBoard, Wrench, FileCode, Scan,
+  Code, Terminal, GitBranch, Globe, Shield, Route, CircuitBoard, Wrench, FileCode, Scan, CircleHelp,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {

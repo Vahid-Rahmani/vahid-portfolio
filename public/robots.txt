@@ -1,3 +1,5 @@
 User-agent: *
-Disallow: /
 Disallow: /img/vahid_cv.pdf
+Allow: /
+
+Sitemap: https://vahid-portfolio-three.vercel.app/sitemap.xml

@@ -262,18 +262,19 @@ const resources = {
         },
         {
           title: "Cloud-Connected Hardware & IoT Monitor",
-          subtitle: "DIY temperature monitoring for server rooms with Azure IoT Hub",
+          subtitle: "Raspberry Pi/ESP32 telemetry and AI-assisted system monitoring",
           description:
-            "A DIY temperature monitoring system for server rooms using custom hardware sensors connected to Azure IoT Hub, with a Streamlit dashboard for real-time visualization and alerts. This project builds a hardware device that measures temperature in computer/server rooms and sends the data to Azure for monitoring and visualization.",
+            "A Raspberry Pi and ESP32 monitoring platform that connects physical sensors, cloud telemetry and local operations data. Alongside environmental temperature monitoring, the project is being extended with an AI-assisted Raspberry Pi system-monitoring track for device health, anomaly detection and actionable incident analysis.",
           architecture:
-            "Hardware Sensor (ESP32/Pi + DHT22/SHT31) → MQTT/HTTPS → Azure IoT Hub → Time Series Insights → Streamlit Dashboard.",
-          tech: ["Python", "C++", "ESP32", "Raspberry Pi", "Azure IoT Hub", "Streamlit", "MQTT", "DHT22/SHT31"],
+            "Sensors + Raspberry Pi system metrics → Edge collector → MQTT/HTTPS + SQLite → Azure IoT Hub / FastAPI → Streamlit Dashboard → Anomaly Detection → Optional AI Explanation.",
+          tech: ["Python", "C++", "ESP32", "Raspberry Pi", "Azure IoT Hub", "FastAPI", "Streamlit", "SQLite", "MQTT", "Anomaly Detection", "DHT22/SHT31"],
           author: "Vahid Rahmani",
           showSteps: false,
           features: [
             { title: "DIY Hardware", description: "Build your own temperature sensor using affordable components like ESP32 or Raspberry Pi." },
             { title: "Azure IoT Hub", description: "Secure, scalable cloud connection for IoT devices with device provisioning and telemetry storage." },
-            { title: "Real-time Dashboard", description: "Live temperature readings with interactive charts, KPI cards, and alert management." },
+            { title: "Real-time Dashboard", description: "Live temperature readings and device-health metrics with interactive charts, KPI cards, and alert management." },
+            { title: "AI-assisted System Monitoring", description: "A Raspberry Pi monitoring track for health metrics, baseline learning, anomaly detection and evidence-based incident explanations." },
             { title: "Multi-zone Monitoring", description: "Track multiple server rooms or rack locations with per-zone status indicators." },
             { title: "Alert System", description: "Email/webhook notifications when temperature exceeds warning (28°C) or critical (35°C) thresholds." },
             { title: "Historical Data", description: "Store and visualize temperature trends over time with Time Series Insights." },
@@ -335,6 +336,7 @@ const resources = {
             { phase: "Phase 3", title: "Azure Integration", status: "planned", items: ["Create Azure IoT Hub resource", "Set up device authentication (X.509/SAS)", "Configure Time Series Insights", "Set up alert rules and action groups", "Implement direct methods for remote config"] },
             { phase: "Phase 4", title: "Dashboard Enhancement", status: "planned", items: ["Real-time temperature charts (plotly)", "Multi-sensor comparison view", "Historical data analysis", "Alert history and notifications", "Mobile-responsive design"] },
             { phase: "Phase 5", title: "Production Deployment", status: "planned", items: ["3D print sensor enclosure", "Deploy sensors in server room", "Set up monitoring and alerting", "Documentation and user guide", "Open-source hardware designs"] },
+            { phase: "Phase 6", title: "AI-assisted Raspberry Pi Monitoring", status: "planned", items: ["Collect CPU, memory, disk, temperature and uptime metrics", "Store local history in SQLite", "Learn normal behaviour and detect anomalies", "Add FastAPI health endpoints and severity-based alerts", "Add optional AI incident explanations"] },
           ],
           alertThresholds: [
             { status: "OK", temp: "< 28°C", color: "Green", action: "Normal operation" },
@@ -347,23 +349,7 @@ const resources = {
             { label: "Step 3: Azure IoT Hub device provisioning and MQTT telemetry sending.", status: "planned" },
             { label: "Step 4: Streamlit dashboard with real-time charts and alert system.", status: "planned" },
             { label: "Step 5: Multi-zone monitoring, historical data, and 3D-printed enclosures.", status: "planned" },
-          ],
-        },
-        {
-          title: "Raspberry Pi AI Monitoring System",
-          subtitle: "Privacy-aware edge monitoring with anomaly detection",
-          description:
-            "An independent Raspberry Pi project focused on device health, performance telemetry and actionable incident analysis. It is separate from the environmental IoT monitor and is currently in the planning and foundation phase.",
-          architecture:
-            "Raspberry Pi Collector → SQLite History → Baseline/Anomaly Detector → Optional AI Explainer → FastAPI Dashboard → Alerts.",
-          tech: ["Python", "Raspberry Pi", "FastAPI", "SQLite", "Anomaly Detection", "Observability"],
-          icon: "Cpu",
-          steps: [
-            { label: "Step 1: Define the metric schema and monitoring configuration.", status: "in-progress" },
-            { label: "Step 2: Build the lightweight Raspberry Pi collector.", status: "planned" },
-            { label: "Step 3: Add local history, baseline learning and anomaly detection.", status: "planned" },
-            { label: "Step 4: Add the FastAPI dashboard and severity-based alerts.", status: "planned" },
-            { label: "Step 5: Add optional AI incident explanations and service deployment.", status: "planned" },
+            { label: "Step 6: Add AI-assisted Raspberry Pi system monitoring and anomaly explanations.", status: "planned" },
           ],
         },
         {
@@ -818,18 +804,19 @@ const resources = {
         },
         {
           title: "Cloud-Connected Hardware & IoT Monitor",
-          subtitle: "DIY-Temperaturüberwachung für Serverräume mit Azure IoT Hub",
+          subtitle: "Raspberry-Pi/ESP32-Telemetrie und KI-gestütztes Systemmonitoring",
           description:
-            "Ein DIY-Temperaturüberwachungssystem für Serverräume mit benutzerdefinierten Hardware-Sensoren, die mit Azure IoT Hub verbunden sind, und einem Streamlit-Dashboard für Echtzeit-Visualisierung und Alarme. Dieses Projekt baut ein Hardware-Gerät, das die Temperatur in Computer-/Serverräumen misst und die Daten zur Überwachung und Visualisierung an Azure sendet.",
+            "Eine Raspberry-Pi- und ESP32-Monitoring-Plattform, die physische Sensoren, Cloud-Telemetrie und lokale Betriebsdaten verbindet. Neben der Umgebungstemperaturüberwachung wird das Projekt um einen KI-gestützten Raspberry-Pi-Systemmonitor für Gerätezustand, Anomalieerkennung und nachvollziehbare Störungsanalyse erweitert.",
           architecture:
-            "Hardware-Sensor (ESP32/Pi + DHT22/SHT31) → MQTT/HTTPS → Azure IoT Hub → Time Series Insights → Streamlit Dashboard.",
-          tech: ["Python", "C++", "ESP32", "Raspberry Pi", "Azure IoT Hub", "Streamlit", "MQTT", "DHT22/SHT31"],
+            "Sensoren + Raspberry-Pi-Systemmetriken → Edge-Collector → MQTT/HTTPS + SQLite → Azure IoT Hub / FastAPI → Streamlit Dashboard → Anomalieerkennung → Optionale KI-Erklärung.",
+          tech: ["Python", "C++", "ESP32", "Raspberry Pi", "Azure IoT Hub", "FastAPI", "Streamlit", "SQLite", "MQTT", "Anomalieerkennung", "DHT22/SHT31"],
           author: "Vahid Rahmani",
           showSteps: false,
           features: [
             { title: "DIY-Hardware", description: "Bauen Sie Ihren eigenen Temperatursensor mit erschwinglichen Komponenten wie ESP32 oder Raspberry Pi." },
             { title: "Azure IoT Hub", description: "Sichere, skalierbare Cloud-Verbindung für IoT-Geräte mit Gerätebereitstellung und Telemetriespeicherung." },
-            { title: "Echtzeit-Dashboard", description: "Live-Temperaturwerte mit interaktiven Diagrammen, KPI-Karten und Alarmverwaltung." },
+            { title: "Echtzeit-Dashboard", description: "Live-Temperaturwerte und Gerätezustandsmetriken mit interaktiven Diagrammen, KPI-Karten und Alarmverwaltung." },
+            { title: "KI-gestütztes Systemmonitoring", description: "Ein Raspberry-Pi-Monitoring-Track für Zustandsmetriken, Baseline-Lernen, Anomalieerkennung und nachvollziehbare Störungserklärungen." },
             { title: "Multi-Zonen-Überwachung", description: "Verfolgen Sie mehrere Serverräume oder Rack-Standorte mit Statusanzeige pro Zone." },
             { title: "Alarmsystem", description: "E-Mail/Webhook-Benachrichtigungen bei Überschreitung der Warnschwelle (28°C) oder kritischen Schwelle (35°C)." },
             { title: "Historische Daten", description: "Speichern und visualisieren Sie Temperaturtrends über die Zeit mit Time Series Insights." },
@@ -891,6 +878,7 @@ const resources = {
             { phase: "Phase 3", title: "Azure-Integration", status: "planned", items: ["Azure IoT Hub Ressource erstellen", "Geräteauthentifizierung einrichten (X.509/SAS)", "Time Series Insights konfigurieren", "Alarmregeln und Aktionsgruppen einrichten", "Direktmethoden für Fernkonfiguration implementieren"] },
             { phase: "Phase 4", title: "Dashboard-Verbesserung", status: "planned", items: ["Echtzeit-Temperaturdiagramme (plotly)", "Mehrere Sensoren Vergleichsansicht", "Historische Datenanalyse", "Alarmverlauf und Benachrichtigungen", "Mobile-responsives Design"] },
             { phase: "Phase 5", title: "Produktionsbereitstellung", status: "planned", items: ["3D-gedrucktes Sensor-Gehäuse", "Sensoren im Serverraum bereitstellen", "Überwachung und Alarmierung einrichten", "Dokumentation und Benutzerhandbuch", "Open-Source-Hardware-Designs"] },
+            { phase: "Phase 6", title: "KI-gestütztes Raspberry-Pi-Monitoring", status: "planned", items: ["CPU-, Speicher-, Festplatten-, Temperatur- und Uptime-Metriken erfassen", "Lokale Historie in SQLite speichern", "Normalverhalten lernen und Anomalien erkennen", "FastAPI-Health-Endpunkte und Alarme nach Schweregrad ergänzen", "Optionale KI-Erklärungen für Vorfälle ergänzen"] },
           ],
           alertThresholds: [
             { status: "OK", temp: "< 28°C", color: "Grün", action: "Normaler Betrieb" },
@@ -903,23 +891,7 @@ const resources = {
             { label: "Step 3: Azure IoT Hub device provisioning and MQTT telemetry sending.", status: "planned" },
             { label: "Step 4: Streamlit dashboard with real-time charts and alert system.", status: "planned" },
             { label: "Step 5: Multi-zone monitoring, historical data, and 3D-printed enclosures.", status: "planned" },
-          ],
-        },
-        {
-          title: "Raspberry Pi AI Monitoring System",
-          subtitle: "Datenschutzorientiertes Edge-Monitoring mit Anomalieerkennung",
-          description:
-            "Ein eigenständiges Raspberry-Pi-Projekt für Gerätezustand, Leistungsmetriken und nachvollziehbare Störungsanalyse. Es bleibt getrennt vom bestehenden Umwelt-IoT-Monitor und befindet sich aktuell in der Planungs- und Grundlagenphase.",
-          architecture:
-            "Raspberry-Pi-Collector → SQLite-Verlauf → Baseline/Anomalieerkennung → Optionaler KI-Erklärer → FastAPI-Dashboard → Alarme.",
-          tech: ["Python", "Raspberry Pi", "FastAPI", "SQLite", "Anomalieerkennung", "Observability"],
-          icon: "Cpu",
-          steps: [
-            { label: "Step 1: Metrikschema und Monitoring-Konfiguration definieren.", status: "in-progress" },
-            { label: "Step 2: Leichtgewichtigen Raspberry-Pi-Collector entwickeln.", status: "planned" },
-            { label: "Step 3: Lokale Historie, Baseline-Lernen und Anomalieerkennung ergänzen.", status: "planned" },
-            { label: "Step 4: FastAPI-Dashboard und Alarme nach Schweregrad ergänzen.", status: "planned" },
-            { label: "Step 5: Optionale KI-Erklärungen und Service-Deployment ergänzen.", status: "planned" },
+            { label: "Step 6: KI-gestütztes Raspberry-Pi-Systemmonitoring und Anomalieerklärungen ergänzen.", status: "planned" },
           ],
         },
         {

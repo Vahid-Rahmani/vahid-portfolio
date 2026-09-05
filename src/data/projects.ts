@@ -12,13 +12,12 @@ export const githubUrls: Record<string, string> = {
   "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/Vahid-Rahmani/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
   "Serverless Network Sentinel Bot": "https://github.com/Vahid-Rahmani/Serverless-Network-Sentinel-Bot",
   "Cloud-Connected Hardware & IoT Monitor": "https://github.com/Vahid-Rahmani/Cloud-Connected-Hardware-IoT-Monitor",
-  "Global High-Availability Web Hosting with IaC": "https://github.com/vahidrahmaniinfo24-alt/Global-High-Availability-Web-Hosting-with-IaC",
+  "Global High-Availability Web Hosting with IaC": "https://github.com/Vahid-Rahmani/Global-High-Availability-Web-Hosting-with-IaC",
   "PyFlow — Python Learning Platform": "https://github.com/Vahid-Rahmani/-pyflow-platform/tree/main",
   "PyMentor — AI Coding Demo": "https://github.com/Vahid-Rahmani/py-mentor",
   "LinkedIn AI Agent": "https://github.com/Vahid-Rahmani/agent-for-linkdin",
-  "Zova — AI Learning Assistant": "https://github.com/Vahid-Rahmani/zofa",
+  "Zova — AI Learning Assistant": "https://github.com/Vahid-Rahmani/zovasite",
   "AI Drop Agent": "https://github.com/Vahid-Rahmani/AI-Drop-Agent",
-  "Raspberry Pi AI Monitoring System": "https://github.com/Vahid-Rahmani/Raspberry-Pi-AI-Monitoring-System",
   "Zova Product Website": "https://github.com/Vahid-Rahmani/zovasite",
   "Cloud DevOps Hub": "https://github.com/Vahid-Rahmani/cloud-devops-hub",
   "Network to Cloud Sheets": "https://github.com/Vahid-Rahmani/network-to-cloud-sheets",
@@ -38,7 +37,6 @@ export const featuredProjects = [
   "Cloud-Connected Hardware & IoT Monitor",
   "Global High-Availability Web Hosting with IaC",
   "Automated Hybrid Network & Monitoring Dashboard",
-  "Raspberry Pi AI Monitoring System",
   "Zova — AI Learning Assistant",
 ];
 

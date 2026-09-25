@@ -16,14 +16,14 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud & Network Engineer Trainee | Azure · Windows Server · Hyper-V · Cisco · EVE-NG",
+      "header.role": "CCNA-Certified Cloud & Network Engineer | AI Automation Engineer | CCNP/CCIE & RHCSA Learning Path",
       "header.location": "Hamburg, Germany",
       "header.contactBtn": "Get in touch",
       "header.experienceBtn": "Experience",
       "header.cvBtn": "Resume",
 
       "about.title": "About Me",
-      "about.text": "Cloud & Network Engineer Trainee based in Hamburg, building hands-on infrastructure and network labs across Azure, Windows Server, Hyper-V, Cisco, EVE-NG, Linux and automation. My current lab connects a Windows Server environment to a Cisco topology in EVE-NG through a SoftEther Layer-2 bridge, with Active Directory, DNS, DHCP, SMB, VLAN routing, router-on-a-stick, DHCP relay and Cisco NAT/PAT. I also work with Python/FastAPI automation, Docker and CI/CD. My background in hardware diagnostics, schematic reading and micro-soldering gives me a practical Layer 1 perspective when troubleshooting systems and network devices. I am open to Junior Cloud Engineer, Cloud Support Engineer, Windows/System Administrator and Network Support roles in Hamburg.",
+      "about.text": "CCNA-Certified Cloud & Network Engineer and AI Automation Engineer based in Hamburg. I have completed five DCI AI & Automation certificates through project-based work and am currently building toward the CCNP/CCIE and RHCSA learning paths while developing Azure, Windows Server, Hyper-V, Cisco Secure Firewall and Fortinet FortiGate skills. My current lab connects a Windows Server environment to a Cisco topology in EVE-NG through a SoftEther Layer-2 bridge, with Active Directory, DNS, DHCP, SMB, VLAN routing, router-on-a-stick, DHCP relay and Cisco NAT/PAT. I also work with Python/FastAPI automation, Docker and CI/CD. My background in hardware diagnostics, schematic reading and micro-soldering gives me a practical Layer 1 perspective when troubleshooting systems and network devices. I am open to Junior Cloud Engineer, Cloud Support Engineer, Windows/System Administrator and Network Support roles in Hamburg.",
 
       "reveal.title": "Click here for more about me",
       "reveal.less": "Show less",
@@ -578,14 +578,14 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud & Network Engineer Trainee | Azure · Windows Server · Hyper-V · Cisco · EVE-NG",
+      "header.role": "CCNA-zertifizierter Cloud & Network Engineer | AI Automation Engineer | CCNP/CCIE- & RHCSA-Lernpfad",
       "header.location": "Hamburg, Deutschland",
       "header.contactBtn": "Kontakt aufnehmen",
       "header.experienceBtn": "Werdegang",
       "header.cvBtn": "Lebenslauf",
 
       "about.title": "Über mich",
-      "about.text": "Cloud & Network Engineer Trainee in Hamburg mit praxisnahen Infrastruktur- und Netzwerk-Labs rund um Azure, Windows Server, Hyper-V, Cisco, EVE-NG, Linux und Automatisierung. Mein aktuelles Lab verbindet eine Windows-Server-Umgebung über eine SoftEther-Layer-2-Bridge mit einer Cisco-Topologie in EVE-NG – inklusive Active Directory, DNS, DHCP, SMB, VLAN-Routing, Router-on-a-Stick, DHCP-Relay sowie Cisco NAT/PAT. Darüber hinaus arbeite ich mit Python/FastAPI-Automatisierung, Docker und CI/CD. Durch Hardware-Diagnose, Schaltplananalyse und Mikrolöten bringe ich eine praktische Layer-1-Perspektive in die Fehlersuche an Systemen und Netzwerkgeräten ein. Ich bin offen für Junior-Positionen im Bereich Cloud Engineering, Cloud Support, Windows/Systemadministration und Network Support in Hamburg.",
+      "about.text": "CCNA-zertifizierter Cloud & Network Engineer und AI Automation Engineer in Hamburg. Ich habe fünf DCI AI & Automation-Zertifikate durch praxisnahe Projekte abgeschlossen und baue aktuell meinen CCNP/CCIE- sowie RHCSA-Lernpfad aus, während ich meine Kenntnisse in Azure, Windows Server, Hyper-V, Cisco Secure Firewall und Fortinet FortiGate vertiefe. Mein aktuelles Lab verbindet eine Windows-Server-Umgebung über eine SoftEther-Layer-2-Bridge mit einer Cisco-Topologie in EVE-NG – inklusive Active Directory, DNS, DHCP, SMB, VLAN-Routing, Router-on-a-Stick, DHCP-Relay sowie Cisco NAT/PAT. Darüber hinaus arbeite ich mit Python/FastAPI-Automatisierung, Docker und CI/CD. Durch Hardware-Diagnose, Schaltplananalyse und Mikrolöten bringe ich eine praktische Layer-1-Perspektive in die Fehlersuche an Systemen und Netzwerkgeräten ein. Ich bin offen für Junior-Positionen im Bereich Cloud Engineering, Cloud Support, Windows/Systemadministration und Network Support in Hamburg.",
 
       "reveal.title": "Klicke hier für mehr über mich",
       "reveal.less": "Weniger anzeigen",

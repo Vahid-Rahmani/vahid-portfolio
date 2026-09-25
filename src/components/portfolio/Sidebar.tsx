@@ -45,7 +45,7 @@ const Sidebar = () => {
             Vahid Rahmani
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-            Cloud Engineer Trainee · Azure · Windows Server · Networks · Python
+            Cloud & Network Engineer Trainee · Azure · Cisco · EVE-NG
           </p>
         </a>
 

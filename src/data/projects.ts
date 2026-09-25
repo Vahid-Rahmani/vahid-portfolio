@@ -8,6 +8,7 @@ export type Project = {
 import cloudImg from "../../img/cloud.jpg";
 
 export const githubUrls: Record<string, string> = {
+  "Windows Server, Cisco & SoftEther Network Lab": "https://github.com/Vahid-Rahmani/windows-hyperv-eve-softether-network-lab",
   "Automated Hybrid Network & Monitoring Dashboard": "https://github.com/Vahid-Rahmani/Automated-Hybrid-Network-Monitoring-Dashboard",
   "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/Vahid-Rahmani/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
   "Serverless Network Sentinel Bot": "https://github.com/Vahid-Rahmani/Serverless-Network-Sentinel-Bot",
@@ -33,6 +34,7 @@ export const demoUrls: Record<string, string> = {
 };
 
 export const featuredProjects = [
+  "Windows Server, Cisco & SoftEther Network Lab",
   "LinkedIn AI Agent",
   "Cloud-Connected Hardware & IoT Monitor",
   "Global High-Availability Web Hosting with IaC",
@@ -81,6 +83,7 @@ export const slugify = (title: string): string =>
     .replace(/(^-|-$)/g, "");
 
 export const projectImages: Record<string, string> = {
+  "windows-server-cisco-softether-network-lab": "/project-images/network-dashboard.svg",
   "automated-hybrid-network-monitoring-dashboard": "/project-images/monitoring.png",
   "hybrid-identity-sync-local-ad-to-azure-entra-id": "/project-images/hybrid-identity.svg",
   "serverless-network-sentinel-bot": "/project-images/sentinel-bot.svg",

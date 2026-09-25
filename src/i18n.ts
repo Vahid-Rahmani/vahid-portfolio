@@ -16,25 +16,25 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud Engineer Trainee | Azure & Windows Server | Infrastructure, Network & AI Automation | Python",
+      "header.role": "Cloud & Network Engineer Trainee | Azure · Windows Server · Hyper-V · Cisco · EVE-NG",
       "header.location": "Hamburg, Germany",
       "header.contactBtn": "Get in touch",
       "header.experienceBtn": "Experience",
       "header.cvBtn": "Resume",
 
       "about.title": "About Me",
-      "about.text": "Thanks to my solid experience in board-level repair, micro-soldering, and reading complex schematics, I have a deep understanding of the physical layer (Layer 1) of IT infrastructure. This enables me to precisely assemble, cable, and diagnose physical network components, server hardware, and IoT devices at the hardware level. I am currently training to become a Cloud Engineer and extending that foundation through Azure, Terraform, Docker, Python automation and applied AI workflows, including prompt engineering, LangChain/LangGraph, RAG, MCP and multi-agent systems. I am looking for an entry-level position as a Junior Cloud Engineer or IT System Administrator in the Hamburg area.",
+      "about.text": "Cloud & Network Engineer Trainee based in Hamburg, building hands-on infrastructure and network labs across Azure, Windows Server, Hyper-V, Cisco, EVE-NG, Linux and automation. My current lab connects a Windows Server environment to a Cisco topology in EVE-NG through a SoftEther Layer-2 bridge, with Active Directory, DNS, DHCP, SMB, VLAN routing, router-on-a-stick, DHCP relay and Cisco NAT/PAT. I also work with Python/FastAPI automation, Docker and CI/CD. My background in hardware diagnostics, schematic reading and micro-soldering gives me a practical Layer 1 perspective when troubleshooting systems and network devices. I am open to Junior Cloud Engineer, Cloud Support Engineer, Windows/System Administrator and Network Support roles in Hamburg.",
 
       "reveal.title": "Click here for more about me",
       "reveal.less": "Show less",
       "reveal.goalTitle": "My Goal",
-      "reveal.goalText": "Entry as Junior Cloud Engineer or IT System Administrator in the Hamburg area, to help shape modern cloud infrastructures with Azure, Terraform and Docker.",
+      "reveal.goalText": "Entry as a Junior Cloud Engineer, Cloud Support Engineer, Windows/System Administrator or Network Support Engineer in Hamburg, contributing to reliable cloud and network infrastructure.",
       "reveal.driveTitle": "What drives me",
       "reveal.driveText": "Bridging the gap between physical hardware and the modern cloud world — from micro-soldering to infrastructure-as-code.",
       "reveal.funTitle": "Fun Fact",
       "reveal.funText": "I repaired demanding mainboards at component level for over 2 years before turning to the cloud.",
       "reveal.learningTitle": "Currently learning",
-      "reveal.learningText": "Deepening Azure DevOps, Kubernetes basics, Terraform deployments and production-oriented AI automation with LangChain, LangGraph, RAG and observability.",
+      "reveal.learningText": "Deepening CCNP-level enterprise routing and troubleshooting, Cisco Secure Firewall and FortiGate fundamentals, Azure DevOps, Terraform deployments and production-oriented automation.",
 
       "experience.title": "Professional Experience",
       "experience.items": [
@@ -44,8 +44,8 @@ const resources = {
           location: "Hamburg",
           period: "06.2026 – ongoing",
           points: [
-            "Focus on modern enterprise architectures, network security and cloud migration.",
-            "Practical implementation of automation scenarios using Python basics.",
+            "Hands-on cloud and network labs across Azure, Windows Server, Hyper-V, Cisco and EVE-NG.",
+            "Practical infrastructure automation with Python, plus Windows Server, DNS/DHCP, VLAN, routing and NAT troubleshooting.",
           ],
         },
         {
@@ -226,6 +226,20 @@ const resources = {
             { label: "Step 3: Add Smart Notes, Clean Study File, and saved classes.", status: "completed" },
             { label: "Step 4: Publish the extension and user guide.", status: "completed" },
             { label: "Step 5: Continue improving classroom integrations and study workflows.", status: "completed" },
+          ],
+        },
+        {
+          title: "Windows Server, Cisco & SoftEther Network Lab",
+          subtitle: "Hybrid Windows Server and Cisco topology with Layer-2 bridging",
+          description: "A hands-on lab that connects a Windows Server environment to a Cisco topology in EVE-NG through a SoftEther Layer-2 bridge. The environment covers Active Directory, DNS, DHCP, SMB, VLAN routing, router-on-a-stick, DHCP relay and Cisco NAT/PAT, with documented troubleshooting for bridge design, ARP conflicts, Wi-Fi endpoint changes and routing validation.",
+          architecture: "Windows Server (AD DS, DNS, DHCP, SMB) ↔ SoftEther Layer-2 Bridge ↔ EVE-NG Cisco Topology (VLANs, DHCP Relay, NAT/PAT).",
+          tech: ["Windows Server", "Hyper-V", "Cisco IOS", "EVE-NG", "SoftEther", "AD DS", "DNS/DHCP", "VLANs", "NAT/PAT"],
+          icon: "Network",
+          steps: [
+            { label: "Build the Windows Server services layer with Active Directory, DNS, DHCP and SMB.", status: "completed" },
+            { label: "Connect the Windows and EVE-NG networks through a SoftEther Layer-2 bridge.", status: "completed" },
+            { label: "Configure Cisco VLAN routing, router-on-a-stick, DHCP relay and NAT/PAT.", status: "completed" },
+            { label: "Validate connectivity and document ARP, DHCP, routing and bridge troubleshooting.", status: "completed" },
           ],
         },
         {
@@ -503,8 +517,8 @@ const resources = {
         { label: "Cloud Platforms", items: ["Microsoft Azure", "Azure Active Directory", "Azure VMs", "Virtual Networks (VNet)", "Identity & Access (IAM)"] },
         { label: "DevOps & Automation", items: ["Terraform (IaC)", "Docker", "Python (Basics)", "Bash & PowerShell", "Git / GitHub"] },
         { label: "Applied AI & Automation", items: ["Prompt Engineering", "LLM & SLM Workflows", "LangChain", "LangGraph", "RAG", "MCP", "Tool Calling", "Multi-Agent Systems", "Evaluation & Observability"] },
-        { label: "System Administration", items: ["Windows Server 2025", "Active Directory (AD DS)", "Linux (Ubuntu/Debian)"] },
-        { label: "Network & Security", items: ["TCP/IP", "DNS", "DHCP", "Firewalls", "Routing & Switching"] },
+        { label: "System Administration", items: ["Windows Server & Hyper-V", "Active Directory (AD DS)", "Linux (Ubuntu/Debian)"] },
+        { label: "Network & Security", items: ["TCP/IP", "DNS", "DHCP", "Cisco Networking", "EVE-NG", "SoftEther VPN / L2 Bridge", "Cisco Firewall / ACLs", "Fortinet FortiGate (NGFW)", "Routing & Switching"] },
         { label: "Hardware & Electronics", items: ["Board-Level Repair", "Micro-soldering", "Schematic Analysis", "Hardware Diagnostics"] },
       ],
 
@@ -564,25 +578,25 @@ const resources = {
       "nav.top": "Top",
 
       "header.openToWork": "Open to Work",
-      "header.role": "Cloud Engineer Trainee | Azure & Windows Server | Infrastructure, Netzwerk & KI-Automatisierung | Python",
+      "header.role": "Cloud & Network Engineer Trainee | Azure · Windows Server · Hyper-V · Cisco · EVE-NG",
       "header.location": "Hamburg, Deutschland",
       "header.contactBtn": "Kontakt aufnehmen",
       "header.experienceBtn": "Werdegang",
       "header.cvBtn": "Lebenslauf",
 
       "about.title": "Über mich",
-      "about.text": "Dank meiner fundierten Erfahrung in der Board-Level-Reparatur, im Mikrolöten und im Lesen komplexer Schaltpläne besitze ich ein tiefes Verständnis für die physische Schicht (Layer 1) der IT-Infrastruktur. Dies ermöglicht es mir, physische Netzwerkkomponenten, Server-Hardware und IoT-Geräte präzise zu assemblieren, zu verkabeln und auf Hardware-Ebene zu diagnostizieren. Aktuell bilde ich mich zum Cloud Engineer weiter und erweitere diese Grundlage durch Azure, Terraform, Docker, Python-Automatisierung und angewandte KI-Workflows wie Prompt Engineering, LangChain/LangGraph, RAG, MCP und Multi-Agent-Systeme. Ich suche eine Einstiegsposition als Junior Cloud Engineer oder IT-Systemadministrator im Raum Hamburg.",
+      "about.text": "Cloud & Network Engineer Trainee in Hamburg mit praxisnahen Infrastruktur- und Netzwerk-Labs rund um Azure, Windows Server, Hyper-V, Cisco, EVE-NG, Linux und Automatisierung. Mein aktuelles Lab verbindet eine Windows-Server-Umgebung über eine SoftEther-Layer-2-Bridge mit einer Cisco-Topologie in EVE-NG – inklusive Active Directory, DNS, DHCP, SMB, VLAN-Routing, Router-on-a-Stick, DHCP-Relay sowie Cisco NAT/PAT. Darüber hinaus arbeite ich mit Python/FastAPI-Automatisierung, Docker und CI/CD. Durch Hardware-Diagnose, Schaltplananalyse und Mikrolöten bringe ich eine praktische Layer-1-Perspektive in die Fehlersuche an Systemen und Netzwerkgeräten ein. Ich bin offen für Junior-Positionen im Bereich Cloud Engineering, Cloud Support, Windows/Systemadministration und Network Support in Hamburg.",
 
       "reveal.title": "Klicke hier für mehr über mich",
       "reveal.less": "Weniger anzeigen",
       "reveal.goalTitle": "Mein Ziel",
-      "reveal.goalText": "Einstieg als Junior Cloud Engineer oder IT-Systemadministrator im Raum Hamburg, um moderne Cloud-Infrastrukturen mit Azure, Terraform und Docker mitzugestalten.",
+      "reveal.goalText": "Einstieg als Junior Cloud Engineer, Cloud Support Engineer, Windows/Systemadministrator oder Network Support Engineer in Hamburg, um zuverlässige Cloud- und Netzwerkinfrastrukturen mitzugestalten.",
       "reveal.driveTitle": "Was mich antreibt",
       "reveal.driveText": "Die Brücke zwischen physischer Hardware und moderner Cloud-Welt zu schlagen — vom Mikrolöten bis zur Infrastructure-as-Code.",
       "reveal.funTitle": "Fun Fact",
       "reveal.funText": "Ich habe über 2 Jahre lang anspruchsvolle Mainboards auf Komponentenebene repariert, bevor ich mich der Cloud zuwandte.",
       "reveal.learningTitle": "Aktuell am Lernen",
-      "reveal.learningText": "Vertiefung in Azure DevOps, Kubernetes-Grundlagen, Terraform-Deployments und produktionsnaher KI-Automatisierung mit LangChain, LangGraph, RAG und Observability.",
+      "reveal.learningText": "Vertiefung von Enterprise Routing und Troubleshooting auf CCNP-Niveau, Cisco Secure Firewall- und FortiGate-Grundlagen, Azure DevOps, Terraform-Deployments und produktionsorientierter Automatisierung.",
 
       "experience.title": "Beruflicher Werdegang",
       "experience.items": [
@@ -592,8 +606,8 @@ const resources = {
           location: "Hamburg",
           period: "06.2026 – laufend",
           points: [
-            "Fokus auf moderne Enterprise-Architekturen, Netzwerksicherheit und Cloud-Migration.",
-            "Praktische Implementierung von Automatisierungs-Szenarien mittels Python-Grundlagen.",
+            "Praxisnahe Cloud- und Netzwerk-Labs mit Azure, Windows Server, Hyper-V, Cisco und EVE-NG.",
+            "Infrastruktur-Automatisierung mit Python sowie Fehlersuche bei Windows Server, DNS/DHCP, VLANs, Routing und NAT.",
           ],
         },
         {
@@ -769,6 +783,20 @@ const resources = {
           architecture: "Chrome-Erweiterung → Lokaler Speicher → Gemini API → Smart-Class-Overlay → Gespeicherte Lektionen.",
           tech: ["JavaScript", "Chrome Extensions", "Gemini API", "Live-Übersetzung", "Lokaler Speicher"],
           steps: [{ label: "Zova-Erweiterung, Lernfunktionen und Installationsanleitung veröffentlicht.", status: "completed" }, { label: "Weitere Unterrichtsintegrationen und Lernabläufe verbessern.", status: "completed" }],
+        },
+        {
+          title: "Windows Server, Cisco & SoftEther Network Lab",
+          subtitle: "Hybrides Windows-Server- und Cisco-Lab mit Layer-2-Bridge",
+          description: "Ein praxisnahes Lab, das eine Windows-Server-Umgebung über eine SoftEther-Layer-2-Bridge mit einer Cisco-Topologie in EVE-NG verbindet. Die Umgebung umfasst Active Directory, DNS, DHCP, SMB, VLAN-Routing, Router-on-a-Stick, DHCP-Relay und Cisco NAT/PAT sowie dokumentierte Fehlersuche für Bridge-Design, ARP-Konflikte, Änderungen an Wi-Fi-Endpunkten und Routing-Validierung.",
+          architecture: "Windows Server (AD DS, DNS, DHCP, SMB) ↔ SoftEther-Layer-2-Bridge ↔ EVE-NG-Cisco-Topologie (VLANs, DHCP-Relay, NAT/PAT).",
+          tech: ["Windows Server", "Hyper-V", "Cisco IOS", "EVE-NG", "SoftEther", "AD DS", "DNS/DHCP", "VLANs", "NAT/PAT"],
+          icon: "Network",
+          steps: [
+            { label: "Windows-Server-Dienste mit Active Directory, DNS, DHCP und SMB aufbauen.", status: "completed" },
+            { label: "Windows- und EVE-NG-Netzwerke über eine SoftEther-Layer-2-Bridge verbinden.", status: "completed" },
+            { label: "Cisco VLAN-Routing, Router-on-a-Stick, DHCP-Relay und NAT/PAT konfigurieren.", status: "completed" },
+            { label: "Konnektivität validieren und Fehlersuche für ARP, DHCP, Routing und Bridge dokumentieren.", status: "completed" },
+          ],
         },
         {
           title: "AI Drop Agent",
@@ -1045,8 +1073,8 @@ const resources = {
         { label: "Cloud-Plattformen", items: ["Microsoft Azure", "Azure Active Directory", "Azure VMs", "Virtual Networks (VNet)", "Identity & Access (IAM)"] },
         { label: "DevOps & Automatisierung", items: ["Terraform (IaC)", "Docker", "Python (Grundlagen)", "Bash & PowerShell", "Git / GitHub"] },
         { label: "Angewandte KI & Automatisierung", items: ["Prompt Engineering", "LLM- & SLM-Workflows", "LangChain", "LangGraph", "RAG", "MCP", "Tool Calling", "Multi-Agent-Systeme", "Evaluation & Observability"] },
-        { label: "Systemadministration", items: ["Windows Server 2025", "Active Directory (AD DS)", "Linux (Ubuntu/Debian)"] },
-        { label: "Netzwerk & Sicherheit", items: ["TCP/IP", "DNS", "DHCP", "Firewalls", "Routing & Switching"] },
+        { label: "Systemadministration", items: ["Windows Server & Hyper-V", "Active Directory (AD DS)", "Linux (Ubuntu/Debian)"] },
+        { label: "Netzwerk & Sicherheit", items: ["TCP/IP", "DNS", "DHCP", "Cisco Networking", "EVE-NG", "SoftEther VPN / L2 Bridge", "Cisco Firewall / ACLs", "Fortinet FortiGate (NGFW)", "Routing & Switching"] },
         { label: "Hardware & Elektronik", items: ["Board-Level-Reparatur", "Mikrolöten", "Schaltplan-Analyse", "Hardware-Diagnose"] },
       ],
 

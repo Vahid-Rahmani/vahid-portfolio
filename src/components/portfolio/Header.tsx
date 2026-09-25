@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { MapPin, ArrowDown, Sparkles, Activity, Server, CloudCog } from "lucide-react";
+import { MapPin, ArrowDown, Sparkles, Activity, Server, CloudCog, Network, Shield } from "lucide-react";
 import OpenToWorkBadge from "./OpenToWorkBadge";
 import ProfilePhoto from "./ProfilePhoto";
 import CvDownloadDialog from "./CvDownloadDialog";
@@ -89,8 +89,9 @@ const Header = () => {
           </div>
           <div className="mt-5 space-y-4">
             <div className="ops-row"><CloudCog size={17} /><span>Azure / Cloud</span><b>ACTIVE</b></div>
-            <div className="ops-row"><Server size={17} /><span>Windows / Linux</span><b>READY</b></div>
-            <div className="ops-row"><Sparkles size={17} /><span>AI Automation</span><b>BUILDING</b></div>
+            <div className="ops-row"><Server size={17} /><span>Windows / Hyper-V</span><b>READY</b></div>
+            <div className="ops-row"><Network size={17} /><span>Cisco / EVE-NG</span><b>ACTIVE</b></div>
+            <div className="ops-row"><Shield size={17} /><span>SoftEther / Firewalls</span><b>LEARNING</b></div>
           </div>
           <div className="mt-5 h-16 overflow-hidden rounded-xl border border-cyan-300/10 bg-black/20 p-3">
             <div className="telemetry-bars">{Array.from({ length: 18 }).map((_, i) => <i key={i} style={{ animationDelay: `${i * -0.11}s` }} />)}</div>

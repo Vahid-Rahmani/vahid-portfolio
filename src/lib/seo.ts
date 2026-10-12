@@ -67,6 +67,12 @@ export const getPageMetadata = (pathname: string): PageMetadata => {
       url: canonical, name: title, description, inLanguage: language,
       isPartOf: { "@id": websiteId }, author: { "@id": personId },
       mainEntity: { "@id": isHome ? personId : `${canonical}#project` },
+      ...(isHome ? {
+        primaryImageOfPage: {
+          "@type": "ImageObject", url: PROFILE_IMAGE, contentUrl: PROFILE_IMAGE,
+          width: 1280, height: 1280, caption: "Vahid Rahmani",
+        },
+      } : {}),
     });
     if (isHome) {
       graph.push({
@@ -118,6 +124,7 @@ export const renderSeoHead = (page: PageMetadata): string => {
     meta("og:locale", page.language === "de" ? "de_DE" : "en_GB", true),
     meta("og:locale:alternate", page.language === "de" ? "en_GB" : "de_DE", true),
     meta("og:image", PROFILE_IMAGE, true), meta("og:image:alt", "Vahid Rahmani — cloud and networking practitioner in Hamburg", true),
+    meta("og:image:type", "image/jpeg", true), meta("og:image:width", "1280", true), meta("og:image:height", "1280", true),
     meta("twitter:card", "summary_large_image"), meta("twitter:title", page.title), meta("twitter:description", page.description),
     meta("twitter:image", PROFILE_IMAGE), meta("twitter:image:alt", "Vahid Rahmani — cloud and networking practitioner in Hamburg"),
     `<script data-seo id="seo-schema" type="application/ld+json">${JSON.stringify(page.schema).replace(/</g, "\\u003c")}</script>`,

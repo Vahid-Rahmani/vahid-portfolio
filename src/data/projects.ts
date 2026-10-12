@@ -8,6 +8,10 @@ export type Project = {
 import cloudImg from "../../img/cloud.jpg";
 
 export const githubUrls: Record<string, string> = {
+  "Klybit — IT Learning & Cisco Simulator": "https://github.com/Vahid-Rahmani/AZ-802-learning-space",
+  "MultiAgentCoding": "https://github.com/Vahid-Rahmani/mullti_agent_coding",
+  "CloudGuard AI": "https://github.com/Vahid-Rahmani/CloudGuard-AI",
+  "Zova — Flutter Language Learning App": "https://github.com/Vahid-Rahmani/zofa",
   "Windows Server, Cisco & SoftEther Network Lab": "https://github.com/Vahid-Rahmani/windows-hyperv-eve-softether-network-lab",
   "Automated Hybrid Network & Monitoring Dashboard": "https://github.com/Vahid-Rahmani/Automated-Hybrid-Network-Monitoring-Dashboard",
   "Hybrid Identity Sync: Local AD to Azure Entra ID": "https://github.com/Vahid-Rahmani/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID",
@@ -25,6 +29,7 @@ export const githubUrls: Record<string, string> = {
 };
 
 export const demoUrls: Record<string, string> = {
+  "Klybit — IT Learning & Cisco Simulator": "https://klybit.vercel.app/",
   "Automated Hybrid Network & Monitoring Dashboard": "/project-images/monitoring.png",
   "Cloud-Connected Hardware & IoT Monitor": "https://cloud-connected-hardware-iot-monitor-ajf9nifbw9ks9mi2clskdr.streamlit.app/",
   "Global High-Availability Web Hosting with IaC": "https://global-high-availability-web-hosting-with-iacgit-bbegw6s42tjyu.streamlit.app/costs",
@@ -34,6 +39,10 @@ export const demoUrls: Record<string, string> = {
 };
 
 export const featuredProjects = [
+  "Klybit — IT Learning & Cisco Simulator",
+  "MultiAgentCoding",
+  "CloudGuard AI",
+  "Zova — Flutter Language Learning App",
   "Windows Server, Cisco & SoftEther Network Lab",
   "LinkedIn AI Agent",
   "Cloud-Connected Hardware & IoT Monitor",
@@ -83,6 +92,10 @@ export const slugify = (title: string): string =>
     .replace(/(^-|-$)/g, "");
 
 export const projectImages: Record<string, string> = {
+  "klybit-it-learning-cisco-simulator": "/project-images/klybit-learning.svg",
+  "multiagentcoding": "/project-images/multi-agent-coding.svg",
+  "cloudguard-ai": "/project-images/cloudguard-ai.svg",
+  "zova-flutter-language-learning-app": "/project-images/zova-flutter.svg",
   "windows-server-cisco-softether-network-lab": "/project-images/network-dashboard.svg",
   "automated-hybrid-network-monitoring-dashboard": "/project-images/monitoring.png",
   "hybrid-identity-sync-local-ad-to-azure-entra-id": "/project-images/hybrid-identity.svg",

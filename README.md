@@ -41,6 +41,10 @@ flowchart TB
 
 ## Selected projects
 
+- [Klybit — IT Learning & Cisco Simulator](https://github.com/Vahid-Rahmani/AZ-802-learning-space) — multilingual infrastructure learning, practice, account-based checkpoints and browser-based Cisco CLI labs. [Live workspace](https://klybit.vercel.app/).
+- [MultiAgentCoding](https://github.com/Vahid-Rahmani/mullti_agent_coding) — Python/FastAPI control plane for visual AI coding workflows, reusable agent roles and persistent project knowledge.
+- [CloudGuard AI](https://github.com/Vahid-Rahmani/CloudGuard-AI) — public architecture showcase for Azure-first infrastructure observability and governed operations; Phase 1 internal MVP in development.
+- [Zova — Flutter Language Learning App](https://github.com/Vahid-Rahmani/zofa) — Flutter/Dart learning app with local demo mode and Supabase/Stripe integration adapters.
 - [Automated Hybrid Network & Monitoring Dashboard](https://github.com/Vahid-Rahmani/Automated-Hybrid-Network-Monitoring-Dashboard) — Active Directory discovery, reachability checks, Windows host metrics, and a FastAPI dashboard.
 - [Cloud Connected Hardware IoT Monitor](https://github.com/Vahid-Rahmani/Cloud-Connected-Hardware-IoT-Monitor) — Raspberry Pi / hardware monitoring direction connected to cloud telemetry concepts.
 - [Azure AI Specialist Project Plan](https://github.com/Vahid-Rahmani/Azure-AI-Specialist-Project-Plan) — data-first Azure knowledge collection, evaluation, RAG, and model strategy.

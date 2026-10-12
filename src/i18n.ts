@@ -3,6 +3,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { languageFromPath } from "./lib/locale";
+import { githubProjectAdditions } from "./data/githubProjects";
 
 const resources = {
   en: {
@@ -216,6 +217,7 @@ const resources = {
       "projects.modules": "Project Modules",
       "projects.localization": "Supported Languages",
       "projects.items": [
+        ...githubProjectAdditions.en,
         {
           title: "Zova — AI Learning Assistant",
           subtitle: "Live translation and smart study tools for Chrome",
@@ -779,6 +781,7 @@ const resources = {
       "projects.modules": "Projektmodule",
       "projects.localization": "Unterstützte Sprachen",
       "projects.items": [
+        ...githubProjectAdditions.de,
         {
           title: "Zova — AI Learning Assistant",
           subtitle: "Live-Übersetzung und intelligente Lernwerkzeuge für Chrome",

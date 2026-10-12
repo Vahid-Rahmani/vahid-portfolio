@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Zova — Flutter Language Learning App</title>
+  <desc id="desc">Project cover for Zova. MOBILE APP / LOCAL DEMO. Flutter · Dart · Supabase · Stripe.</desc>
+  <defs><linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f172a"/><stop offset="1" stop-color="#09090b"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="900" cy="130" r="280" fill="#60a5fa" opacity="0.045"/>
+  <rect x="70" y="60" width="1060" height="510" rx="24" fill="none" stroke="#334155" stroke-opacity="0.5"/>
+  <text x="600" y="110" text-anchor="middle" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="13" letter-spacing="3">MOBILE APP / LOCAL DEMO</text>
+  <g transform="translate(600,220)" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="-35" y="-60" width="70" height="120" rx="13"/><path d="M-12,-43 H12 M-11,40 H11 M-19,-22 H19 M-19,-6 H8 M-19,10 H19"/></g>
+  <text x="600" y="345" text-anchor="middle" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="42" font-weight="600">Zova</text>
+  <text x="600" y="396" text-anchor="middle" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="24">Flutter Language Learning App</text>
+  <text x="600" y="463" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="18">Flutter · Dart · Supabase · Stripe</text>
+  <path d="M470,501 H730" stroke="#60a5fa" stroke-opacity="0.4" stroke-width="3"/>
+</svg>

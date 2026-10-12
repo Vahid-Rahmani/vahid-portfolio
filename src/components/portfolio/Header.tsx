@@ -11,6 +11,7 @@ const Header = () => {
   const { t } = useTranslation();
   return (
     <header className="command-hero border-b border-cyan-300/10 pb-10 pt-4">
+      <h1 className="sr-only">Vahid Rahmani — {t("header.role")}</h1>
       {/* ── Mobile: Gradient Profile Card ── */}
       <div className="profile-card rounded-2xl p-6 sm:hidden">
         <div className="flex flex-col items-center text-center">
@@ -22,7 +23,7 @@ const Header = () => {
           </div>
 
           {/* Name & Info */}
-          <h1 className="text-xl font-bold tracking-tight text-[#f4f4f5]">Vahid Rahmani</h1>
+          <p className="text-xl font-bold tracking-tight text-[#f4f4f5]">Vahid Rahmani</p>
           <p className="mt-1.5 flex items-center gap-1.5 text-sm font-medium text-teal-400">
             <Sparkles size={13} className="shrink-0" />
             {t("header.role")}
@@ -67,7 +68,7 @@ const Header = () => {
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/[0.06] px-3 py-1 font-mono text-[11px] uppercase tracking-[.18em] text-cyan-300">
               <span className="signal-dot" /> Cloud systems online
             </div>
-            <h1 className="glitch-title text-4xl font-bold tracking-[-0.04em] text-white lg:text-5xl" data-text="Vahid Rahmani">Vahid Rahmani</h1>
+            <p className="glitch-title text-4xl font-bold tracking-[-0.04em] text-white lg:text-5xl" data-text="Vahid Rahmani">Vahid Rahmani</p>
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-300">{t("header.role")}</p>
             <p className="mt-3 flex items-center gap-1.5 text-sm text-slate-500">
               <MapPin size={12} className="text-teal-400" /> {t("header.location")}

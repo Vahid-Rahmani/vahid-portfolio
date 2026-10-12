@@ -11,6 +11,7 @@ import Roadmap from "@/components/portfolio/Roadmap";
 import Projects from "@/components/portfolio/Projects";
 import FooterCredits from "@/components/FooterCredits";
 import SignalBackdrop from "@/components/portfolio/SignalBackdrop";
+import Faq from "@/components/portfolio/Faq";
 
 const Index = () => {
   return (
@@ -29,6 +30,7 @@ const Index = () => {
           <Experience />
           <Skills />
           <Certificates />
+          <Faq />
           <Contact />
 
           <footer className="mt-16 border-t border-cyan-300/10 pt-8 text-center text-sm text-slate-500">

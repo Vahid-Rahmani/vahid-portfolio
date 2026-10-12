@@ -1,5 +1,13 @@
+# Public portfolio pages are available to search and AI search crawlers.
 User-agent: *
 Disallow: /img/vahid_cv.pdf
+Disallow: /assets/vahid_cv
+Allow: /
+
+# OpenAI search access is independent of model-training crawler policies.
+User-agent: OAI-SearchBot
+Disallow: /img/vahid_cv.pdf
+Disallow: /assets/vahid_cv
 Allow: /
 
 Sitemap: https://vahid-portfolio-three.vercel.app/sitemap.xml

@@ -9,6 +9,8 @@ import {
   githubUrls, demoUrls, featuredProjects, getProgress, getStatusLabel, statusColor, progressBarColor, slugify, type Step, type Project,
 } from "@/data/projects";
 import cloudImg from "../../../img/cloud.jpg";
+import i18n from "@/i18n";
+import { localizedPath } from "@/lib/locale";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   Network, Shield, Bot, Cpu, Globe,
@@ -76,7 +78,7 @@ const ProjectModal = ({ project, onClose, t }: { project: Project; onClose: () =
           </ul>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3" onClick={(e) => e.stopPropagation()}>
-          <a href={`/project/${projectSlug}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-teal-500 px-4 py-2 text-xs font-medium text-[#09090b] transition hover:bg-teal-400">
+          <a href={localizedPath(`/project/${projectSlug}`, i18n.language)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-teal-500 px-4 py-2 text-xs font-medium text-[#09090b] transition hover:bg-teal-400">
             <ArrowUpRight size={14} /> {t("projects.viewPage")}
           </a>
           <a href={githubUrls[project.title] || "#"} target={githubUrls[project.title] ? "_blank" : undefined} rel={githubUrls[project.title] ? "noreferrer" : undefined} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-zinc-300 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={14} /> {t("projects.github")}</a>
@@ -94,7 +96,7 @@ const FeaturedCard = ({ project, onClick, t }: { project: Project; onClick: () =
   const demo = project.demoUrl || demoUrls[project.title];
   const projectSlug = slugify(project.title);
   return (
-    <button onClick={onClick} className="project-card group w-full rounded-xl p-5 text-left transition-all duration-300 hover:-translate-y-1 sm:p-6">
+    <article onClick={onClick} className="project-card group w-full rounded-xl p-5 text-left transition-all duration-300 hover:-translate-y-1 sm:p-6">
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex items-start gap-4 min-w-0 flex-1">
           <div className="project-icon-glow flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-400/10 text-teal-400"><Icon size={24} /></div>
@@ -102,7 +104,7 @@ const FeaturedCard = ({ project, onClick, t }: { project: Project; onClick: () =
             <img src={cloudImg} alt="Cloud-Connected Hardware preview" className="hidden h-32 w-32 shrink-0 rounded-lg object-cover ring-1 ring-white/10 sm:block" />
           )}
           <div className="min-w-0 flex-1">
-            <h3 className="text-base font-bold leading-snug text-[#f4f4f5] sm:font-semibold">{project.title}</h3>
+            <h3 className="text-base font-bold leading-snug text-[#f4f4f5] sm:font-semibold"><button type="button" onClick={(event) => { event.stopPropagation(); onClick(); }} className="text-left">{project.title}</button></h3>
             <p className="mt-1 text-sm font-medium text-teal-400">{project.subtitle}</p>
             <p className="mt-2 text-sm leading-relaxed text-zinc-400 line-clamp-2">{project.description}</p>
           </div>
@@ -128,12 +130,12 @@ const FeaturedCard = ({ project, onClick, t }: { project: Project; onClick: () =
           {project.tech.map((tech) => (<span key={tech} className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-400 ring-1 ring-white/[0.06]">{tech}</span>))}
         </div>
         <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
-          <a href={`/project/${projectSlug}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-teal-500 px-3 py-1.5 text-[11px] font-medium text-[#09090b] transition hover:bg-teal-400"><ArrowUpRight size={12} /> View</a>
+          <a href={localizedPath(`/project/${projectSlug}`, i18n.language)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-teal-500 px-3 py-1.5 text-[11px] font-medium text-[#09090b] transition hover:bg-teal-400"><ArrowUpRight size={12} /> View</a>
           {github && <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-[11px] font-medium text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={12} /> GitHub</a>}
           {demo && <a href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-3 py-1.5 text-[11px] font-medium text-[#09090b] transition hover:bg-zinc-200"><ExternalLink size={12} /> Demo</a>}
         </div>
       </div>
-    </button>
+    </article>
   );
 };
 
@@ -144,12 +146,12 @@ const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () =>
   const demo = project.demoUrl || demoUrls[project.title];
   const projectSlug = slugify(project.title);
   return (
-    <button onClick={onClick} className="project-card group flex flex-col rounded-2xl p-5 text-left transition-all duration-500 hover:-translate-y-2">
+    <article onClick={onClick} className="project-card group flex flex-col rounded-2xl p-5 text-left transition-all duration-500 hover:-translate-y-2">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
           <div className="project-icon-glow flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400"><Icon size={20} /></div>
           <div className="min-w-0">
-            <h3 className="text-sm font-bold leading-snug text-[#f4f4f5] sm:font-medium">{project.title}</h3>
+            <h3 className="text-sm font-bold leading-snug text-[#f4f4f5] sm:font-medium"><button type="button" onClick={(event) => { event.stopPropagation(); onClick(); }} className="text-left">{project.title}</button></h3>
             <p className="mt-1 text-xs font-medium text-teal-400/80">{project.subtitle}</p>
           </div>
         </div>
@@ -170,11 +172,11 @@ const CompactCard = ({ project, onClick, t }: { project: Project; onClick: () =>
         {project.tech.map((tech) => (<span key={tech} className="rounded-full bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-400 ring-1 ring-white/[0.06]">{tech}</span>))}
       </div>
       <div className="mt-3 flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
-        <a href={`/project/${projectSlug}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-teal-500 px-2.5 py-1 text-[10px] font-medium text-[#09090b] transition hover:bg-teal-400"><ArrowUpRight size={11} /> View</a>
+        <a href={localizedPath(`/project/${projectSlug}`, i18n.language)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-teal-500 px-2.5 py-1 text-[10px] font-medium text-[#09090b] transition hover:bg-teal-400"><ArrowUpRight size={11} /> View</a>
         {github && <a href={github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-white/10 px-2.5 py-1 text-[10px] font-medium text-zinc-400 transition hover:border-teal-400/40 hover:text-teal-400"><Github size={11} /> GitHub</a>}
         {demo && <a href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[#f4f4f5] px-2.5 py-1 text-[10px] font-medium text-[#09090b] transition hover:bg-zinc-200"><ExternalLink size={11} /> Demo</a>}
       </div>
-    </button>
+    </article>
   );
 };
 

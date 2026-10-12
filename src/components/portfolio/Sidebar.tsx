@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail, ArrowUpRight, ExternalLink } from "lucide-react
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import LanguageToggle from "@/components/LanguageToggle";
+import { localizedPath } from "@/lib/locale";
 
 const navKeys = [
   { id: "projects", key: "nav.projects" },
@@ -13,11 +14,12 @@ const navKeys = [
   { id: "roadmap", key: "nav.roadmap" },
   { id: "skills", key: "nav.skills" },
   { id: "certificates", key: "nav.certificates" },
+  { id: "faq", key: "nav.faq" },
   { id: "contact", key: "nav.contact" },
 ];
 
 const Sidebar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [active, setActive] = React.useState<string>("projects");
 
   React.useEffect(() => {
@@ -39,11 +41,11 @@ const Sidebar = () => {
   return (
     <aside className="command-sidebar fixed inset-y-0 left-0 z-40 hidden w-[300px] flex-col justify-between px-9 py-12 lg:flex">
       <div>
-        <a href="#projects" className="block">
+        <a href={localizedPath("/#projects", i18n.language)} className="block">
           <div className="mb-5 flex items-center gap-3"><span className="brand-mark">VR</span><span className="h-px flex-1 bg-gradient-to-r from-cyan-300/40 to-transparent" /></div>
-          <h1 className="text-2xl font-semibold tracking-tight text-[#f4f4f5]">
+          <p className="text-2xl font-semibold tracking-tight text-[#f4f4f5]">
             Vahid Rahmani
-          </h1>
+          </p>
           <p className="mt-2 text-sm leading-relaxed text-zinc-500">
             CCNA Certified · AI Automation · Cisco & FortiGate
           </p>
@@ -54,7 +56,7 @@ const Sidebar = () => {
             {navKeys.map((item) => (
               <li key={item.id}>
                 <a
-                  href={`#${item.id}`}
+                  href={localizedPath(`/#${item.id}`, i18n.language)}
                   className={cn(
                     "group inline-flex items-center gap-2 text-sm transition-colors",
                     active === item.id
@@ -76,7 +78,7 @@ const Sidebar = () => {
             ))}
             <li className="pt-2">
               <a
-                href="/costs"
+                href={localizedPath("/costs", i18n.language)}
                 className="group inline-flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
               >
                 <span className="h-px w-4 bg-zinc-700 transition-all duration-300 group-hover:w-6 group-hover:bg-zinc-500" />
@@ -98,7 +100,7 @@ const Sidebar = () => {
           <Mail size={18} />
         </a>
         <LanguageToggle />
-        <a href="#contact" className="ml-auto inline-flex items-center gap-1 text-xs text-zinc-500 transition-colors hover:text-teal-400">
+        <a href={localizedPath("/#contact", i18n.language)} className="ml-auto inline-flex items-center gap-1 text-xs text-zinc-500 transition-colors hover:text-teal-400">
           {t("nav.top")} <ArrowUpRight size={14} />
         </a>
       </div>

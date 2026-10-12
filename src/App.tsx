@@ -7,25 +7,30 @@ import Index from "./pages/Index";
 import Costs from "./pages/Costs";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
+import Seo from "./components/Seo";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+export const AppContent = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/costs" element={<Costs />} />
-          <Route path="/project/:slug" element={<ProjectDetail />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <Seo />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/costs" element={<Costs />} />
+        <Route path="/project/:slug" element={<ProjectDetail />} />
+        <Route path="/en" element={<Index />} />
+        <Route path="/en/costs" element={<Costs />} />
+        <Route path="/en/project/:slug" element={<ProjectDetail />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+const App = () => <BrowserRouter><AppContent /></BrowserRouter>;
 
 export default App;

@@ -11,6 +11,7 @@ import {
 } from "@/data/projects";
 import Sidebar from "@/components/portfolio/Sidebar";
 import MobileTopBar from "@/components/portfolio/MobileTopBar";
+import { localizedPath } from "@/lib/locale";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   Network, Shield, Bot, Cpu, Globe,
@@ -32,7 +33,7 @@ const RoadmapIcon = ({ status }: { status: string }) => {
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const items = t("projects.items", { returnObjects: true }) as Array<{
     title: string; subtitle: string; description: string; architecture: string;
     tech: string[]; icon: string; steps: Step[];
@@ -49,6 +50,7 @@ const ProjectDetail = () => {
     modules?: Array<{ name: string; description: string }>;
     localization?: Array<{ lang: string; flag: string }>;
     author?: string;
+    demoUrl?: string;
     showSteps?: boolean;
   }>;
 
@@ -65,7 +67,7 @@ const ProjectDetail = () => {
               <FolderGit size={48} className="mb-4 text-zinc-600" />
               <h1 className="text-2xl font-semibold text-[#f4f4f5]">Project not found</h1>
               <p className="mt-2 text-sm text-zinc-500">The project you're looking for doesn't exist.</p>
-              <Link to="/" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#f4f4f5] px-5 py-2.5 text-sm font-medium text-[#09090b] transition hover:bg-zinc-200">
+              <Link to={localizedPath("/", i18n.language)} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#f4f4f5] px-5 py-2.5 text-sm font-medium text-[#09090b] transition hover:bg-zinc-200">
                 <ArrowLeft size={16} /> Back to Portfolio
               </Link>
             </div>
@@ -91,12 +93,12 @@ const ProjectDetail = () => {
         <main className="lg:pl-[280px]">
           <div className="mx-auto max-w-4xl px-6 pb-20 pt-20 lg:pt-12">
 
-            <Link to="/" className="mb-8 inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-teal-400">
+            <Link to={localizedPath("/", i18n.language)} className="mb-8 inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-teal-400">
               <ArrowLeft size={16} /> Back to Portfolio
             </Link>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={import.meta.env.SSR ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
@@ -133,7 +135,7 @@ const ProjectDetail = () => {
                     return (
                       <motion.div
                         key={feature.title}
-                        initial={{ opacity: 0, y: 12 }}
+                        initial={import.meta.env.SSR ? false : { opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.35, delay: 0.1 + i * 0.08 }}
                         className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 transition-colors hover:border-teal-400/20 hover:bg-teal-400/[0.03]"
@@ -418,12 +420,12 @@ const ProjectDetail = () => {
       <main className="lg:pl-[280px]">
         <div className="mx-auto max-w-3xl px-6 pb-20 pt-20 lg:pt-12">
 
-          <Link to="/" className="mb-8 inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-teal-400">
+          <Link to={localizedPath("/", i18n.language)} className="mb-8 inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-teal-400">
             <ArrowLeft size={16} /> Back to Portfolio
           </Link>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={import.meta.env.SSR ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >

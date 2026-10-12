@@ -72,7 +72,13 @@ pnpm dev
 pnpm build
 ```
 
-The production build is emitted to `dist/` and is configured for Vercel deployment.
+The production build is emitted to `dist/` and is configured for Vercel deployment. It renders the actual React pages into static HTML at build time, so project content and metadata are available before JavaScript runs. No runtime server or new rendering dependency is required.
+
+German pages retain the existing URLs; English pages use `/en` and `/en/project/:slug`. The language switch preserves the current page. Titles, descriptions, canonicals, reciprocal hreflang, social cards and JSON-LD come from `src/lib/seo.ts`; visible questions and their structured answers share `src/data/faq.ts`.
+
+The build generates a sitemap covering every public project in both languages, an optional `llms.txt` project index, a stable profile image, and a real `404.html`. The sample `/costs` dashboard is marked `noindex` and excluded from the sitemap. Crawler rules preserve the resume restriction, including its bundled asset path. The existing Search Console verification token is retained.
+
+Run `pnpm exec tsc -p tsconfig.app.json --noEmit` and `pnpm build` to validate changes. After deploying, use Search Console URL Inspection and submit `https://vahid-portfolio-three.vercel.app/sitemap.xml` for recrawling. `llms.txt` is optional documentation; it is not a Google ranking requirement. Indexing, search positions and AI citations are not guaranteed.
 
 ## Professional profile
 

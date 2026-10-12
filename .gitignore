@@ -29,3 +29,6 @@ dist-ssr
 /playwright/.cache/
 .last-run.json
 .dyad/
+
+# Temporary build-time React renderer
+.prerender/

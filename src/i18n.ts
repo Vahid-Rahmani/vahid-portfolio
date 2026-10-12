@@ -2,6 +2,7 @@
 
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { languageFromPath } from "./lib/locale";
 
 const resources = {
   en: {
@@ -14,6 +15,7 @@ const resources = {
       "nav.certificates": "Certificates",
       "nav.contact": "Contact",
       "nav.top": "Top",
+      "nav.faq": "FAQ",
 
       "header.openToWork": "Open to Work",
       "header.role": "CCNA-Certified Cloud & Network Engineer | AI Automation Engineer | CCNP/CCIE & RHCSA Learning Path",
@@ -576,6 +578,7 @@ const resources = {
       "nav.certificates": "Zertifikate",
       "nav.contact": "Kontakt",
       "nav.top": "Top",
+      "nav.faq": "FAQ",
 
       "header.openToWork": "Open to Work",
       "header.role": "CCNA-zertifizierter Cloud & Network Engineer | AI Automation Engineer | CCNP/CCIE- & RHCSA-Lernpfad",
@@ -1124,20 +1127,14 @@ const resources = {
   },
 };
 
-const savedLang = localStorage.getItem("lang") || "de";
+const initialLanguage = typeof window === "undefined" ? "de" : languageFromPath(window.location.pathname);
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: savedLang,
+  lng: initialLanguage,
   fallbackLng: "de",
+  initAsync: false,
   interpolation: { escapeValue: false },
 });
-
-i18n.on("languageChanged", (lng) => {
-  localStorage.setItem("lang", lng);
-  document.documentElement.lang = lng;
-});
-
-document.documentElement.lang = savedLang;
 
 export default i18n;

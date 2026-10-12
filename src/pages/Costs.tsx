@@ -10,6 +10,8 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { localizedPath } from "@/lib/locale";
 import {
   PieChart,
   Pie,
@@ -130,11 +132,12 @@ const StatsCard = ({
 );
 
 const Costs = () => {
+  const { i18n } = useTranslation();
   return (
     <div className="min-h-screen bg-[#09090b] font-sans text-[#f4f4f5]">
       <main className="mx-auto max-w-6xl px-6 py-12">
         <Link
-          to="/"
+          to={localizedPath("/", i18n.language)}
           className="mb-8 inline-flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-teal-400"
         >
           <ArrowLeft size={14} /> Back to Portfolio
@@ -145,8 +148,9 @@ const Costs = () => {
             Global HA Web Hosting — Cost Breakdown
           </h1>
           <p className="mt-3 max-w-2xl text-zinc-400">
-            Monthly infrastructure cost analysis for the Terraform-built
-            zero-downtime static edge architecture (AWS).
+            Illustrative AWS infrastructure cost dashboard for a Terraform-based
+            static hosting architecture. Figures below are sample data for this
+            portfolio demo, not live provider prices or customer invoices.
           </p>
         </div>
 

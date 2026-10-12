@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import LanguageToggle from "@/components/LanguageToggle";
+import { localizedPath } from "@/lib/locale";
 
 const navKeys = [
   { id: "projects", key: "nav.projects" },
@@ -13,11 +14,12 @@ const navKeys = [
   { id: "roadmap", key: "nav.roadmap" },
   { id: "skills", key: "nav.skills" },
   { id: "certificates", key: "nav.certificates" },
+  { id: "faq", key: "nav.faq" },
   { id: "contact", key: "nav.contact" },
 ];
 
 const MobileTopBar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState<string>("projects");
 
@@ -41,7 +43,7 @@ const MobileTopBar = () => {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#09090b]/90 backdrop-blur-md lg:hidden">
       <div className="flex items-center justify-between px-5 py-3">
         <div className="flex flex-1 items-center">
-          <a href="#projects" className="text-base font-semibold tracking-tight text-[#f4f4f5]">
+          <a href={localizedPath("/#projects", i18n.language)} className="text-base font-semibold tracking-tight text-[#f4f4f5]">
             Vahid Rahmani
           </a>
         </div>
@@ -60,13 +62,13 @@ const MobileTopBar = () => {
             <ul className="space-y-1">
               {navKeys.map((item) => (
                 <li key={item.id}>
-                  <a href={`#${item.id}`} onClick={() => setOpen(false)} className={cn("block py-2 text-sm transition-colors", active === item.id ? "text-[#f4f4f5]" : "text-zinc-500 hover:text-zinc-300")}>
+                  <a href={localizedPath(`/#${item.id}`, i18n.language)} onClick={() => setOpen(false)} className={cn("block py-2 text-sm transition-colors", active === item.id ? "text-[#f4f4f5]" : "text-zinc-500 hover:text-zinc-300")}>
                     {t(item.key)}
                   </a>
                 </li>
               ))}
               <li>
-                <a href="/costs" onClick={() => setOpen(false)} className="block py-2 text-sm text-zinc-500 transition-colors hover:text-zinc-300">
+                <a href={localizedPath("/costs", i18n.language)} onClick={() => setOpen(false)} className="block py-2 text-sm text-zinc-500 transition-colors hover:text-zinc-300">
                   Costs
                 </a>
               </li>

@@ -39,16 +39,9 @@ export const demoUrls: Record<string, string> = {
 };
 
 export const featuredProjects = [
-  "Klybit — IT Learning & Cisco Simulator",
-  "MultiAgentCoding",
-  "CloudGuard AI",
-  "Zova — Flutter Language Learning App",
   "Windows Server, Cisco & SoftEther Network Lab",
-  "LinkedIn AI Agent",
-  "Cloud-Connected Hardware & IoT Monitor",
-  "Global High-Availability Web Hosting with IaC",
   "Automated Hybrid Network & Monitoring Dashboard",
-  "Zova — AI Learning Assistant",
+  "Cloud-Connected Hardware & IoT Monitor",
 ];
 
 export const stepWeight: Record<StepStatus, number> = {

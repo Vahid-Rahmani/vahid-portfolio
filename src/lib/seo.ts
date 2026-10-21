@@ -30,13 +30,13 @@ export const getPageMetadata = (pathname: string): PageMetadata => {
   const indexable = isHome || Boolean(project);
   const canonical = `${SITE_URL}${localizedPath(path, language)}`;
   const title = isHome
-    ? language === "de" ? "Vahid Rahmani | Cloud- und Netzwerktechnik in Hamburg" : "Vahid Rahmani | Cloud & Network Engineer in Hamburg"
+    ? language === "de" ? "Vahid Rahmani | System & Network Engineer in Hamburg" : "Vahid Rahmani | System & Network Engineer in Hamburg"
     : project ? `${project.title} | Vahid Rahmani`
     : isCosts ? "AWS Hosting Cost Demo | Vahid Rahmani" : "Page not found | Vahid Rahmani";
   const description = isHome
     ? language === "de"
-      ? "Vahid Rahmani in Hamburg: CCNA, Azure, Windows Server und Python-Automatisierung. Entdecken Sie praktische Netzwerk-Labs, KI-Projekte und GitHub-Code."
-      : "Explore Vahid Rahmani's cloud and networking portfolio in Hamburg: CCNA, Azure, Windows Server, Python automation, infrastructure labs and AI projects."
+      ? "Vahid Rahmani in Hamburg: Windows Server, Linux, Cisco, Azure und Infrastructure Automation. Multi-Site-Abschlussprojekt, Monitoring und Raspberry-Pi-Hardware."
+      : "Explore Vahid Rahmani's infrastructure portfolio in Hamburg: Windows Server, Linux, Cisco, Azure, PowerShell/Python automation, monitoring and Raspberry Pi hardware."
     : project ? (project.description.length > 160 ? project.description.slice(0, 157).replace(/\s+\S*$/, "") + "…" : project.description)
     : isCosts ? "Illustrative AWS hosting cost dashboard with sample data. A portfolio demonstration, not current provider pricing or a customer billing report."
     : "The requested portfolio page does not exist. Return to Vahid Rahmani's portfolio to browse infrastructure and automation projects.";
@@ -50,11 +50,11 @@ export const getPageMetadata = (pathname: string): PageMetadata => {
   const graph: Record<string, unknown>[] = [
     {
       "@type": "Person", "@id": personId, name: "Vahid Rahmani", url: `${SITE_URL}/`,
-      jobTitle: "CCNA-Certified Cloud & Network Engineer | AI Automation Engineer",
+      jobTitle: "System & Network Engineer",
       image: PROFILE_IMAGE, email: "vahidrahmani.info@gmail.com",
       address: { "@type": "PostalAddress", addressLocality: "Hamburg", addressCountry: "DE" },
       sameAs: ["https://www.linkedin.com/in/vahid-rahmani-699944417/", "https://github.com/Vahid-Rahmani"],
-      knowsAbout: ["Microsoft Azure", "Windows Server", "Active Directory", "Hyper-V", "Cisco Networking", "EVE-NG", "SoftEther", "Linux", "Python", "Infrastructure Automation"],
+      knowsAbout: ["Windows Server", "Active Directory", "Linux", "Red Hat / RHEL", "Cisco Networking", "EVE-NG", "SoftEther", "Microsoft Azure", "PowerShell", "Python", "Terraform", "Docker", "Ansible", "Kubernetes", "Raspberry Pi", "Infrastructure Automation"],
     },
     {
       "@type": "WebSite", "@id": websiteId, name: "Vahid Rahmani Portfolio", url: `${SITE_URL}/`,
@@ -123,10 +123,10 @@ export const renderSeoHead = (page: PageMetadata): string => {
     meta("og:title", page.title, true), meta("og:description", page.description, true), meta("og:url", page.canonical, true),
     meta("og:locale", page.language === "de" ? "de_DE" : "en_GB", true),
     meta("og:locale:alternate", page.language === "de" ? "en_GB" : "de_DE", true),
-    meta("og:image", PROFILE_IMAGE, true), meta("og:image:alt", "Vahid Rahmani — cloud and networking practitioner in Hamburg", true),
+    meta("og:image", PROFILE_IMAGE, true), meta("og:image:alt", "Vahid Rahmani — system and network engineer in Hamburg", true),
     meta("og:image:type", "image/jpeg", true), meta("og:image:width", "1280", true), meta("og:image:height", "1280", true),
     meta("twitter:card", "summary_large_image"), meta("twitter:title", page.title), meta("twitter:description", page.description),
-    meta("twitter:image", PROFILE_IMAGE), meta("twitter:image:alt", "Vahid Rahmani — cloud and networking practitioner in Hamburg"),
+    meta("twitter:image", PROFILE_IMAGE), meta("twitter:image:alt", "Vahid Rahmani — system and network engineer in Hamburg"),
     `<script data-seo id="seo-schema" type="application/ld+json">${JSON.stringify(page.schema).replace(/</g, "\\u003c")}</script>`,
   ].join("\n    ");
 };

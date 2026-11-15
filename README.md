@@ -1,57 +1,73 @@
 # Vahid Rahmani — Cloud & Infrastructure Portfolio
 
-> Personal portfolio for hands-on work across Azure, Windows Server, Linux, networking, Python, automation, and practical AI-enabled tools.
+> Hands-on portfolio documenting my development across IT infrastructure, networking, cloud, automation and applied AI.
 
 <p align="center">
-  <a href="https://vahid-portfolio-three.vercel.app/"><img src="https://img.shields.io/badge/live%20portfolio-vahid--portfolio--three.vercel.app-2563eb" alt="Live portfolio"></a>
-  <a href="https://www.linkedin.com/in/vahid-rahmani-699944417/"><img src="https://img.shields.io/badge/LinkedIn-Vahid%20Rahmani-0A66C2" alt="LinkedIn"></a>
-  <a href="https://github.com/Vahid-Rahmani"><img src="https://img.shields.io/badge/GitHub-Vahid--Rahmani-181717?logo=github" alt="GitHub"></a>
+  <a href="https://vahid-portfolio-three.vercel.app/">Live portfolio</a> ·
+  <a href="https://www.linkedin.com/in/vahid-rahmani-699944417/">LinkedIn</a> ·
+  <a href="https://github.com/Vahid-Rahmani">GitHub</a>
 </p>
 
 ## What this portfolio communicates
 
-The site brings together infrastructure labs, monitoring tools, automation experiments, and learning products in one evidence-led profile. Each featured project is presented with its purpose, technology choices, current state, and repository link so a reviewer can move from overview to implementation quickly.
+This portfolio connects practical labs, monitoring tools, automation experiments and learning products. It is designed to show the progression from foundational practice to increasingly complex infrastructure and software projects. Each project should state its actual status and link to implementation evidence.
 
 ## Focus areas
 
 | Area | Evidence in the project collection |
 | --- | --- |
-| Cloud & infrastructure | Azure architecture, monitoring, hybrid networking and deployment planning |
-| Systems administration | Windows Server, Active Directory, PowerShell remoting and Linux practice |
+| Cloud & infrastructure | Azure concepts, infrastructure as code, deployment and monitoring |
+| Systems administration | Windows Server, Active Directory, PowerShell remoting and Linux |
+| Networking | Hyper-V, EVE-NG, SoftEther, VLANs, routing and hybrid connectivity |
 | Automation | Python utilities, repeatable workflows, data collection and operational tooling |
-| AI engineering | RAG/data pipelines, multi-agent workflow orchestration and classroom assistance |
+| Applied AI | RAG/data pipelines, evaluation, LLM integrations and multi-agent workflows |
 | Web delivery | React, TypeScript, Vite, Tailwind CSS and Vercel deployment |
-| Hardware & networking | Raspberry Pi, IoT monitoring concepts, diagnostics and network fundamentals |
 
-## Featured project map
+## Project map
 
 ```mermaid
 flowchart TB
-    P[Portfolio] --> I[Infrastructure]
-    P --> A[Automation & AI]
-    P --> W[Web products]
+    P[Portfolio] --> F[Foundations & Learning]
+    P --> I[Infrastructure & Networking]
+    P --> C[Cloud & Automation]
+    P --> A[Applied AI & Agents]
+    I --> L[Windows / Hyper-V Lab]
     I --> M[Hybrid Network Monitoring]
-    I --> H[Cloud-connected Hardware Monitor]
-    I --> AZ[Azure AI Specialist]
-    A --> MA[MultiAgentCoding]
-    A --> D[AI Drop Agent]
-    W --> Z[Zova classroom assistant]
-    W --> S[Zova product site]
+    C --> H[Cloud-connected Hardware]
+    C --> S[Serverless Network Sentinel]
+    A --> Z[Zova Learning Tools]
+    A --> AZ[Azure AI Specialist]
+    A --> FCC[FCC Agent Control Plane]
 ```
 
 ## Selected projects
 
-- [Klybit — IT Learning & Cisco Simulator](https://github.com/Vahid-Rahmani/AZ-802-learning-space) — multilingual infrastructure learning, practice, account-based checkpoints and browser-based Cisco CLI labs. [Live workspace](https://klybit.vercel.app/).
-- [MultiAgentCoding](https://github.com/Vahid-Rahmani/mullti_agent_coding) — Python/FastAPI control plane for visual AI coding workflows, reusable agent roles and persistent project knowledge.
-- [CloudGuard AI](https://github.com/Vahid-Rahmani/CloudGuard-AI) — public architecture showcase for Azure-first infrastructure observability and governed operations; Phase 1 internal MVP in development.
-- [Zova — Flutter Language Learning App](https://github.com/Vahid-Rahmani/zofa) — Flutter/Dart learning app with local demo mode and Supabase/Stripe integration adapters.
-- [Automated Hybrid Network & Monitoring Dashboard](https://github.com/Vahid-Rahmani/Automated-Hybrid-Network-Monitoring-Dashboard) — Active Directory discovery, reachability checks, Windows host metrics, and a FastAPI dashboard.
-- [Cloud Connected Hardware IoT Monitor](https://github.com/Vahid-Rahmani/Cloud-Connected-Hardware-IoT-Monitor) — Raspberry Pi / hardware monitoring direction connected to cloud telemetry concepts.
-- [Azure AI Specialist Project Plan](https://github.com/Vahid-Rahmani/Azure-AI-Specialist-Project-Plan) — data-first Azure knowledge collection, evaluation, RAG, and model strategy.
-- [MultiAgentCoding](https://github.com/Vahid-Rahmani/mullti_agent_coding) — visual orchestration and control plane for multi-agent coding workflows.
-- [AI Drop Agent](https://github.com/Vahid-Rahmani/AI-Drop-Agent) — automation project for product discovery and marketplace workflows.
-- [Zova extension](https://github.com/Vahid-Rahmani/dobzova) — Chrome classroom assistant for transcription, translation, study support, and local class history.
-- [Zova product site](https://zovasite.vercel.app/) — public product landing page, guide, privacy information, and support content.
+### Infrastructure and networking
+
+- [Windows Server, Hyper-V, EVE-NG and SoftEther Lab](https://github.com/Vahid-Rahmani/windows-hyperv-eve-softether-network-lab) — documented progression from a small virtual networking lab to a two-site environment with VLANs, Active Directory, shared storage and clustering.
+- [Automated Hybrid Network Monitoring Dashboard](https://github.com/Vahid-Rahmani/Automated-Hybrid-Network-Monitoring-Dashboard) — Active Directory discovery, reachability checks, Windows host metrics and a FastAPI dashboard.
+- [Hybrid Identity Sync — Local AD to Azure Entra ID](https://github.com/Vahid-Rahmani/Hybrid-Identity-Sync-Local-AD-to-Azure-Entra-ID) — repository for hybrid identity learning and implementation.
+- [Network-to-Cloud Sheets](https://github.com/Vahid-Rahmani/network-to-cloud-sheets) — network and cloud learning project.
+
+### Cloud and automation
+
+- [Cloud & DevOps Hub](https://github.com/Vahid-Rahmani/cloud-devops-hub) — index of cloud and infrastructure projects.
+- [Global High Availability Web Hosting with IaC](https://github.com/Vahid-Rahmani/Global-High-Availability-Web-Hosting-with-IaC) — infrastructure-as-code hosting project.
+- [Cloud-connected Hardware & IoT Monitor](https://github.com/Vahid-Rahmani/Cloud-Connected-Hardware-IoT-Monitor) — hardware telemetry and cloud-connected monitoring concepts.
+- [Serverless Network Sentinel Bot](https://github.com/Vahid-Rahmani/Serverless-Network-Sentinel-Bot) — network monitoring and automation project.
+
+### Applied AI and learning products
+
+- [Zova](https://github.com/Vahid-Rahmani/zofa) — AI-supported learning and classroom assistance.
+- [Zova browser extension](https://github.com/Vahid-Rahmani/dobzova) — classroom assistance extension.
+- [Zova product website](https://github.com/Vahid-Rahmani/zovasite) — product website source.
+- [Azure AI Specialist Project Plan](https://github.com/Vahid-Rahmani/Azure-AI-Specialist-Project-Plan) — separate Azure-focused AI research and evaluation project.
+- [AI Drop Agent](https://github.com/Vahid-Rahmani/AI-Drop-Agent) — automation project.
+
+### Multi-agent systems
+
+- [MultiAgentCoding](https://github.com/Vahid-Rahmani/mullti_agent_coding) — visual multi-agent coding workflow project.
+- [Kontorit Agent Control Plane — FCC](https://github.com/Vahid-Rahmani/Kontorit-Agent-Control-Plane) — FCC agent runtime and control-plane workspace. This is separate from the KONTORIT public website and the Azure AI Specialist project.
 
 ## Site architecture
 
@@ -76,19 +92,17 @@ pnpm dev
 pnpm build
 ```
 
-The production build is emitted to `dist/` and is configured for Vercel deployment. It renders the actual React pages into static HTML at build time, so project content and metadata are available before JavaScript runs. No runtime server or new rendering dependency is required.
+The production build is emitted to `dist/` and is configured for Vercel deployment. German pages retain their existing URLs; English pages use `/en` and `/en/project/:slug`. The language switch preserves the current page. Titles, descriptions, canonicals, reciprocal hreflang, social cards and JSON-LD are managed in `src/lib/seo.ts`; FAQ content is shared through `src/data/faq.ts`.
 
-German pages retain the existing URLs; English pages use `/en` and `/en/project/:slug`. The language switch preserves the current page. Titles, descriptions, canonicals, reciprocal hreflang, social cards and JSON-LD come from `src/lib/seo.ts`; visible questions and their structured answers share `src/data/faq.ts`.
+The build generates a sitemap covering public projects in both languages, an optional `llms.txt` project index, a profile image and a `404.html`. The sample `/costs` dashboard is marked `noindex` and excluded from the sitemap. Search indexing and rankings are not guaranteed.
 
-The build generates a sitemap covering every public project in both languages, an optional `llms.txt` project index, a stable profile image, and a real `404.html`. The sample `/costs` dashboard is marked `noindex` and excluded from the sitemap. Crawler rules preserve the resume restriction, including its bundled asset path. The existing Search Console verification token is retained.
-
-Run `pnpm exec tsc -p tsconfig.app.json --noEmit` and `pnpm build` to validate changes. After deploying, use Search Console URL Inspection and submit `https://vahid-portfolio-three.vercel.app/sitemap.xml` for recrawling. `llms.txt` is optional documentation; it is not a Google ranking requirement. Indexing, search positions and AI citations are not guaranteed.
+Run `pnpm exec tsc -p tsconfig.app.json --noEmit` and `pnpm build` to validate changes. After deployment, submit `https://vahid-portfolio-three.vercel.app/sitemap.xml` in Search Console.
 
 ## Professional profile
 
-I am a Cloud Engineer Trainee and IT infrastructure practitioner in Hamburg, Germany, focused on Azure, Windows Server, Linux, networking, Python, and practical automation. My projects are built as learning evidence: clear scope, reproducible setup, and an honest separation between implemented features and future work.
+I am a Cloud Engineer trainee and IT infrastructure practitioner in Hamburg, Germany. My current learning and project work focuses on Azure, Windows Server, Linux, networking, Python, PowerShell and practical automation.
 
-Languages: German, Persian, and English.
+This portfolio is a record of learning and implementation. It distinguishes working features from prototypes, research and planned work. It does not claim a university degree or an unverified professional certification.
 
 ## Links
 
